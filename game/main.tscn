@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqdkc53aebwxv"]
+
+[ext_resource type="PackedScene" uid="uid://erkvk6ayn6cu" path="res://scenes/mushy.tscn" id="1_71bsr"]
+
+[node name="Main" type="Node"]
+
+[node name="mushy" parent="." instance=ExtResource("1_71bsr")]
+position = Vector2(527, 263)
