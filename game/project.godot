@@ -11,8 +11,14 @@ config_version=5
 [application]
 
 config/name="Game"
+run/main_scene="res://HUD.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://images/icon.svg"
+
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [input]
 
