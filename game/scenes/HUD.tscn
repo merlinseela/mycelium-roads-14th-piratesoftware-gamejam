@@ -1,17 +1,18 @@
-[gd_scene load_steps=9 format=3 uid="uid://v7oxdodc6od"]
+[gd_scene load_steps=10 format=3 uid="uid://v7oxdodc6od"]
 
-[ext_resource type="Script" path="res://HUD.gd" id="1_0yckf"]
-[ext_resource type="Texture2D" uid="uid://bgbb40jtmsitr" path="res://images/Spritesheet_UI_Wood.png" id="1_rb3wf"]
-[ext_resource type="Texture2D" uid="uid://jmlarxo7lw1" path="res://images/UI_Wood_Button_Large_Lock_02a1.png" id="2_o0dr4"]
-[ext_resource type="Texture2D" uid="uid://cbf6bg7hyxagg" path="res://images/UI_Wood_Button_Large_Lock_02a3.png" id="3_872o0"]
-[ext_resource type="Texture2D" uid="uid://cu0enlqdej8e3" path="res://images/UI_Wood_Button_Large_Lock_02a2.png" id="4_eau0n"]
-[ext_resource type="Script" path="res://QuitButton.gd" id="5_dm3fe"]
-[ext_resource type="Script" path="res://EventButton.gd" id="6_3tggm"]
+[ext_resource type="Script" path="res://scripts/HUD.gd" id="1_85cbg"]
+[ext_resource type="Texture2D" uid="uid://bgbb40jtmsitr" path="res://images/Spritesheet_UI_Wood.png" id="2_0wwhe"]
+[ext_resource type="Texture2D" uid="uid://jmlarxo7lw1" path="res://images/UI_Wood_Button_Large_Lock_02a1.png" id="3_5jom4"]
+[ext_resource type="Texture2D" uid="uid://cbf6bg7hyxagg" path="res://images/UI_Wood_Button_Large_Lock_02a3.png" id="4_ee4xe"]
+[ext_resource type="Texture2D" uid="uid://cu0enlqdej8e3" path="res://images/UI_Wood_Button_Large_Lock_02a2.png" id="5_74m5a"]
+[ext_resource type="Script" path="res://scripts/EventButton.gd" id="6_mh4o5"]
+[ext_resource type="Script" path="res://scripts/QuitButton.gd" id="7_lbjq6"]
+[ext_resource type="Script" path="res://scripts/ButtonInventory.gd" id="8_dtp82"]
 
 [sub_resource type="Theme" id="Theme_0q56n"]
 
 [node name="HUD" type="Node2D"]
-script = ExtResource("1_0yckf")
+script = ExtResource("1_85cbg")
 
 [node name="RandomEvent" type="CanvasLayer" parent="."]
 
@@ -51,7 +52,7 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
-texture = ExtResource("1_rb3wf")
+texture = ExtResource("2_0wwhe")
 region_rect = Rect2(224, 32, 96, 96)
 patch_margin_left = 19
 patch_margin_top = 24
@@ -75,11 +76,11 @@ grow_vertical = 0
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
-texture_normal = ExtResource("2_o0dr4")
-texture_pressed = ExtResource("3_872o0")
-texture_hover = ExtResource("4_eau0n")
+texture_normal = ExtResource("3_5jom4")
+texture_pressed = ExtResource("4_ee4xe")
+texture_hover = ExtResource("5_74m5a")
 stretch_mode = 0
-script = ExtResource("6_3tggm")
+script = ExtResource("6_mh4o5")
 
 [node name="EventLabel" type="Label" parent="RandomEvent/HBoxContainer2/EventButton"]
 layout_mode = 1
@@ -108,7 +109,7 @@ offset_bottom = 142.0
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.2
-texture = ExtResource("1_rb3wf")
+texture = ExtResource("2_0wwhe")
 region_rect = Rect2(224, 32, 96, 96)
 patch_margin_left = 19
 patch_margin_top = 24
@@ -126,6 +127,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Resource: XXX"
 
 [node name="Label2" type="Label" parent="UI/HBoxContainer/Resource"]
+layout_mode = 0
 offset_left = 28.0
 offset_top = 47.0
 offset_right = 138.0
@@ -135,6 +137,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Resource: XXX"
 
 [node name="Label3" type="Label" parent="UI/HBoxContainer/Resource"]
+layout_mode = 0
 offset_left = 28.0
 offset_top = 67.0
 offset_right = 138.0
@@ -144,6 +147,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Resource: XXX"
 
 [node name="Label4" type="Label" parent="UI/HBoxContainer/Resource"]
+layout_mode = 0
 offset_left = 28.0
 offset_top = 87.0
 offset_right = 138.0
@@ -153,6 +157,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Resource: XXX"
 
 [node name="Label5" type="Label" parent="UI/HBoxContainer/Resource"]
+layout_mode = 0
 offset_left = 148.0
 offset_top = 27.0
 offset_right = 258.0
@@ -162,6 +167,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Resource: XXX"
 
 [node name="Label6" type="Label" parent="UI/HBoxContainer/Resource"]
+layout_mode = 0
 offset_left = 148.0
 offset_top = 47.0
 offset_right = 258.0
@@ -171,6 +177,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Resource: XXX"
 
 [node name="Label7" type="Label" parent="UI/HBoxContainer/Resource"]
+layout_mode = 0
 offset_left = 148.0
 offset_top = 67.0
 offset_right = 258.0
@@ -180,6 +187,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Resource: XXX"
 
 [node name="Label8" type="Label" parent="UI/HBoxContainer/Resource"]
+layout_mode = 0
 offset_left = 148.0
 offset_top = 87.0
 offset_right = 258.0
@@ -189,6 +197,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Resource: XXX"
 
 [node name="Label9" type="Label" parent="UI/HBoxContainer/Resource"]
+layout_mode = 0
 offset_left = 268.0
 offset_top = 27.0
 offset_right = 378.0
@@ -198,6 +207,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Resource: XXX"
 
 [node name="Label10" type="Label" parent="UI/HBoxContainer/Resource"]
+layout_mode = 0
 offset_left = 268.0
 offset_top = 47.0
 offset_right = 378.0
@@ -207,6 +217,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Resource: XXX"
 
 [node name="Label11" type="Label" parent="UI/HBoxContainer/Resource"]
+layout_mode = 0
 offset_left = 268.0
 offset_top = 67.0
 offset_right = 378.0
@@ -216,6 +227,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Resource: XXX"
 
 [node name="Label12" type="Label" parent="UI/HBoxContainer/Resource"]
+layout_mode = 0
 offset_left = 268.0
 offset_top = 87.0
 offset_right = 378.0
@@ -227,7 +239,7 @@ text = "Resource: XXX"
 [node name="Population" type="NinePatchRect" parent="UI/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-texture = ExtResource("1_rb3wf")
+texture = ExtResource("2_0wwhe")
 region_rect = Rect2(224, 32, 96, 96)
 patch_margin_left = 19
 patch_margin_top = 24
@@ -235,6 +247,7 @@ patch_margin_right = 19
 patch_margin_bottom = 24
 
 [node name="Label" type="Label" parent="UI/HBoxContainer/Population"]
+layout_mode = 0
 offset_left = 28.0
 offset_top = 27.0
 offset_right = 131.0
@@ -244,6 +257,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Population: XXX"
 
 [node name="Label2" type="Label" parent="UI/HBoxContainer/Population"]
+layout_mode = 0
 offset_left = 28.0
 offset_top = 47.0
 offset_right = 138.0
@@ -253,6 +267,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Builders: XXX"
 
 [node name="Label3" type="Label" parent="UI/HBoxContainer/Population"]
+layout_mode = 0
 offset_left = 28.0
 offset_top = 67.0
 offset_right = 138.0
@@ -262,6 +277,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Gathers: XXX"
 
 [node name="Label4" type="Label" parent="UI/HBoxContainer/Population"]
+layout_mode = 0
 offset_left = 28.0
 offset_top = 87.0
 offset_right = 138.0
@@ -273,7 +289,7 @@ text = "Wizards: XXX"
 [node name="Effect" type="NinePatchRect" parent="UI/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-texture = ExtResource("1_rb3wf")
+texture = ExtResource("2_0wwhe")
 region_rect = Rect2(224, 32, 96, 96)
 patch_margin_left = 19
 patch_margin_top = 24
@@ -281,6 +297,7 @@ patch_margin_right = 19
 patch_margin_bottom = 24
 
 [node name="Label" type="Label" parent="UI/HBoxContainer/Effect"]
+layout_mode = 0
 offset_left = 28.0
 offset_top = 27.0
 offset_right = 131.0
@@ -290,6 +307,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Effect: XXX"
 
 [node name="Label2" type="Label" parent="UI/HBoxContainer/Effect"]
+layout_mode = 0
 offset_left = 28.0
 offset_top = 47.0
 offset_right = 138.0
@@ -299,6 +317,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Effect: XXX"
 
 [node name="Label3" type="Label" parent="UI/HBoxContainer/Effect"]
+layout_mode = 0
 offset_left = 28.0
 offset_top = 67.0
 offset_right = 138.0
@@ -308,6 +327,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Effect: XXX"
 
 [node name="Label4" type="Label" parent="UI/HBoxContainer/Effect"]
+layout_mode = 0
 offset_left = 28.0
 offset_top = 87.0
 offset_right = 138.0
@@ -330,7 +350,7 @@ grow_vertical = 0
 [node name="Minimap" type="NinePatchRect" parent="UI/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
-texture = ExtResource("1_rb3wf")
+texture = ExtResource("2_0wwhe")
 region_rect = Rect2(32, 32, 96, 96)
 patch_margin_left = 12
 patch_margin_top = 28
@@ -351,7 +371,7 @@ grow_horizontal = 0
 [node name="Weather" type="NinePatchRect" parent="UI/HBoxContainer4"]
 layout_mode = 2
 size_flags_horizontal = 3
-texture = ExtResource("1_rb3wf")
+texture = ExtResource("2_0wwhe")
 region_rect = Rect2(354, 226, 28, 28)
 
 [node name="Options" type="CanvasLayer" parent="."]
@@ -391,11 +411,11 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
-texture_normal = ExtResource("2_o0dr4")
-texture_pressed = ExtResource("3_872o0")
-texture_hover = ExtResource("4_eau0n")
+texture_normal = ExtResource("3_5jom4")
+texture_pressed = ExtResource("4_ee4xe")
+texture_hover = ExtResource("5_74m5a")
 stretch_mode = 0
-script = ExtResource("5_dm3fe")
+script = ExtResource("7_lbjq6")
 
 [node name="QuitLabel" type="Label" parent="Options/VBoxContainer/QuitButton"]
 layout_mode = 0
@@ -404,4 +424,48 @@ offset_right = 96.0
 offset_bottom = -1.0
 theme_override_font_sizes/font_size = 24
 text = "Quit"
+horizontal_alignment = 1
+
+[node name="Inventory" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="HBoxContainerInventory" type="HBoxContainer" parent="Inventory"]
+unique_name_in_owner = true
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -57.0
+offset_top = -140.0
+offset_right = 57.0
+offset_bottom = -83.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ButtonInventory" type="TextureButton" parent="Inventory/HBoxContainerInventory"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+texture_normal = ExtResource("3_5jom4")
+texture_pressed = ExtResource("4_ee4xe")
+texture_hover = ExtResource("5_74m5a")
+stretch_mode = 0
+script = ExtResource("8_dtp82")
+
+[node name="LabelInventory" type="Label" parent="Inventory/HBoxContainerInventory/ButtonInventory"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_top = 3.0
+offset_right = 48.0
+offset_bottom = 37.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "Hide Event"
 horizontal_alignment = 1
