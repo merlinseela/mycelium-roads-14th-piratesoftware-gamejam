@@ -155,7 +155,7 @@ horizontal_alignment = 1
 
 [node name="HBoxResource" type="HBoxContainer" parent="UI"]
 offset_right = 783.0
-offset_bottom = 142.0
+offset_bottom = 145.0
 
 [node name="Resource" type="NinePatchRect" parent="UI/HBoxResource"]
 layout_mode = 2
@@ -168,125 +168,111 @@ patch_margin_top = 24
 patch_margin_right = 19
 patch_margin_bottom = 24
 
-[node name="Label" type="Label" parent="UI/HBoxResource/Resource"]
-layout_mode = 0
-offset_left = 28.0
-offset_top = 27.0
-offset_right = 131.0
-offset_bottom = 50.0
-theme = SubResource("Theme_0q56n")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Resource: XXX"
+[node name="HBoxResource1" type="HBoxContainer" parent="UI/HBoxResource/Resource"]
+layout_mode = 1
+offset_left = 40.0
+offset_top = 20.0
+offset_right = 145.0
+offset_bottom = 124.0
 
-[node name="Label2" type="Label" parent="UI/HBoxResource/Resource"]
-layout_mode = 0
-offset_left = 28.0
-offset_top = 47.0
-offset_right = 138.0
-offset_bottom = 70.0
-theme = SubResource("Theme_0q56n")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Resource: XXX"
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/HBoxResource/Resource/HBoxResource1"]
+layout_mode = 2
 
-[node name="Label3" type="Label" parent="UI/HBoxResource/Resource"]
-layout_mode = 0
-offset_left = 28.0
-offset_top = 67.0
-offset_right = 138.0
-offset_bottom = 90.0
+[node name="LabelWater" type="Label" parent="UI/HBoxResource/Resource/HBoxResource1/VBoxContainer"]
+layout_mode = 2
 theme = SubResource("Theme_0q56n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Resource: XXX"
+text = "Water:"
+horizontal_alignment = 2
 
-[node name="Label4" type="Label" parent="UI/HBoxResource/Resource"]
-layout_mode = 0
-offset_left = 28.0
-offset_top = 87.0
-offset_right = 138.0
-offset_bottom = 110.0
+[node name="LabelDirt" type="Label" parent="UI/HBoxResource/Resource/HBoxResource1/VBoxContainer"]
+layout_mode = 2
 theme = SubResource("Theme_0q56n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Resource: XXX"
+text = "Dirt:"
+horizontal_alignment = 2
 
-[node name="Label5" type="Label" parent="UI/HBoxResource/Resource"]
-layout_mode = 0
-offset_left = 148.0
-offset_top = 27.0
-offset_right = 258.0
-offset_bottom = 50.0
+[node name="LabelProtein" type="Label" parent="UI/HBoxResource/Resource/HBoxResource1/VBoxContainer"]
+layout_mode = 2
 theme = SubResource("Theme_0q56n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Resource: XXX"
+text = "Protein:"
+horizontal_alignment = 2
 
-[node name="Label6" type="Label" parent="UI/HBoxResource/Resource"]
-layout_mode = 0
-offset_left = 148.0
-offset_top = 47.0
-offset_right = 258.0
-offset_bottom = 70.0
+[node name="LabelCalcium" type="Label" parent="UI/HBoxResource/Resource/HBoxResource1/VBoxContainer"]
+layout_mode = 2
 theme = SubResource("Theme_0q56n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Resource: XXX"
+text = "Calcium:"
+horizontal_alignment = 2
 
-[node name="Label7" type="Label" parent="UI/HBoxResource/Resource"]
-layout_mode = 0
-offset_left = 148.0
-offset_top = 67.0
-offset_right = 258.0
-offset_bottom = 90.0
-theme = SubResource("Theme_0q56n")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Resource: XXX"
+[node name="VBoxContainer2" type="VBoxContainer" parent="UI/HBoxResource/Resource/HBoxResource1"]
+layout_mode = 2
 
-[node name="Label8" type="Label" parent="UI/HBoxResource/Resource"]
-layout_mode = 0
-offset_left = 148.0
-offset_top = 87.0
-offset_right = 258.0
-offset_bottom = 110.0
+[node name="WaterCount" type="Label" parent="UI/HBoxResource/Resource/HBoxResource1/VBoxContainer2"]
+layout_mode = 2
 theme = SubResource("Theme_0q56n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Resource: XXX"
+text = "XXX"
 
-[node name="Label9" type="Label" parent="UI/HBoxResource/Resource"]
-layout_mode = 0
-offset_left = 268.0
-offset_top = 27.0
-offset_right = 378.0
-offset_bottom = 50.0
+[node name="DirtCount" type="Label" parent="UI/HBoxResource/Resource/HBoxResource1/VBoxContainer2"]
+layout_mode = 2
 theme = SubResource("Theme_0q56n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Resource: XXX"
+text = "XXX"
 
-[node name="Label10" type="Label" parent="UI/HBoxResource/Resource"]
-layout_mode = 0
-offset_left = 268.0
-offset_top = 47.0
-offset_right = 378.0
-offset_bottom = 70.0
+[node name="ProteinCount" type="Label" parent="UI/HBoxResource/Resource/HBoxResource1/VBoxContainer2"]
+layout_mode = 2
 theme = SubResource("Theme_0q56n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Resource: XXX"
+text = "XXX"
 
-[node name="Label11" type="Label" parent="UI/HBoxResource/Resource"]
-layout_mode = 0
-offset_left = 268.0
-offset_top = 67.0
-offset_right = 378.0
-offset_bottom = 90.0
+[node name="CalciumCount" type="Label" parent="UI/HBoxResource/Resource/HBoxResource1/VBoxContainer2"]
+layout_mode = 2
 theme = SubResource("Theme_0q56n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Resource: XXX"
+text = "XXX"
 
-[node name="Label12" type="Label" parent="UI/HBoxResource/Resource"]
+[node name="HBoxResource2" type="HBoxContainer" parent="UI/HBoxResource/Resource"]
 layout_mode = 0
-offset_left = 268.0
-offset_top = 87.0
-offset_right = 378.0
-offset_bottom = 110.0
+offset_left = 190.0
+offset_top = 20.0
+offset_right = 347.0
+offset_bottom = 124.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/HBoxResource/Resource/HBoxResource2"]
+layout_mode = 2
+
+[node name="LabelPhosphorus" type="Label" parent="UI/HBoxResource/Resource/HBoxResource2/VBoxContainer"]
+layout_mode = 2
 theme = SubResource("Theme_0q56n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Resource: XXX"
+text = "Phosphorus: XXX"
+horizontal_alignment = 2
+
+[node name="LabelPotassium" type="Label" parent="UI/HBoxResource/Resource/HBoxResource2/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_0q56n")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Potassium: XXX"
+horizontal_alignment = 2
+
+[node name="LabelCarbohydrates" type="Label" parent="UI/HBoxResource/Resource/HBoxResource2/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_0q56n")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Carbohydrates: XXX"
+horizontal_alignment = 2
+
+[node name="LabelLuciferin" type="Label" parent="UI/HBoxResource/Resource/HBoxResource2/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_0q56n")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Luciferin: XXX"
+horizontal_alignment = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="UI/HBoxResource/Resource/HBoxResource2"]
+layout_mode = 2
 
 [node name="Population" type="NinePatchRect" parent="UI/HBoxResource"]
 layout_mode = 2
