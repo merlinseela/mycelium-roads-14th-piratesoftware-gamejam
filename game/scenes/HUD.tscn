@@ -210,24 +210,28 @@ horizontal_alignment = 2
 layout_mode = 2
 
 [node name="WaterCount" type="Label" parent="UI/HBoxResource/Resource/HBoxResource1/VBoxContainer2"]
+unique_name_in_owner = true
 layout_mode = 2
 theme = SubResource("Theme_0q56n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "XXX"
 
 [node name="DirtCount" type="Label" parent="UI/HBoxResource/Resource/HBoxResource1/VBoxContainer2"]
+unique_name_in_owner = true
 layout_mode = 2
 theme = SubResource("Theme_0q56n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "XXX"
 
 [node name="ProteinCount" type="Label" parent="UI/HBoxResource/Resource/HBoxResource1/VBoxContainer2"]
+unique_name_in_owner = true
 layout_mode = 2
 theme = SubResource("Theme_0q56n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "XXX"
 
 [node name="CalciumCount" type="Label" parent="UI/HBoxResource/Resource/HBoxResource1/VBoxContainer2"]
+unique_name_in_owner = true
 layout_mode = 2
 theme = SubResource("Theme_0q56n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -247,82 +251,60 @@ layout_mode = 2
 layout_mode = 2
 theme = SubResource("Theme_0q56n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Phosphorus: XXX"
+text = "Phosphorus: "
 horizontal_alignment = 2
 
 [node name="LabelPotassium" type="Label" parent="UI/HBoxResource/Resource/HBoxResource2/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_0q56n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Potassium: XXX"
+text = "Potassium: "
 horizontal_alignment = 2
 
 [node name="LabelCarbohydrates" type="Label" parent="UI/HBoxResource/Resource/HBoxResource2/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_0q56n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Carbohydrates: XXX"
+text = "Carbohydrates: "
 horizontal_alignment = 2
 
 [node name="LabelLuciferin" type="Label" parent="UI/HBoxResource/Resource/HBoxResource2/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_0q56n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Luciferin: XXX"
+text = "Luciferin: "
 horizontal_alignment = 2
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="UI/HBoxResource/Resource/HBoxResource2"]
 layout_mode = 2
 
-[node name="Population" type="NinePatchRect" parent="UI/HBoxResource"]
+[node name="PhosphorusCount" type="Label" parent="UI/HBoxResource/Resource/HBoxResource2/VBoxContainer2"]
+unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 3
-texture = ExtResource("2_0wwhe")
-region_rect = Rect2(224, 32, 96, 96)
-patch_margin_left = 19
-patch_margin_top = 24
-patch_margin_right = 19
-patch_margin_bottom = 24
-
-[node name="Label" type="Label" parent="UI/HBoxResource/Population"]
-layout_mode = 0
-offset_left = 28.0
-offset_top = 27.0
-offset_right = 131.0
-offset_bottom = 50.0
 theme = SubResource("Theme_0q56n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Population: XXX"
+text = "XXX"
 
-[node name="Label2" type="Label" parent="UI/HBoxResource/Population"]
-layout_mode = 0
-offset_left = 28.0
-offset_top = 47.0
-offset_right = 138.0
-offset_bottom = 70.0
+[node name="PotassiumCount" type="Label" parent="UI/HBoxResource/Resource/HBoxResource2/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
 theme = SubResource("Theme_0q56n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Builders: XXX"
+text = "XXX"
 
-[node name="Label3" type="Label" parent="UI/HBoxResource/Population"]
-layout_mode = 0
-offset_left = 28.0
-offset_top = 67.0
-offset_right = 138.0
-offset_bottom = 90.0
+[node name="CarbohydratesCount" type="Label" parent="UI/HBoxResource/Resource/HBoxResource2/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
 theme = SubResource("Theme_0q56n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Gathers: XXX"
+text = "XXX"
 
-[node name="Label4" type="Label" parent="UI/HBoxResource/Population"]
-layout_mode = 0
-offset_left = 28.0
-offset_top = 87.0
-offset_right = 138.0
-offset_bottom = 110.0
+[node name="LuciferinCount" type="Label" parent="UI/HBoxResource/Resource/HBoxResource2/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
 theme = SubResource("Theme_0q56n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Wizards: XXX"
+text = "XXX"
 
 [node name="Effect" type="NinePatchRect" parent="UI/HBoxResource"]
 layout_mode = 2
@@ -334,7 +316,7 @@ patch_margin_top = 24
 patch_margin_right = 19
 patch_margin_bottom = 24
 
-[node name="Label" type="Label" parent="UI/HBoxResource/Effect"]
+[node name="LabelEffect" type="Label" parent="UI/HBoxResource/Effect"]
 layout_mode = 0
 offset_left = 28.0
 offset_top = 27.0
@@ -344,7 +326,7 @@ theme = SubResource("Theme_0q56n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Effect: XXX"
 
-[node name="Label2" type="Label" parent="UI/HBoxResource/Effect"]
+[node name="LabelEffect2" type="Label" parent="UI/HBoxResource/Effect"]
 layout_mode = 0
 offset_left = 28.0
 offset_top = 47.0
@@ -354,7 +336,7 @@ theme = SubResource("Theme_0q56n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Effect: XXX"
 
-[node name="Label3" type="Label" parent="UI/HBoxResource/Effect"]
+[node name="LabelEffect3" type="Label" parent="UI/HBoxResource/Effect"]
 layout_mode = 0
 offset_left = 28.0
 offset_top = 67.0
@@ -364,7 +346,7 @@ theme = SubResource("Theme_0q56n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Effect: XXX"
 
-[node name="Label4" type="Label" parent="UI/HBoxResource/Effect"]
+[node name="LabelEffect4" type="Label" parent="UI/HBoxResource/Effect"]
 layout_mode = 0
 offset_left = 28.0
 offset_top = 87.0
@@ -373,6 +355,39 @@ offset_bottom = 110.0
 theme = SubResource("Theme_0q56n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Effect: XXX"
+
+[node name="Population" type="NinePatchRect" parent="UI/HBoxResource"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_0wwhe")
+region_rect = Rect2(224, 32, 96, 96)
+patch_margin_left = 19
+patch_margin_top = 24
+patch_margin_right = 19
+patch_margin_bottom = 24
+
+[node name="LabelPopulation" type="Label" parent="UI/HBoxResource/Population"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 27.0
+offset_right = 153.0
+offset_bottom = 50.0
+theme = SubResource("Theme_0q56n")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Population:"
+horizontal_alignment = 1
+
+[node name="PopulationCount" type="Label" parent="UI/HBoxResource/Population"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 28.0
+offset_top = 47.0
+offset_right = 153.0
+offset_bottom = 70.0
+theme = SubResource("Theme_0q56n")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "XXX"
+horizontal_alignment = 1
 
 [node name="HBoxMinimap" type="HBoxContainer" parent="UI"]
 anchors_preset = 3
