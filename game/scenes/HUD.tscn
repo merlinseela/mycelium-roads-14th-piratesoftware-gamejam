@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://v7oxdodc6od"]
+[gd_scene load_steps=18 format=3 uid="uid://v7oxdodc6od"]
 
 [ext_resource type="Script" path="res://scripts/HUD.gd" id="1_85cbg"]
 [ext_resource type="Texture2D" uid="uid://bgbb40jtmsitr" path="res://images/Spritesheet_UI_Wood.png" id="2_0wwhe"]
@@ -7,9 +7,61 @@
 [ext_resource type="Texture2D" uid="uid://cu0enlqdej8e3" path="res://images/UI_Wood_Button_Large_Lock_02a2.png" id="5_74m5a"]
 [ext_resource type="Script" path="res://scripts/EventButton.gd" id="6_mh4o5"]
 [ext_resource type="Script" path="res://scripts/QuitButton.gd" id="7_lbjq6"]
+[ext_resource type="Texture2D" uid="uid://ntqfof625rr" path="res://images/icon_sheet.png" id="7_sjnku"]
 [ext_resource type="Script" path="res://scripts/ButtonInventory.gd" id="8_dtp82"]
 
 [sub_resource type="Theme" id="Theme_0q56n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_engbv"]
+atlas = ExtResource("7_sjnku")
+region = Rect2(160, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_48sio"]
+atlas = ExtResource("7_sjnku")
+region = Rect2(224, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7inah"]
+atlas = ExtResource("7_sjnku")
+region = Rect2(288, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gmyrk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_engbv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_48sio")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7inah")
+}],
+"loop": true,
+"name": &"Weather",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86k0x"]
+atlas = ExtResource("7_sjnku")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_edpu6"]
+atlas = ExtResource("7_sjnku")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wbvel"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86k0x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_edpu6")
+}],
+"loop": true,
+"name": &"Day_Night",
+"speed": 5.0
+}]
 
 [node name="HUD" type="Node2D"]
 script = ExtResource("1_85cbg")
@@ -59,7 +111,7 @@ patch_margin_top = 24
 patch_margin_right = 19
 patch_margin_bottom = 24
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="RandomEvent"]
+[node name="HBoxEventButton" type="HBoxContainer" parent="RandomEvent"]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -72,9 +124,9 @@ offset_bottom = -83.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="EventButton" type="TextureButton" parent="RandomEvent/HBoxContainer2"]
+[node name="EventButton" type="TextureButton" parent="RandomEvent/HBoxEventButton"]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 6
 size_flags_vertical = 3
 texture_normal = ExtResource("3_5jom4")
 texture_pressed = ExtResource("4_ee4xe")
@@ -82,7 +134,7 @@ texture_hover = ExtResource("5_74m5a")
 stretch_mode = 0
 script = ExtResource("6_mh4o5")
 
-[node name="EventLabel" type="Label" parent="RandomEvent/HBoxContainer2/EventButton"]
+[node name="EventLabel" type="Label" parent="RandomEvent/HBoxEventButton/EventButton"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -101,11 +153,11 @@ horizontal_alignment = 1
 
 [node name="UI" type="CanvasLayer" parent="."]
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI"]
+[node name="HBoxResource" type="HBoxContainer" parent="UI"]
 offset_right = 783.0
 offset_bottom = 142.0
 
-[node name="Resource" type="NinePatchRect" parent="UI/HBoxContainer"]
+[node name="Resource" type="NinePatchRect" parent="UI/HBoxResource"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.2
@@ -116,7 +168,7 @@ patch_margin_top = 24
 patch_margin_right = 19
 patch_margin_bottom = 24
 
-[node name="Label" type="Label" parent="UI/HBoxContainer/Resource"]
+[node name="Label" type="Label" parent="UI/HBoxResource/Resource"]
 layout_mode = 0
 offset_left = 28.0
 offset_top = 27.0
@@ -126,7 +178,7 @@ theme = SubResource("Theme_0q56n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Resource: XXX"
 
-[node name="Label2" type="Label" parent="UI/HBoxContainer/Resource"]
+[node name="Label2" type="Label" parent="UI/HBoxResource/Resource"]
 layout_mode = 0
 offset_left = 28.0
 offset_top = 47.0
@@ -136,7 +188,7 @@ theme = SubResource("Theme_0q56n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Resource: XXX"
 
-[node name="Label3" type="Label" parent="UI/HBoxContainer/Resource"]
+[node name="Label3" type="Label" parent="UI/HBoxResource/Resource"]
 layout_mode = 0
 offset_left = 28.0
 offset_top = 67.0
@@ -146,7 +198,7 @@ theme = SubResource("Theme_0q56n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Resource: XXX"
 
-[node name="Label4" type="Label" parent="UI/HBoxContainer/Resource"]
+[node name="Label4" type="Label" parent="UI/HBoxResource/Resource"]
 layout_mode = 0
 offset_left = 28.0
 offset_top = 87.0
@@ -156,7 +208,7 @@ theme = SubResource("Theme_0q56n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Resource: XXX"
 
-[node name="Label5" type="Label" parent="UI/HBoxContainer/Resource"]
+[node name="Label5" type="Label" parent="UI/HBoxResource/Resource"]
 layout_mode = 0
 offset_left = 148.0
 offset_top = 27.0
@@ -166,7 +218,7 @@ theme = SubResource("Theme_0q56n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Resource: XXX"
 
-[node name="Label6" type="Label" parent="UI/HBoxContainer/Resource"]
+[node name="Label6" type="Label" parent="UI/HBoxResource/Resource"]
 layout_mode = 0
 offset_left = 148.0
 offset_top = 47.0
@@ -176,7 +228,7 @@ theme = SubResource("Theme_0q56n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Resource: XXX"
 
-[node name="Label7" type="Label" parent="UI/HBoxContainer/Resource"]
+[node name="Label7" type="Label" parent="UI/HBoxResource/Resource"]
 layout_mode = 0
 offset_left = 148.0
 offset_top = 67.0
@@ -186,7 +238,7 @@ theme = SubResource("Theme_0q56n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Resource: XXX"
 
-[node name="Label8" type="Label" parent="UI/HBoxContainer/Resource"]
+[node name="Label8" type="Label" parent="UI/HBoxResource/Resource"]
 layout_mode = 0
 offset_left = 148.0
 offset_top = 87.0
@@ -196,7 +248,7 @@ theme = SubResource("Theme_0q56n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Resource: XXX"
 
-[node name="Label9" type="Label" parent="UI/HBoxContainer/Resource"]
+[node name="Label9" type="Label" parent="UI/HBoxResource/Resource"]
 layout_mode = 0
 offset_left = 268.0
 offset_top = 27.0
@@ -206,7 +258,7 @@ theme = SubResource("Theme_0q56n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Resource: XXX"
 
-[node name="Label10" type="Label" parent="UI/HBoxContainer/Resource"]
+[node name="Label10" type="Label" parent="UI/HBoxResource/Resource"]
 layout_mode = 0
 offset_left = 268.0
 offset_top = 47.0
@@ -216,7 +268,7 @@ theme = SubResource("Theme_0q56n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Resource: XXX"
 
-[node name="Label11" type="Label" parent="UI/HBoxContainer/Resource"]
+[node name="Label11" type="Label" parent="UI/HBoxResource/Resource"]
 layout_mode = 0
 offset_left = 268.0
 offset_top = 67.0
@@ -226,7 +278,7 @@ theme = SubResource("Theme_0q56n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Resource: XXX"
 
-[node name="Label12" type="Label" parent="UI/HBoxContainer/Resource"]
+[node name="Label12" type="Label" parent="UI/HBoxResource/Resource"]
 layout_mode = 0
 offset_left = 268.0
 offset_top = 87.0
@@ -236,7 +288,7 @@ theme = SubResource("Theme_0q56n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Resource: XXX"
 
-[node name="Population" type="NinePatchRect" parent="UI/HBoxContainer"]
+[node name="Population" type="NinePatchRect" parent="UI/HBoxResource"]
 layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("2_0wwhe")
@@ -246,7 +298,7 @@ patch_margin_top = 24
 patch_margin_right = 19
 patch_margin_bottom = 24
 
-[node name="Label" type="Label" parent="UI/HBoxContainer/Population"]
+[node name="Label" type="Label" parent="UI/HBoxResource/Population"]
 layout_mode = 0
 offset_left = 28.0
 offset_top = 27.0
@@ -256,7 +308,7 @@ theme = SubResource("Theme_0q56n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Population: XXX"
 
-[node name="Label2" type="Label" parent="UI/HBoxContainer/Population"]
+[node name="Label2" type="Label" parent="UI/HBoxResource/Population"]
 layout_mode = 0
 offset_left = 28.0
 offset_top = 47.0
@@ -266,7 +318,7 @@ theme = SubResource("Theme_0q56n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Builders: XXX"
 
-[node name="Label3" type="Label" parent="UI/HBoxContainer/Population"]
+[node name="Label3" type="Label" parent="UI/HBoxResource/Population"]
 layout_mode = 0
 offset_left = 28.0
 offset_top = 67.0
@@ -276,7 +328,7 @@ theme = SubResource("Theme_0q56n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Gathers: XXX"
 
-[node name="Label4" type="Label" parent="UI/HBoxContainer/Population"]
+[node name="Label4" type="Label" parent="UI/HBoxResource/Population"]
 layout_mode = 0
 offset_left = 28.0
 offset_top = 87.0
@@ -286,7 +338,7 @@ theme = SubResource("Theme_0q56n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Wizards: XXX"
 
-[node name="Effect" type="NinePatchRect" parent="UI/HBoxContainer"]
+[node name="Effect" type="NinePatchRect" parent="UI/HBoxResource"]
 layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("2_0wwhe")
@@ -296,7 +348,7 @@ patch_margin_top = 24
 patch_margin_right = 19
 patch_margin_bottom = 24
 
-[node name="Label" type="Label" parent="UI/HBoxContainer/Effect"]
+[node name="Label" type="Label" parent="UI/HBoxResource/Effect"]
 layout_mode = 0
 offset_left = 28.0
 offset_top = 27.0
@@ -306,7 +358,7 @@ theme = SubResource("Theme_0q56n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Effect: XXX"
 
-[node name="Label2" type="Label" parent="UI/HBoxContainer/Effect"]
+[node name="Label2" type="Label" parent="UI/HBoxResource/Effect"]
 layout_mode = 0
 offset_left = 28.0
 offset_top = 47.0
@@ -316,7 +368,7 @@ theme = SubResource("Theme_0q56n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Effect: XXX"
 
-[node name="Label3" type="Label" parent="UI/HBoxContainer/Effect"]
+[node name="Label3" type="Label" parent="UI/HBoxResource/Effect"]
 layout_mode = 0
 offset_left = 28.0
 offset_top = 67.0
@@ -326,7 +378,7 @@ theme = SubResource("Theme_0q56n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Effect: XXX"
 
-[node name="Label4" type="Label" parent="UI/HBoxContainer/Effect"]
+[node name="Label4" type="Label" parent="UI/HBoxResource/Effect"]
 layout_mode = 0
 offset_left = 28.0
 offset_top = 87.0
@@ -336,7 +388,7 @@ theme = SubResource("Theme_0q56n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Effect: XXX"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="UI"]
+[node name="HBoxMinimap" type="HBoxContainer" parent="UI"]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -347,7 +399,7 @@ offset_top = -215.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="Minimap" type="NinePatchRect" parent="UI/HBoxContainer2"]
+[node name="Minimap" type="NinePatchRect" parent="UI/HBoxMinimap"]
 layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("2_0wwhe")
@@ -358,21 +410,40 @@ patch_margin_right = 12
 patch_margin_bottom = 12
 axis_stretch_vertical = 2
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="UI"]
+[node name="HBoxWeather" type="HBoxContainer" parent="UI"]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -121.0
-offset_top = 42.0
-offset_right = -44.0
-offset_bottom = 115.0
+offset_left = -131.0
+offset_top = 68.0
+offset_right = -67.0
+offset_bottom = 132.0
 grow_horizontal = 0
 
-[node name="Weather" type="NinePatchRect" parent="UI/HBoxContainer4"]
+[node name="WeatherHolder" type="NinePatchRect" parent="UI/HBoxWeather"]
 layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("2_0wwhe")
 region_rect = Rect2(354, 226, 28, 28)
+
+[node name="Weather" type="AnimatedSprite2D" parent="UI/HBoxWeather/WeatherHolder"]
+unique_name_in_owner = true
+position = Vector2(32, 32)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_gmyrk")
+animation = &"Weather"
+
+[node name="SunMoonMovement" type="Node2D" parent="UI/HBoxWeather/WeatherHolder"]
+unique_name_in_owner = true
+position = Vector2(32, 32)
+rotation = -6.28319
+
+[node name="SunMoon" type="AnimatedSprite2D" parent="UI/HBoxWeather/WeatherHolder/SunMoonMovement"]
+unique_name_in_owner = true
+position = Vector2(0, -65)
+scale = Vector2(1.2, 1.2)
+sprite_frames = SubResource("SpriteFrames_wbvel")
+animation = &"Day_Night"
 
 [node name="Options" type="CanvasLayer" parent="."]
 visible = false
