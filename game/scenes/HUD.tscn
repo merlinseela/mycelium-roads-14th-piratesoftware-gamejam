@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://v7oxdodc6od"]
+[gd_scene load_steps=19 format=3 uid="uid://v7oxdodc6od"]
 
 [ext_resource type="Script" path="res://scripts/HUD.gd" id="1_85cbg"]
 [ext_resource type="Texture2D" uid="uid://bgbb40jtmsitr" path="res://images/Spritesheet_UI_Wood.png" id="2_0wwhe"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cu0enlqdej8e3" path="res://images/UI_Wood_Button_Large_Lock_02a2.png" id="5_74m5a"]
 [ext_resource type="Script" path="res://scripts/EventButton.gd" id="6_mh4o5"]
 [ext_resource type="Script" path="res://scripts/QuitButton.gd" id="7_lbjq6"]
+[ext_resource type="Texture2D" uid="uid://ciqq5642e4ahd" path="res://images/water_droplet.png" id="7_sbikl"]
 [ext_resource type="Texture2D" uid="uid://ntqfof625rr" path="res://images/icon_sheet.png" id="7_sjnku"]
 [ext_resource type="Script" path="res://scripts/ButtonInventory.gd" id="8_dtp82"]
 
@@ -207,30 +208,40 @@ text = "Calcium:"
 horizontal_alignment = 2
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="UI/HBoxResource/Resource/HBoxResource1"]
+custom_minimum_size = Vector2(16, 0)
 layout_mode = 2
 
-[node name="WaterCount" type="Label" parent="UI/HBoxResource/Resource/HBoxResource1/VBoxContainer2"]
+[node name="Sprite2D" type="Sprite2D" parent="UI/HBoxResource/Resource/HBoxResource1/VBoxContainer2"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_sbikl")
+centered = false
+offset = Vector2(0, 10)
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="UI/HBoxResource/Resource/HBoxResource1"]
+layout_mode = 2
+
+[node name="WaterCount" type="Label" parent="UI/HBoxResource/Resource/HBoxResource1/VBoxContainer3"]
 unique_name_in_owner = true
 layout_mode = 2
 theme = SubResource("Theme_0q56n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "XXX"
 
-[node name="DirtCount" type="Label" parent="UI/HBoxResource/Resource/HBoxResource1/VBoxContainer2"]
+[node name="DirtCount" type="Label" parent="UI/HBoxResource/Resource/HBoxResource1/VBoxContainer3"]
 unique_name_in_owner = true
 layout_mode = 2
 theme = SubResource("Theme_0q56n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "XXX"
 
-[node name="ProteinCount" type="Label" parent="UI/HBoxResource/Resource/HBoxResource1/VBoxContainer2"]
+[node name="ProteinCount" type="Label" parent="UI/HBoxResource/Resource/HBoxResource1/VBoxContainer3"]
 unique_name_in_owner = true
 layout_mode = 2
 theme = SubResource("Theme_0q56n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "XXX"
 
-[node name="CalciumCount" type="Label" parent="UI/HBoxResource/Resource/HBoxResource1/VBoxContainer2"]
+[node name="CalciumCount" type="Label" parent="UI/HBoxResource/Resource/HBoxResource1/VBoxContainer3"]
 unique_name_in_owner = true
 layout_mode = 2
 theme = SubResource("Theme_0q56n")
