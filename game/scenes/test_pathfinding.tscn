@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwvubiif5pnk"]
+
+[ext_resource type="Texture2D" uid="uid://bafeg2r0xcmi2" path="res://images/merlins_tile.png" id="1_c2xqp"]
+[ext_resource type="Texture2D" uid="uid://2suq8mlsumie" path="res://images/adult_mushy.png" id="2_xylu3"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wnpwd"]
+texture = ExtResource("1_c2xqp")
+texture_region_size = Vector2i(64, 48)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, -8)
+
+[sub_resource type="TileSet" id="TileSet_w5lil"]
+tile_shape = 3
+tile_layout = 5
+tile_offset_axis = 1
+tile_size = Vector2i(64, 31)
+sources/1 = SubResource("TileSetAtlasSource_wnpwd")
+
+[node name="TestPathfinding" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_w5lil")
+format = 2
+layer_0/tile_data = PackedInt32Array(196613, 1, 0, 196614, 1, 0, 262150, 1, 0, 262151, 1, 0, 327687, 1, 0, 327688, 1, 0, 393224, 1, 0, 327689, 1, 0, 393226, 1, 0, 393225, 1, 0, 262152, 1, 0, 196617, 1, 0, 196616, 1, 0, 262153, 1, 0, 262154, 1, 0, 327690, 1, 0, 327691, 1, 0, 393227, 1, 0, 196615, 1, 0, 131079, 1, 0, 131080, 1, 0, 131078, 1, 0, 131077, 1, 0, 65541, 1, 0, 65542, 1, 0, 1, 1, 0, 65538, 1, 0, 131075, 1, 0, 196612, 1, 0, 262148, 1, 0, 196611, 1, 0, 131074, 1, 0, 65537, 1, 0, -65535, 1, 0, 0, 1, 0, 2, 1, 0, -65534, 1, 0, 3, 1, 0, 65539, 1, 0, 131076, 1, 0, 65540, 1, 0, 4, 1, 0, -65533, 1, 0, 262149, 1, 0, 327686, 1, 0, 393222, 1, 0, 327685, 1, 0)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(128, 47)
+texture = ExtResource("2_xylu3")

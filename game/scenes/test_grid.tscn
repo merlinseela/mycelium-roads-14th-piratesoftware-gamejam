@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bvxswjuvm8aqt"]
 
-[ext_resource type="Script" path="res://scenes/CharacterBody2D.gd" id="1_jggws"]
+[ext_resource type="Script" path="res://scripts/character_body_2d.gd" id="1_jggws"]
 [ext_resource type="Texture2D" uid="uid://bw3744mxobo4a" path="res://images/baby_mushy.png" id="1_qlcft"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_5ldfr"]

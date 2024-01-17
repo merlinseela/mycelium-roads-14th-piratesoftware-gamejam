@@ -1,15 +1,15 @@
 [gd_scene load_steps=19 format=3 uid="uid://v7oxdodc6od"]
 
-[ext_resource type="Script" path="res://scripts/HUD.gd" id="1_85cbg"]
+[ext_resource type="Script" path="res://scripts/hud.gd" id="1_85cbg"]
 [ext_resource type="Texture2D" uid="uid://bgbb40jtmsitr" path="res://images/Spritesheet_UI_Wood.png" id="2_0wwhe"]
 [ext_resource type="Texture2D" uid="uid://jmlarxo7lw1" path="res://images/UI_Wood_Button_Large_Lock_02a1.png" id="3_5jom4"]
 [ext_resource type="Texture2D" uid="uid://cbf6bg7hyxagg" path="res://images/UI_Wood_Button_Large_Lock_02a3.png" id="4_ee4xe"]
 [ext_resource type="Texture2D" uid="uid://cu0enlqdej8e3" path="res://images/UI_Wood_Button_Large_Lock_02a2.png" id="5_74m5a"]
-[ext_resource type="Script" path="res://scripts/EventButton.gd" id="6_mh4o5"]
-[ext_resource type="Script" path="res://scripts/QuitButton.gd" id="7_lbjq6"]
+[ext_resource type="Script" path="res://scripts/event_button.gd" id="6_mh4o5"]
+[ext_resource type="Script" path="res://scripts/quit_button.gd" id="7_lbjq6"]
 [ext_resource type="Texture2D" uid="uid://ciqq5642e4ahd" path="res://images/water_droplet.png" id="7_sbikl"]
 [ext_resource type="Texture2D" uid="uid://ntqfof625rr" path="res://images/icon_sheet.png" id="7_sjnku"]
-[ext_resource type="Script" path="res://scripts/ButtonInventory.gd" id="8_dtp82"]
+[ext_resource type="Script" path="res://scripts/button_inventory.gd" id="8_dtp82"]
 
 [sub_resource type="Theme" id="Theme_0q56n"]
 

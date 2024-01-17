@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Game"
-run/main_scene="res://scenes/HUD.tscn"
+run/main_scene="res://scenes/test_pathfinding.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://images/icon.svg"
 
