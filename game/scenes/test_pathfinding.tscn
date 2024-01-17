@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://2suq8mlsumie" path="res://images/adult_mushy.png" id="2_xylu3"]
 [ext_resource type="Script" path="res://scripts/pathfinding_test.gd" id="3_of0rt"]
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_pfur3"]
-vertices = PackedVector2Array(20, -11, 26, -6, 14, -1, 5, -5, -23, 9, -27, 5, -15, 0, -7, 4, -26, -5, -21, -11, -6, -5, 5, 4, 25, 6, 20, 12, 4, 16, -7, 16, -5, -16, 5, -16)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(6, 8, 9, 10), PackedInt32Array(11, 7, 6, 10, 3, 2), PackedInt32Array(2, 12, 13, 11), PackedInt32Array(14, 15, 7, 11), PackedInt32Array(3, 10, 16, 17)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-20.8185, -10.8321, -6.0988, -5.12652, -4.86136, -15.5, 4.68458, -15.5, 4.86136, -5.12652, 20.2479, -11.3849, 25.9396, -5.87105, 13.877, -0.530331, 25.4388, 6.35617, 20.1189, 11.5098, 4.50781, 4.06586, 4.15425, 15.5, -6.98268, 15.5, -6.8059, 3.53553, -22.533, 9.17116, -27.1992, 4.6508, -14.9376, -0.353554, -26.4696, -5.35755)])
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_qlxqc"]
+vertices = PackedVector2Array(32, 0, 16, 16, -16, 16, -32, 0, -16, -16, 16, -16)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-32, 0, -16, -15.5, 16, -15.5, 32, 0, 16, 15.5, -16, 15.5)])
 source_geometry_group_name = &"navigation_polygon_source_group"
 agent_radius = 0.0
 
@@ -16,7 +16,7 @@ texture = ExtResource("1_c2xqp")
 texture_region_size = Vector2i(64, 48)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(0, -8)
-0:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_pfur3")
+0:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_qlxqc")
 
 [sub_resource type="TileSet" id="TileSet_w5lil"]
 tile_shape = 3
