@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cu0enlqdej8e3"
-path="res://.godot/imported/UI_Wood_Button_Large_Lock_02a2.png-4a43fe7250926681958c672bebbbc972.ctex"
+uid="uid://b2x23e57d5ewy"
+path="res://.godot/imported/teen_mushy.png-46ee7d90f148bf0f688814d87a19508f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/UI_Wood_Button_Large_Lock_02a2.png"
-dest_files=["res://.godot/imported/UI_Wood_Button_Large_Lock_02a2.png-4a43fe7250926681958c672bebbbc972.ctex"]
+source_file="res://images/mushy/teen_mushy.png"
+dest_files=["res://.godot/imported/teen_mushy.png-46ee7d90f148bf0f688814d87a19508f.ctex"]
 
 [params]
 

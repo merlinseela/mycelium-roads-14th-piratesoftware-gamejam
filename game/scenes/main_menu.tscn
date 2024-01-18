@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://b5fpc0pmkusq7"]
 
 [ext_resource type="PackedScene" uid="uid://cdniymhmxc1r3" path="res://scenes/gdd_mushy.tscn" id="1_8i3cr"]
-[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_563nv"]
-[ext_resource type="Texture2D" uid="uid://jmlarxo7lw1" path="res://images/UI_Wood_Button_Large_Lock_02a1.png" id="2_c6kgw"]
-[ext_resource type="Texture2D" uid="uid://cbf6bg7hyxagg" path="res://images/UI_Wood_Button_Large_Lock_02a3.png" id="3_x3a3d"]
-[ext_resource type="Texture2D" uid="uid://cu0enlqdej8e3" path="res://images/UI_Wood_Button_Large_Lock_02a2.png" id="4_0wb6s"]
-[ext_resource type="AudioStream" uid="uid://gfin2ky0e4f4" path="res://sound/Button Confirm-2024-01-14-00.wav" id="6_swuit"]
-[ext_resource type="AudioStream" uid="uid://d0q1cdew41r68" path="res://sound/Button Back-2024-01-14-00.wav" id="7_k4o2x"]
+[ext_resource type="Script" path="res://scripts/ui/main_menu.gd" id="1_563nv"]
+[ext_resource type="Texture2D" uid="uid://jmlarxo7lw1" path="res://images/ui/UI_Wood_Button_Large_Lock_02a1.png" id="2_c6kgw"]
+[ext_resource type="Texture2D" uid="uid://cbf6bg7hyxagg" path="res://images/ui/UI_Wood_Button_Large_Lock_02a3.png" id="3_x3a3d"]
+[ext_resource type="Texture2D" uid="uid://cu0enlqdej8e3" path="res://images/ui/UI_Wood_Button_Large_Lock_02a2.png" id="4_0wb6s"]
+[ext_resource type="AudioStream" uid="uid://gfin2ky0e4f4" path="res://sounds/Button Confirm-2024-01-14-00.wav" id="6_swuit"]
+[ext_resource type="AudioStream" uid="uid://d0q1cdew41r68" path="res://sounds/Button Back-2024-01-14-00.wav" id="7_k4o2x"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3

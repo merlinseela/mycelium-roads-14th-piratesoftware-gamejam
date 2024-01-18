@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bw3744mxobo4a"
-path="res://.godot/imported/baby_mushy.png-fcb06d06257c606106bf933e916b7b0c.ctex"
+uid="uid://cai24otl86sq3"
+path="res://.godot/imported/UI mini map.PNG-6425d9e282ba03c4a5b11ecab6e44ff2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/baby_mushy.png"
-dest_files=["res://.godot/imported/baby_mushy.png-fcb06d06257c606106bf933e916b7b0c.ctex"]
+source_file="res://images/ui/UI mini map.PNG"
+dest_files=["res://.godot/imported/UI mini map.PNG-6425d9e282ba03c4a5b11ecab6e44ff2.ctex"]
 
 [params]
 

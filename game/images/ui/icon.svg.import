@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgbb40jtmsitr"
-path="res://.godot/imported/Spritesheet_UI_Wood.png-2f09833624f23cd8532a297ecc7a5231.ctex"
+uid="uid://k2r6mveys5bt"
+path="res://.godot/imported/icon.svg-e7361ef7969ed71c3a3e6b06f9874e3c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/Spritesheet_UI_Wood.png"
-dest_files=["res://.godot/imported/Spritesheet_UI_Wood.png-2f09833624f23cd8532a297ecc7a5231.ctex"]
+source_file="res://images/ui/icon.svg"
+dest_files=["res://.godot/imported/icon.svg-e7361ef7969ed71c3a3e6b06f9874e3c.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://gfin2ky0e4f4"
-path="res://.godot/imported/Button Confirm-2024-01-14-00.wav-514d113f90c9d9816e5b8f375c3842c4.sample"
+path="res://.godot/imported/Button Confirm-2024-01-14-00.wav-b12e7bb329bea03950eb76309a99c9cd.sample"
 
 [deps]
 
-source_file="res://sound/Button Confirm-2024-01-14-00.wav"
-dest_files=["res://.godot/imported/Button Confirm-2024-01-14-00.wav-514d113f90c9d9816e5b8f375c3842c4.sample"]
+source_file="res://sounds/Button Confirm-2024-01-14-00.wav"
+dest_files=["res://.godot/imported/Button Confirm-2024-01-14-00.wav-b12e7bb329bea03950eb76309a99c9cd.sample"]
 
 [params]
 

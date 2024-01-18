@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://erkvk6ayn6cu"]
 
 [ext_resource type="Script" path="res://scripts/mushy.gd" id="1_poije"]
-[ext_resource type="Texture2D" uid="uid://bw3744mxobo4a" path="res://images/baby_mushy.png" id="2_g7wwr"]
+[ext_resource type="Texture2D" uid="uid://bw3744mxobo4a" path="res://images/mushy/baby_mushy.png" id="2_g7wwr"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ftsk6"]
 radius = 12.0

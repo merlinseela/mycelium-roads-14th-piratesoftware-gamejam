@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ciqq5642e4ahd"
-path="res://.godot/imported/water_droplet.png-362b9ab9b0ae982e1455bbc7a89620ea.ctex"
+uid="uid://2suq8mlsumie"
+path="res://.godot/imported/adult_mushy.png-04ad841184d22e56c2252b3b9083a985.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/water_droplet.png"
-dest_files=["res://.godot/imported/water_droplet.png-362b9ab9b0ae982e1455bbc7a89620ea.ctex"]
+source_file="res://images/mushy/adult_mushy.png"
+dest_files=["res://.godot/imported/adult_mushy.png-04ad841184d22e56c2252b3b9083a985.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bf0lssxncbyoe"
-path="res://.godot/imported/gdd_mushy_1.png-b51d6436aa798f2a28421f02c2ac6e3a.ctex"
+uid="uid://bafeg2r0xcmi2"
+path="res://.godot/imported/tile_grass.png-2bf9ff1123ed2db30109b7e5750da290.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/gdd_mushy_1.png"
-dest_files=["res://.godot/imported/gdd_mushy_1.png-b51d6436aa798f2a28421f02c2ac6e3a.ctex"]
+source_file="res://images/tiles/tile_grass.png"
+dest_files=["res://.godot/imported/tile_grass.png-2bf9ff1123ed2db30109b7e5750da290.ctex"]
 
 [params]
 

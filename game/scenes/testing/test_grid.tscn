@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bvxswjuvm8aqt"]
 
 [ext_resource type="Script" path="res://scripts/character_body_2d.gd" id="1_jggws"]
-[ext_resource type="Texture2D" uid="uid://bw3744mxobo4a" path="res://images/baby_mushy.png" id="1_qlcft"]
+[ext_resource type="Texture2D" uid="uid://bw3744mxobo4a" path="res://images/mushy/baby_mushy.png" id="1_qlcft"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ynw51"]
 radius = 15.0
