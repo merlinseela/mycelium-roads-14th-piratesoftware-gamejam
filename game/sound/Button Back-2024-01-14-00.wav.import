@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d0q1cdew41r68"
+path="res://.godot/imported/Button Back-2024-01-14-00.wav-a96d9d71ebb215b800d1e79871776032.sample"
+
+[deps]
+
+source_file="res://sound/Button Back-2024-01-14-00.wav"
+dest_files=["res://.godot/imported/Button Back-2024-01-14-00.wav-a96d9d71ebb215b800d1e79871776032.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

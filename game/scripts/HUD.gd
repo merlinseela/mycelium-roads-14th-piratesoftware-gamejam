@@ -4,10 +4,16 @@ extends Node2D
 var game_speed = 1
 var tweenfade : Tween
 var game_time = 0
+#Allows reuse of confirm menu
+var going_to_main_menu : bool = false
 
 func _process(_delta):
 	# game quit button called by "escape"-key
 	if Input.is_action_just_pressed("ui_cancel"):
+		if $Options.visible == true:
+			$AudioBack.play()
+		elif $Options.visible == false:
+			$AudioConfirm.play()
 		$Options.visible = !$Options.visible
 
 	#Keeping track of time played for other UI later
@@ -35,3 +41,35 @@ func _change_sun():
 	else:
 		%SunMoon.frame = 0
 	print_debug(game_time)
+
+#Quits the app
+func _on_quit_button_pressed():
+	$AudioConfirm.play()
+	%HBoxConfirm.visible = true
+	%VBoxOptions.visible = false
+
+#Opens the confirmation menu
+func _on_button_main_menu_pressed():
+	$AudioConfirm.play()
+	going_to_main_menu = true
+	%HBoxConfirm.visible = true
+	%VBoxOptions.visible = false
+
+#Goes back to the options menu
+func _on_button_decline_pressed():
+	$AudioBack.play()
+	going_to_main_menu = false
+	%HBoxConfirm.visible = false
+	%VBoxOptions.visible = true
+
+#Goes to main_scene or quits game depending on what button opened this menu
+func _on_button_confirm_pressed():
+	if going_to_main_menu == true:
+		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	elif  going_to_main_menu == false:
+		get_tree().quit()
+
+#Hides options and gets back to the game
+func _on_button_back_pressed():
+	$AudioBack.play()
+	$Options.visible = false

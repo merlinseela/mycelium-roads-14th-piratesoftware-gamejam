@@ -1,0 +1,161 @@
+[gd_scene load_steps=8 format=3 uid="uid://b5fpc0pmkusq7"]
+
+[ext_resource type="PackedScene" uid="uid://cdniymhmxc1r3" path="res://scenes/gdd_mushy.tscn" id="1_8i3cr"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_563nv"]
+[ext_resource type="Texture2D" uid="uid://jmlarxo7lw1" path="res://images/UI_Wood_Button_Large_Lock_02a1.png" id="2_c6kgw"]
+[ext_resource type="Texture2D" uid="uid://cbf6bg7hyxagg" path="res://images/UI_Wood_Button_Large_Lock_02a3.png" id="3_x3a3d"]
+[ext_resource type="Texture2D" uid="uid://cu0enlqdej8e3" path="res://images/UI_Wood_Button_Large_Lock_02a2.png" id="4_0wb6s"]
+[ext_resource type="AudioStream" uid="uid://gfin2ky0e4f4" path="res://sound/Button Confirm-2024-01-14-00.wav" id="6_swuit"]
+[ext_resource type="AudioStream" uid="uid://d0q1cdew41r68" path="res://sound/Button Back-2024-01-14-00.wav" id="7_k4o2x"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_563nv")
+
+[node name="CavasTitle" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CavasTitle"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -221.5
+offset_top = -224.0
+offset_right = 221.5
+offset_bottom = -45.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameTitle" type="Label" parent="CavasTitle/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.431373, 0.262745, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = "Mycelium 
+               Roads"
+
+[node name="CanvasButtons" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasButtons"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = -398.0
+offset_right = 141.0
+offset_bottom = -141.0
+grow_vertical = 0
+
+[node name="VBoxButtons" type="VBoxContainer" parent="CanvasButtons/HBoxContainer"]
+layout_mode = 2
+
+[node name="LabelNewGame" type="Label" parent="CanvasButtons/HBoxContainer/VBoxButtons"]
+layout_mode = 2
+text = "New Game"
+horizontal_alignment = 1
+
+[node name="ButtonNewGame" type="TextureButton" parent="CanvasButtons/HBoxContainer/VBoxButtons"]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("2_c6kgw")
+texture_pressed = ExtResource("3_x3a3d")
+texture_hover = ExtResource("4_0wb6s")
+stretch_mode = 3
+
+[node name="LabelOptions" type="Label" parent="CanvasButtons/HBoxContainer/VBoxButtons"]
+layout_mode = 2
+text = "Options"
+horizontal_alignment = 1
+
+[node name="ButtonOptions" type="TextureButton" parent="CanvasButtons/HBoxContainer/VBoxButtons"]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("2_c6kgw")
+texture_pressed = ExtResource("3_x3a3d")
+texture_hover = ExtResource("4_0wb6s")
+stretch_mode = 3
+
+[node name="LabelQuit" type="Label" parent="CanvasButtons/HBoxContainer/VBoxButtons"]
+layout_mode = 2
+text = "Quit"
+horizontal_alignment = 1
+
+[node name="ButtonQuit" type="TextureButton" parent="CanvasButtons/HBoxContainer/VBoxButtons"]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("2_c6kgw")
+texture_pressed = ExtResource("3_x3a3d")
+texture_hover = ExtResource("4_0wb6s")
+stretch_mode = 3
+
+[node name="VBoxSlots" type="VBoxContainer" parent="CanvasButtons/HBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="LabelSlot1" type="Label" parent="CanvasButtons/HBoxContainer/VBoxSlots"]
+layout_mode = 2
+text = "Slot 1"
+horizontal_alignment = 1
+
+[node name="ButtonSlot1" type="TextureButton" parent="CanvasButtons/HBoxContainer/VBoxSlots"]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("2_c6kgw")
+texture_pressed = ExtResource("3_x3a3d")
+texture_hover = ExtResource("4_0wb6s")
+stretch_mode = 3
+
+[node name="LabelSlot2" type="Label" parent="CanvasButtons/HBoxContainer/VBoxSlots"]
+layout_mode = 2
+text = "Slot 2"
+horizontal_alignment = 1
+
+[node name="ButtonSlot2" type="TextureButton" parent="CanvasButtons/HBoxContainer/VBoxSlots"]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("2_c6kgw")
+texture_pressed = ExtResource("3_x3a3d")
+texture_hover = ExtResource("4_0wb6s")
+stretch_mode = 3
+
+[node name="LabelSlot3" type="Label" parent="CanvasButtons/HBoxContainer/VBoxSlots"]
+layout_mode = 2
+text = "Slot 3"
+horizontal_alignment = 1
+
+[node name="ButtonSlot3" type="TextureButton" parent="CanvasButtons/HBoxContainer/VBoxSlots"]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("2_c6kgw")
+texture_pressed = ExtResource("3_x3a3d")
+texture_hover = ExtResource("4_0wb6s")
+stretch_mode = 3
+
+[node name="CanvasLinks" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLinks"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="DancingMushy" parent="CanvasLinks/VBoxContainer" instance=ExtResource("1_8i3cr")]
+position = Vector2(-12, 55)
+
+[node name="AudioConfirm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_swuit")
+
+[node name="AudioBack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_k4o2x")
+
+[connection signal="pressed" from="CanvasButtons/HBoxContainer/VBoxButtons/ButtonNewGame" to="." method="_on_button_new_game_pressed"]
+[connection signal="pressed" from="CanvasButtons/HBoxContainer/VBoxButtons/ButtonQuit" to="." method="_on_button_quit_pressed"]
