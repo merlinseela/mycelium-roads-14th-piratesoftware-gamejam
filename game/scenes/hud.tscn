@@ -7,8 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://cu0enlqdej8e3" path="res://images/ui/UI_Wood_Button_Large_Lock_02a2.png" id="5_74m5a"]
 [ext_resource type="Script" path="res://scripts/ui/event_button.gd" id="6_mh4o5"]
 [ext_resource type="Texture2D" uid="uid://ntqfof625rr" path="res://images/ui/icon_sheet.png" id="7_sjnku"]
-[ext_resource type="Texture2D" uid="uid://cai24otl86sq3" path="res://images/ui/UI mini map.PNG" id="7_uubdx"]
 [ext_resource type="Script" path="res://scripts/ui/button_inventory.gd" id="8_dtp82"]
+[ext_resource type="Texture2D" uid="uid://ct2ujn5b4taer" path="res://images/ui/finished_ui_and_redone.PNG" id="9_4olp2"]
 [ext_resource type="AudioStream" uid="uid://gfin2ky0e4f4" path="res://sounds/Button Confirm-2024-01-14-00.wav" id="9_psx5h"]
 [ext_resource type="AudioStream" uid="uid://d0q1cdew41r68" path="res://sounds/Button Back-2024-01-14-00.wav" id="10_7l3f6"]
 
@@ -69,7 +69,6 @@ animations = [{
 script = ExtResource("1_85cbg")
 
 [node name="RandomEvent" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="HBoxPanel" type="HBoxContainer" parent="RandomEvent"]
 unique_name_in_owner = true
@@ -96,10 +95,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -156.0
-offset_top = -165.0
-offset_right = 156.0
-offset_bottom = 165.0
+offset_left = -212.0
+offset_top = -134.0
+offset_right = 212.0
+offset_bottom = 298.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -107,24 +106,21 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
-texture = ExtResource("2_0wwhe")
-region_rect = Rect2(224, 32, 96, 96)
-patch_margin_left = 19
-patch_margin_top = 24
-patch_margin_right = 19
-patch_margin_bottom = 24
+texture = ExtResource("9_4olp2")
+region_rect = Rect2(380, 234, 248, 267)
+patch_margin_left = 69
+patch_margin_top = 100
+patch_margin_right = 75
+patch_margin_bottom = 107
 
 [node name="HBoxEventButton" type="HBoxContainer" parent="RandomEvent"]
-anchors_preset = 7
-anchor_left = 0.5
+anchors_preset = 2
 anchor_top = 1.0
-anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -57.0
-offset_top = -140.0
-offset_right = 57.0
-offset_bottom = -83.0
-grow_horizontal = 2
+offset_left = 50.0
+offset_top = -107.0
+offset_right = 164.0
+offset_bottom = -50.0
 grow_vertical = 0
 
 [node name="EventButton" type="TextureButton" parent="RandomEvent/HBoxEventButton"]
@@ -156,260 +152,6 @@ horizontal_alignment = 1
 
 [node name="UI" type="CanvasLayer" parent="."]
 
-[node name="HBoxResource" type="HBoxContainer" parent="UI"]
-offset_right = 783.0
-offset_bottom = 145.0
-
-[node name="Resource" type="NinePatchRect" parent="UI/HBoxResource"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 2.2
-texture = ExtResource("2_0wwhe")
-region_rect = Rect2(224, 32, 96, 96)
-patch_margin_left = 19
-patch_margin_top = 24
-patch_margin_right = 19
-patch_margin_bottom = 24
-
-[node name="HBoxResource1" type="HBoxContainer" parent="UI/HBoxResource/Resource"]
-layout_mode = 1
-offset_left = 40.0
-offset_top = 20.0
-offset_right = 145.0
-offset_bottom = 124.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/HBoxResource/Resource/HBoxResource1"]
-layout_mode = 2
-
-[node name="LabelWater" type="Label" parent="UI/HBoxResource/Resource/HBoxResource1/VBoxContainer"]
-layout_mode = 2
-theme = SubResource("Theme_0q56n")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Water:"
-horizontal_alignment = 2
-
-[node name="LabelDirt" type="Label" parent="UI/HBoxResource/Resource/HBoxResource1/VBoxContainer"]
-layout_mode = 2
-theme = SubResource("Theme_0q56n")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Dirt:"
-horizontal_alignment = 2
-
-[node name="LabelProtein" type="Label" parent="UI/HBoxResource/Resource/HBoxResource1/VBoxContainer"]
-layout_mode = 2
-theme = SubResource("Theme_0q56n")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Protein:"
-horizontal_alignment = 2
-
-[node name="LabelCalcium" type="Label" parent="UI/HBoxResource/Resource/HBoxResource1/VBoxContainer"]
-layout_mode = 2
-theme = SubResource("Theme_0q56n")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Calcium:"
-horizontal_alignment = 2
-
-[node name="VBoxContainer3" type="VBoxContainer" parent="UI/HBoxResource/Resource/HBoxResource1"]
-layout_mode = 2
-
-[node name="WaterCount" type="Label" parent="UI/HBoxResource/Resource/HBoxResource1/VBoxContainer3"]
-unique_name_in_owner = true
-layout_mode = 2
-theme = SubResource("Theme_0q56n")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "XXX"
-
-[node name="DirtCount" type="Label" parent="UI/HBoxResource/Resource/HBoxResource1/VBoxContainer3"]
-unique_name_in_owner = true
-layout_mode = 2
-theme = SubResource("Theme_0q56n")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "XXX"
-
-[node name="ProteinCount" type="Label" parent="UI/HBoxResource/Resource/HBoxResource1/VBoxContainer3"]
-unique_name_in_owner = true
-layout_mode = 2
-theme = SubResource("Theme_0q56n")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "XXX"
-
-[node name="CalciumCount" type="Label" parent="UI/HBoxResource/Resource/HBoxResource1/VBoxContainer3"]
-unique_name_in_owner = true
-layout_mode = 2
-theme = SubResource("Theme_0q56n")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "XXX"
-
-[node name="HBoxResource2" type="HBoxContainer" parent="UI/HBoxResource/Resource"]
-layout_mode = 0
-offset_left = 190.0
-offset_top = 20.0
-offset_right = 347.0
-offset_bottom = 124.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/HBoxResource/Resource/HBoxResource2"]
-layout_mode = 2
-
-[node name="LabelPhosphorus" type="Label" parent="UI/HBoxResource/Resource/HBoxResource2/VBoxContainer"]
-layout_mode = 2
-theme = SubResource("Theme_0q56n")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Phosphorus: "
-horizontal_alignment = 2
-
-[node name="LabelPotassium" type="Label" parent="UI/HBoxResource/Resource/HBoxResource2/VBoxContainer"]
-layout_mode = 2
-theme = SubResource("Theme_0q56n")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Potassium: "
-horizontal_alignment = 2
-
-[node name="LabelCarbohydrates" type="Label" parent="UI/HBoxResource/Resource/HBoxResource2/VBoxContainer"]
-layout_mode = 2
-theme = SubResource("Theme_0q56n")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Carbohydrates: "
-horizontal_alignment = 2
-
-[node name="LabelLuciferin" type="Label" parent="UI/HBoxResource/Resource/HBoxResource2/VBoxContainer"]
-layout_mode = 2
-theme = SubResource("Theme_0q56n")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Luciferin: "
-horizontal_alignment = 2
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="UI/HBoxResource/Resource/HBoxResource2"]
-layout_mode = 2
-
-[node name="PhosphorusCount" type="Label" parent="UI/HBoxResource/Resource/HBoxResource2/VBoxContainer2"]
-unique_name_in_owner = true
-layout_mode = 2
-theme = SubResource("Theme_0q56n")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "XXX"
-
-[node name="PotassiumCount" type="Label" parent="UI/HBoxResource/Resource/HBoxResource2/VBoxContainer2"]
-unique_name_in_owner = true
-layout_mode = 2
-theme = SubResource("Theme_0q56n")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "XXX"
-
-[node name="CarbohydratesCount" type="Label" parent="UI/HBoxResource/Resource/HBoxResource2/VBoxContainer2"]
-unique_name_in_owner = true
-layout_mode = 2
-theme = SubResource("Theme_0q56n")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "XXX"
-
-[node name="LuciferinCount" type="Label" parent="UI/HBoxResource/Resource/HBoxResource2/VBoxContainer2"]
-unique_name_in_owner = true
-layout_mode = 2
-theme = SubResource("Theme_0q56n")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "XXX"
-
-[node name="Effect" type="NinePatchRect" parent="UI/HBoxResource"]
-layout_mode = 2
-size_flags_horizontal = 3
-texture = ExtResource("2_0wwhe")
-region_rect = Rect2(224, 32, 96, 96)
-patch_margin_left = 19
-patch_margin_top = 24
-patch_margin_right = 19
-patch_margin_bottom = 24
-
-[node name="LabelEffect" type="Label" parent="UI/HBoxResource/Effect"]
-layout_mode = 0
-offset_left = 28.0
-offset_top = 27.0
-offset_right = 131.0
-offset_bottom = 50.0
-theme = SubResource("Theme_0q56n")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Effect: XXX"
-
-[node name="LabelEffect2" type="Label" parent="UI/HBoxResource/Effect"]
-layout_mode = 0
-offset_left = 28.0
-offset_top = 47.0
-offset_right = 138.0
-offset_bottom = 70.0
-theme = SubResource("Theme_0q56n")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Effect: XXX"
-
-[node name="LabelEffect3" type="Label" parent="UI/HBoxResource/Effect"]
-layout_mode = 0
-offset_left = 28.0
-offset_top = 67.0
-offset_right = 138.0
-offset_bottom = 90.0
-theme = SubResource("Theme_0q56n")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Effect: XXX"
-
-[node name="LabelEffect4" type="Label" parent="UI/HBoxResource/Effect"]
-layout_mode = 0
-offset_left = 28.0
-offset_top = 87.0
-offset_right = 138.0
-offset_bottom = 110.0
-theme = SubResource("Theme_0q56n")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Effect: XXX"
-
-[node name="Population" type="NinePatchRect" parent="UI/HBoxResource"]
-layout_mode = 2
-size_flags_horizontal = 3
-texture = ExtResource("2_0wwhe")
-region_rect = Rect2(224, 32, 96, 96)
-patch_margin_left = 19
-patch_margin_top = 24
-patch_margin_right = 19
-patch_margin_bottom = 24
-
-[node name="LabelPopulation" type="Label" parent="UI/HBoxResource/Population"]
-layout_mode = 0
-offset_left = 28.0
-offset_top = 27.0
-offset_right = 153.0
-offset_bottom = 50.0
-theme = SubResource("Theme_0q56n")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Population:"
-horizontal_alignment = 1
-
-[node name="PopulationCount" type="Label" parent="UI/HBoxResource/Population"]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 28.0
-offset_top = 47.0
-offset_right = 153.0
-offset_bottom = 70.0
-theme = SubResource("Theme_0q56n")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "XXX"
-horizontal_alignment = 1
-
-[node name="HBoxMinimap" type="HBoxContainer" parent="UI"]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -228.0
-offset_top = -215.0
-grow_horizontal = 0
-grow_vertical = 0
-
-[node name="Minimap" type="NinePatchRect" parent="UI/HBoxMinimap"]
-layout_mode = 2
-size_flags_horizontal = 3
-texture = ExtResource("7_uubdx")
-region_rect = Rect2(183, 3, 248, 250)
-axis_stretch_vertical = 2
-
 [node name="HBoxWeather" type="HBoxContainer" parent="UI"]
 anchors_preset = 1
 anchor_left = 1.0
@@ -420,25 +162,293 @@ offset_right = -67.0
 offset_bottom = 132.0
 grow_horizontal = 0
 
-[node name="WeatherHolder" type="NinePatchRect" parent="UI/HBoxWeather"]
+[node name="Resource" type="NinePatchRect" parent="UI"]
+offset_top = -10.0
+offset_right = 420.0
+offset_bottom = 188.0
+texture = ExtResource("9_4olp2")
+region_rect = Rect2(28, 42, 334, 165)
+
+[node name="LabelWater" type="Label" parent="UI/Resource"]
 layout_mode = 2
+offset_left = 80.0
+offset_top = 75.0
+offset_right = 147.0
+offset_bottom = 98.0
+theme = SubResource("Theme_0q56n")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Water:"
+horizontal_alignment = 2
+
+[node name="LabelDirt" type="Label" parent="UI/Resource"]
+layout_mode = 2
+offset_left = 80.0
+offset_top = 51.0
+offset_right = 147.0
+offset_bottom = 74.0
+theme = SubResource("Theme_0q56n")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Dirt:"
+horizontal_alignment = 2
+
+[node name="LabelProtein" type="Label" parent="UI/Resource"]
+layout_mode = 2
+offset_left = 80.0
+offset_top = 105.0
+offset_right = 147.0
+offset_bottom = 128.0
+theme = SubResource("Theme_0q56n")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Protein:"
+horizontal_alignment = 2
+
+[node name="LabelCalcium" type="Label" parent="UI/Resource"]
+layout_mode = 2
+offset_left = 80.0
+offset_top = 132.0
+offset_right = 147.0
+offset_bottom = 155.0
+theme = SubResource("Theme_0q56n")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Calcium:"
+horizontal_alignment = 2
+
+[node name="WaterCount" type="Label" parent="UI/Resource"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 150.0
+offset_top = 78.0
+offset_right = 180.0
+offset_bottom = 101.0
+theme = SubResource("Theme_0q56n")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "XXX"
+
+[node name="DirtCount" type="Label" parent="UI/Resource"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 150.0
+offset_top = 51.0
+offset_right = 180.0
+offset_bottom = 74.0
+theme = SubResource("Theme_0q56n")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "XXX"
+
+[node name="ProteinCount" type="Label" parent="UI/Resource"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 150.0
+offset_top = 105.0
+offset_right = 180.0
+offset_bottom = 128.0
+theme = SubResource("Theme_0q56n")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "XXX"
+
+[node name="CalciumCount" type="Label" parent="UI/Resource"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 150.0
+offset_top = 132.0
+offset_right = 180.0
+offset_bottom = 155.0
+theme = SubResource("Theme_0q56n")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "XXX"
+
+[node name="LabelPhosphorus" type="Label" parent="UI/Resource"]
+layout_mode = 2
+offset_left = 203.0
+offset_top = 51.0
+offset_right = 326.0
+offset_bottom = 74.0
+theme = SubResource("Theme_0q56n")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Phosphorus: "
+horizontal_alignment = 2
+
+[node name="LabelPotassium" type="Label" parent="UI/Resource"]
+layout_mode = 2
+offset_left = 203.0
+offset_top = 77.0
+offset_right = 326.0
+offset_bottom = 100.0
+theme = SubResource("Theme_0q56n")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Potassium: "
+horizontal_alignment = 2
+
+[node name="LabelCarbohydrates" type="Label" parent="UI/Resource"]
+layout_mode = 2
+offset_left = 203.0
+offset_top = 105.0
+offset_right = 326.0
+offset_bottom = 128.0
+theme = SubResource("Theme_0q56n")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Carbohydrates: "
+horizontal_alignment = 2
+
+[node name="LabelLuciferin" type="Label" parent="UI/Resource"]
+layout_mode = 2
+offset_left = 203.0
+offset_top = 132.0
+offset_right = 326.0
+offset_bottom = 155.0
+theme = SubResource("Theme_0q56n")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Luciferin: "
+horizontal_alignment = 2
+
+[node name="PhosphorusCount" type="Label" parent="UI/Resource"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 330.0
+offset_top = 51.0
+offset_right = 360.0
+offset_bottom = 74.0
+theme = SubResource("Theme_0q56n")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "XXX"
+
+[node name="PotassiumCount" type="Label" parent="UI/Resource"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 330.0
+offset_top = 77.0
+offset_right = 360.0
+offset_bottom = 100.0
+theme = SubResource("Theme_0q56n")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "XXX"
+
+[node name="CarbohydratesCount" type="Label" parent="UI/Resource"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 330.0
+offset_top = 105.0
+offset_right = 360.0
+offset_bottom = 128.0
+theme = SubResource("Theme_0q56n")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "XXX"
+
+[node name="LuciferinCount" type="Label" parent="UI/Resource"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 330.0
+offset_top = 132.0
+offset_right = 360.0
+offset_bottom = 155.0
+theme = SubResource("Theme_0q56n")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "XXX"
+
+[node name="Effect" type="NinePatchRect" parent="UI"]
+offset_left = 420.0
+offset_top = -35.0
+offset_right = 809.0
+offset_bottom = 188.0
+size_flags_horizontal = 3
+texture = ExtResource("9_4olp2")
+region_rect = Rect2(400, 0, 274, 210)
+
+[node name="LabelEffect" type="Label" parent="UI/Effect"]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 92.0
+offset_right = 165.0
+offset_bottom = 115.0
+theme = SubResource("Theme_0q56n")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Effect: XXX"
+
+[node name="LabelEffect2" type="Label" parent="UI/Effect"]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 112.0
+offset_right = 172.0
+offset_bottom = 135.0
+theme = SubResource("Theme_0q56n")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Effect: XXX"
+
+[node name="LabelEffect3" type="Label" parent="UI/Effect"]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 132.0
+offset_right = 172.0
+offset_bottom = 155.0
+theme = SubResource("Theme_0q56n")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Effect: XXX"
+
+[node name="LabelEffect4" type="Label" parent="UI/Effect"]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 152.0
+offset_right = 172.0
+offset_bottom = 175.0
+theme = SubResource("Theme_0q56n")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Effect: XXX"
+
+[node name="LabelPopulation" type="Label" parent="UI/Effect"]
+layout_mode = 0
+offset_left = 258.0
+offset_top = 123.0
+offset_right = 383.0
+offset_bottom = 146.0
+theme = SubResource("Theme_0q56n")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Population:"
+horizontal_alignment = 1
+
+[node name="PopulationCount" type="Label" parent="UI/Effect"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 262.0
+offset_top = 158.0
+offset_right = 387.0
+offset_bottom = 181.0
+theme = SubResource("Theme_0q56n")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "XXX"
+horizontal_alignment = 1
+
+[node name="Minimap" type="NinePatchRect" parent="UI"]
+offset_left = 880.0
+offset_top = 375.0
+offset_right = 1152.0
+offset_bottom = 648.0
+size_flags_horizontal = 3
+texture = ExtResource("9_4olp2")
+region_rect = Rect2(961, 236, 248, 250)
+axis_stretch_vertical = 2
+
+[node name="WeatherHolder" type="NinePatchRect" parent="UI"]
+offset_left = 1021.0
+offset_top = 68.0
+offset_right = 1085.0
+offset_bottom = 132.0
 size_flags_horizontal = 3
 texture = ExtResource("2_0wwhe")
 region_rect = Rect2(354, 226, 28, 28)
 
-[node name="Weather" type="AnimatedSprite2D" parent="UI/HBoxWeather/WeatherHolder"]
+[node name="Weather" type="AnimatedSprite2D" parent="UI/WeatherHolder"]
 unique_name_in_owner = true
 position = Vector2(32, 32)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_gmyrk")
 animation = &"Weather"
 
-[node name="SunMoonMovement" type="Node2D" parent="UI/HBoxWeather/WeatherHolder"]
+[node name="SunMoonMovement" type="Node2D" parent="UI/WeatherHolder"]
 unique_name_in_owner = true
 position = Vector2(32, 32)
 rotation = -6.28319
 
-[node name="SunMoon" type="AnimatedSprite2D" parent="UI/HBoxWeather/WeatherHolder/SunMoonMovement"]
+[node name="SunMoon" type="AnimatedSprite2D" parent="UI/WeatherHolder/SunMoonMovement"]
 unique_name_in_owner = true
 position = Vector2(0, -65)
 scale = Vector2(1.2, 1.2)

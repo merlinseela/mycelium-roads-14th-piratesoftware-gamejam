@@ -19,6 +19,7 @@ config/icon="res://images/ui/icon.svg"
 
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
+mouse_cursor/custom_image="res://images/ui/cursor.png"
 
 [input]
 

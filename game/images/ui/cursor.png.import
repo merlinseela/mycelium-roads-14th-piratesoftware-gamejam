@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cai24otl86sq3"
-path="res://.godot/imported/UI mini map.PNG-6425d9e282ba03c4a5b11ecab6e44ff2.ctex"
+uid="uid://b7gol7pq4skdu"
+path="res://.godot/imported/cursor.png-778e6dd8ba1b7eaf7c875a1ef5a4b63e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/ui/UI mini map.PNG"
-dest_files=["res://.godot/imported/UI mini map.PNG-6425d9e282ba03c4a5b11ecab6e44ff2.ctex"]
+source_file="res://images/ui/cursor.png"
+dest_files=["res://.godot/imported/cursor.png-778e6dd8ba1b7eaf7c875a1ef5a4b63e.ctex"]
 
 [params]
 
