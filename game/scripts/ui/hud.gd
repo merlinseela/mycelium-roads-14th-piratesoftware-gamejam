@@ -1,12 +1,14 @@
 extends Node2D
 
 # game_speed 1 means 6 mins for 1 day then 6 for 1 night
-var game_speed = 1
+var game_speed = 20
 var tweenfade : Tween
 var game_time = 0
 #Allows reuse of confirm menu
 var going_to_main_menu : bool = false
 
+func _ready():
+	$UI/Minimap/SubViewportContainer/SubViewport/mushy/mushy_script/Camera2D.zoom = Vector2(.5,.5)
 func _process(_delta):
 	# game quit button called by "escape"-key
 	if Input.is_action_just_pressed("ui_cancel"):
@@ -20,46 +22,60 @@ func _process(_delta):
 	game_time += _delta
 	
 	#Rotates the sun around weather
-	%SunMoonMovement.rotation_degrees += _delta * game_speed
-	#Counter rotates the sun to keep the same rotation
-	%SunMoon.rotation_degrees -= _delta * game_speed
+	if %SunMoon.frame == 0 and %SunMoonMovement.rotation_degrees < -270:
+		%SunMoonMovement.rotation_degrees += _delta * game_speed * .25
+		#Counter rotates the sun to keep the same rotation
+		%SunMoon.rotation_degrees -= _delta * game_speed * .25
+	elif %SunMoon.frame == 1 and %SunMoonMovement.rotation_degrees > -360:
+		%SunMoonMovement.rotation_degrees -= _delta * game_speed * .25
+		%SunMoon.rotation_degrees += _delta * game_speed * .25
 
 	#Rotation tracker to see when the sun/moon is at the top again
-	if %SunMoonMovement.rotation_degrees >= 0:
+	if %SunMoonMovement.rotation_degrees > -270:
+		%SunMoonMovement.rotation_degrees = -270
+		_tween_sun()
+	if %SunMoonMovement.rotation_degrees < -360:
 		%SunMoonMovement.rotation_degrees = -360
+		_tween_sun()
+	
+	if going_to_main_menu == true:
+		%LabelConfirmation.text = "Go to main menu?"
+	else:
+		%LabelConfirmation.text = "Quit game?"
 
-		#Does the fade in and out of the sun
-		tweenfade = create_tween()
-		tweenfade.tween_property(%SunMoon, "modulate:a", 0.0, 2)
-		tweenfade.tween_callback(_change_sun)
-		tweenfade.tween_property(%SunMoon, "modulate:a", 1.0, 2)
-
-#Changes the sun to moon and back
 func _change_sun():
+	#Changes the sun to moon and back
 	if %SunMoon.frame == 0:
 		%SunMoon.frame = 1
 	else:
 		%SunMoon.frame = 0
+	
+func _tween_sun():
+	#Does the fade in and out of the sun
 	print_debug(game_time)
+	tweenfade = create_tween()
+	tweenfade.tween_property(%SunMoon, "modulate:a", 0.0, 2)
+	tweenfade.tween_callback(_change_sun)
+	tweenfade.tween_property(%SunMoon, "modulate:a", 1.0, 2)
 
 #Quits the app
 func _on_quit_button_pressed():
 	$AudioConfirm.play()
-	%HBoxConfirm.visible = true
+	%VBoxConfirm.visible = true
 	%VBoxOptions.visible = false
 
 #Opens the confirmation menu
 func _on_button_main_menu_pressed():
 	$AudioConfirm.play()
 	going_to_main_menu = true
-	%HBoxConfirm.visible = true
+	%VBoxConfirm.visible = true
 	%VBoxOptions.visible = false
 
 #Goes back to the options menu
 func _on_button_decline_pressed():
 	$AudioBack.play()
 	going_to_main_menu = false
-	%HBoxConfirm.visible = false
+	%VBoxConfirm.visible = false
 	%VBoxOptions.visible = true
 
 #Goes to main_scene or quits game depending on what button opened this menu

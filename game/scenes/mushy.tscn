@@ -22,3 +22,5 @@ shape = SubResource("CapsuleShape2D_frid6")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="mushy_script"]
 navigation_layers = 3
+
+[node name="Camera2D" type="Camera2D" parent="mushy_script"]
