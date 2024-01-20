@@ -3,11 +3,11 @@
 [ext_resource type="Texture2D" uid="uid://bw3744mxobo4a" path="res://images/mushy/baby_mushy.png" id="1_k4yi8"]
 [ext_resource type="Script" path="res://scripts/npc_shroom_script.gd" id="1_xntdo"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_xkeg0"]
-radius = 12.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6r2c1"]
+radius = 1.0
+height = 10.0
 
 [node name="npc_shroom" type="CharacterBody2D"]
-collision_mask = 2
 script = ExtResource("1_xntdo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -15,8 +15,9 @@ texture = ExtResource("1_k4yi8")
 offset = Vector2(0, -32)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -11)
-shape = SubResource("CircleShape2D_xkeg0")
+position = Vector2(1, -1)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_6r2c1")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 navigation_layers = 2

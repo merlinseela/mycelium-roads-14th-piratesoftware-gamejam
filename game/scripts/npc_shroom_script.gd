@@ -17,7 +17,8 @@ func _ready():
 	# Make sure to not await during _ready.
 	call_deferred("actor_setup")
 	
-	print(name)
+	# Needed later for collison
+	# print(name)
 
 func actor_setup():
 	# Wait for the first physics frame so the NavigationServer can sync.
@@ -31,7 +32,7 @@ func set_movement_target(movement_target: Vector2):
 
 func _process(_delta):
 	if Input.is_action_just_pressed("mouse_right_button"):
-		movement_target_position = get_viewport().get_mouse_position()
+		movement_target_position = get_global_mouse_position()
 		#print(get_viewport().get_mouse_position())
 		#print(movement_target_position)
 		#print(navigation_agent.target_position)
@@ -40,9 +41,7 @@ func _process(_delta):
 func _physics_process(_delta):
 	#for i in get_slide_collision_count():
 		#var collision = get_slide_collision(i)
-		#print("Collided with: ", collision.get_collider().name)
-		#
-	
+		#print("Collided with: ", collision.get_collider().name)	
 	
 	if navigation_agent.is_navigation_finished():
 		return

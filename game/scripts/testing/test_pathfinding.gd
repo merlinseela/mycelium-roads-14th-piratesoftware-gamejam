@@ -25,12 +25,26 @@ func _process(_delta):
 		add_child(npcScene.instantiate())
 
 	if (Input.is_action_just_pressed("mouse_middle_button")) == true:
+		# check if the tiles under the building are all grass tiles. If not do not place building!
+		#var tileVector = tilemap.local_to_map(get_viewport().get_mouse_position())
+		#var tileData = tilemap.get_cell_tile_data(0, tileVector)
+		#print("TILE TYPE: " + str(tileData.get_custom_data("type")))
+		
 		add_child(shedScene.instantiate())
+		if true:
+			pass
+			print("PLACED")
+		else:
+			pass
+			print("NOT PLACEABLE")
+		
+		
+		
+		
 		
 		# Detect tile on cursor and return tile coordinates
-		print(tilemap.local_to_map(get_viewport().get_mouse_position()))
-		
-		
-		
-		
-
+		print("TILE CORDS: " + str(tilemap.local_to_map(get_viewport().get_mouse_position())))
+	#if (Input.is_action_just_pressed("mouse_middle_button")) == true:
+		#var tileVector = tilemap.local_to_map(get_viewport().get_mouse_position())
+		#var tileData = tilemap.get_cell_tile_data(0, tileVector)
+		#print("TILE TYPE: " + str(tileData.get_custom_data("type")))

@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://2suq8mlsumie" path="res://images/mushy/adult_mushy.png" id="1_k7wtu"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_frid6"]
-radius = 13.0
-height = 48.0
+radius = 2.0
+height = 14.0
 
 [node name="mushy" type="Node2D"]
 
@@ -17,10 +17,9 @@ texture = ExtResource("1_k7wtu")
 offset = Vector2(0, -32)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="mushy_script"]
-position = Vector2(0, -24)
+position = Vector2(-1, -2)
+rotation = 1.5708
 shape = SubResource("CapsuleShape2D_frid6")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="mushy_script"]
 navigation_layers = 3
-
-[node name="Camera2D" type="Camera2D" parent="mushy_script"]
