@@ -1,22 +1,26 @@
 extends Node2D
 
 # game_speed 1 means 6 mins for 1 day then 6 for 1 night
-var game_speed = 20
+var game_speed = 1
 var tweenfade : Tween
 var game_time = 0
-#Allows reuse of confirm menu
-var going_to_main_menu : bool = false
 
 func _ready():
-	$UI/Minimap/SubViewportContainer/SubViewport/mushy/mushy_script/Camera2D.zoom = Vector2(.5,.5)
+	pass
+	#$UI/Minimap/SubViewportContainer/SubViewport/mushy/mushy_script/Camera2D.zoom = Vector2(.5,.5)
 func _process(_delta):
 	# game quit button called by "escape"-key
 	if Input.is_action_just_pressed("ui_cancel"):
-		if $Options.visible == true:
+		if $Options.visible == true and %VBoxConfirm.visible == false:
 			$AudioBack.play()
-		elif $Options.visible == false:
+			$Options.visible = !$Options.visible
+		elif $Options.visible == false and %VBoxConfirm.visible == false:
 			$AudioConfirm.play()
-		$Options.visible = !$Options.visible
+			$Options.visible = !$Options.visible
+		elif %VBoxOptions.visible == false and %VBoxConfirm.visible == true:
+			$AudioBack.play()
+			%VBoxConfirm.visible = false
+			%VBoxOptions.visible = true
 
 	#Keeping track of time played for other UI later
 	game_time += _delta
@@ -37,11 +41,6 @@ func _process(_delta):
 	if %SunMoonMovement.rotation_degrees < -360:
 		%SunMoonMovement.rotation_degrees = -360
 		_tween_sun()
-	
-	if going_to_main_menu == true:
-		%LabelConfirmation.text = "Go to main menu?"
-	else:
-		%LabelConfirmation.text = "Quit game?"
 
 func _change_sun():
 	#Changes the sun to moon and back
@@ -61,28 +60,28 @@ func _tween_sun():
 #Quits the app
 func _on_quit_button_pressed():
 	$AudioConfirm.play()
+	%LabelConfirmation.text = "Quit game?"
 	%VBoxConfirm.visible = true
 	%VBoxOptions.visible = false
 
 #Opens the confirmation menu
 func _on_button_main_menu_pressed():
 	$AudioConfirm.play()
-	going_to_main_menu = true
+	%LabelConfirmation.text = "Go to main menu?"
 	%VBoxConfirm.visible = true
 	%VBoxOptions.visible = false
 
 #Goes back to the options menu
 func _on_button_decline_pressed():
 	$AudioBack.play()
-	going_to_main_menu = false
 	%VBoxConfirm.visible = false
 	%VBoxOptions.visible = true
 
 #Goes to main_scene or quits game depending on what button opened this menu
 func _on_button_confirm_pressed():
-	if going_to_main_menu == true:
+	if %LabelConfirmation.text == "Go to main menu?":
 		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
-	elif  going_to_main_menu == false:
+	elif  %LabelConfirmation.text == "Quit game?":
 		get_tree().quit()
 
 #Hides options and gets back to the game
