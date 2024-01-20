@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://6psyccdpdnl0"]
+
+[ext_resource type="Texture2D" uid="uid://jmpkhgt26kay" path="res://images/buildings/wheat_farm_greybox.png" id="1_qtw1b"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oe5vn"]
+radius = 19.0
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_qtw1b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, -27)
+shape = SubResource("CircleShape2D_oe5vn")

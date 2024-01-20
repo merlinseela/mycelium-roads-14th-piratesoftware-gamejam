@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0gfvc1cehj3b"]
+
+[ext_resource type="Texture2D" uid="uid://c4frds0cq1y2g" path="res://images/buildings/dirt_cleanser_greybox.png" id="1_unfiu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g2axv"]
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_unfiu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_g2axv")

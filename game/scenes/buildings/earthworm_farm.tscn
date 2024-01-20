@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bn4txj5a6auah"]
+
+[ext_resource type="Texture2D" uid="uid://d2k1uwtnagqhp" path="res://images/buildings/earthworm_farm_greybox.png" id="1_vi7lf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uwa1b"]
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, 18)
+texture = ExtResource("1_vi7lf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_uwa1b")

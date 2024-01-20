@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cratqhs3c5lty"]
+
+[ext_resource type="Texture2D" uid="uid://bcpnp77nptfad" path="res://images/buildings/dirt_hole_greybox.png" id="1_0dv68"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ebrh8"]
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 17)
+texture = ExtResource("1_0dv68")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ebrh8")
