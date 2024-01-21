@@ -9,7 +9,7 @@ func _ready():
 	pass
 	#$UI/Minimap/SubViewportContainer/SubViewport/mushy/mushy_script/Camera2D.zoom = Vector2(.5,.5)
 func _process(_delta):
-	# game quit button called by "escape"-key
+	#options menu controls called by "escape"-key
 	if Input.is_action_just_pressed("ui_cancel"):
 		if $Options.visible == true and %VBoxConfirm.visible == false:
 			$AudioBack.play()
@@ -21,6 +21,15 @@ func _process(_delta):
 			$AudioBack.play()
 			%VBoxConfirm.visible = false
 			%VBoxOptions.visible = true
+	
+	if %ButtonPause.is_pressed() == true:
+		game_speed = 0
+	elif %ButtonPlay.is_pressed() == true:
+		game_speed = 1
+	elif %Button2x.is_pressed() == true:
+		game_speed = 2
+	elif %Button3x.is_pressed() == true:
+		game_speed = 3
 
 	#Keeping track of time played for other UI later
 	game_time += _delta
