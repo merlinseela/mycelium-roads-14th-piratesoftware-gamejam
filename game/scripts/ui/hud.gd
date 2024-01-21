@@ -26,7 +26,7 @@ func _process(_delta):
 			%VBoxOptions.visible = true
 	
 	#Sets game speed based on what button is pressed
-	if %ButtonPause.is_pressed() == true:
+	if %ButtonPause.is_pressed() == true or $RandomEvent.visible == true or $Options.visible == true:
 		new_game_speed = 0
 	elif %ButtonPlay.is_pressed() == true:
 		new_game_speed = 1
