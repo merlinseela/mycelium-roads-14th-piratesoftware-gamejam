@@ -1,9 +1,12 @@
 extends Node2D
 
 # game_speed 1 means 6 mins for 1 day then 6 for 1 night
-var game_speed = 1
+var game_speed
+var new_game_speed
 var tweenfade : Tween
 var game_time = 0
+
+signal update_game_speed
 
 func _ready():
 	pass
@@ -22,14 +25,20 @@ func _process(_delta):
 			%VBoxConfirm.visible = false
 			%VBoxOptions.visible = true
 	
+	#Sets game speed based on what button is pressed
 	if %ButtonPause.is_pressed() == true:
-		game_speed = 0
+		new_game_speed = 0
 	elif %ButtonPlay.is_pressed() == true:
-		game_speed = 1
+		new_game_speed = 1
 	elif %Button2x.is_pressed() == true:
-		game_speed = 2
+		new_game_speed = 2
 	elif %Button3x.is_pressed() == true:
-		game_speed = 3
+		new_game_speed = 3
+	
+	#Checks if the game speed has changed and emits a signal if it has
+	if new_game_speed != game_speed:
+		game_speed = new_game_speed
+		update_game_speed.emit(new_game_speed)
 
 	#Keeping track of time played for other UI later
 	game_time += _delta

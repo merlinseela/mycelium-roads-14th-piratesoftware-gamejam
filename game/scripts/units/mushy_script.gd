@@ -1,7 +1,9 @@
 extends CharacterBody2D
 
-var movement_speed: float = 200.0
+var movement_speed: float = 160.0
+#var movement_speed: float = 200.0
 var movement_target_position: Vector2
+var game_speed = 1
 
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
 
@@ -13,6 +15,13 @@ func _ready():
 
 	# Make sure to not await during _ready.
 	call_deferred("actor_setup")
+	
+	#Connects Mushy to the HUD speed
+	var get_speed = get_node("/root/Main/HUD")
+	get_speed.update_game_speed.connect(_update_speed)
+
+func _update_speed(new_game_speed):
+	game_speed = new_game_speed
 
 func actor_setup():
 	# Wait for the first physics frame so the NavigationServer can sync.
@@ -42,5 +51,5 @@ func _physics_process(_delta):
 	var current_agent_position: Vector2 = global_position
 	var next_path_position: Vector2 = navigation_agent.get_next_path_position()
 
-	velocity = current_agent_position.direction_to(next_path_position) * movement_speed
+	velocity = current_agent_position.direction_to(next_path_position) * movement_speed * game_speed
 	move_and_slide()
