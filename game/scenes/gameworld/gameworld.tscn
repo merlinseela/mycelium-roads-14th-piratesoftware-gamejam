@@ -1,11 +1,11 @@
 [gd_scene load_steps=17 format=3 uid="uid://cwvubiif5pnk"]
 
-[ext_resource type="Texture2D" uid="uid://bafeg2r0xcmi2" path="res://images/tiles/tile_grass.png" id="1_ww1q7"]
-[ext_resource type="Script" path="res://scripts/testing/test_pathfinding.gd" id="1_ygucs"]
-[ext_resource type="Texture2D" uid="uid://dd1mbv0n2wpgl" path="res://images/tiles/street_tile.png" id="2_4igmn"]
-[ext_resource type="Texture2D" uid="uid://cfsvs6danobca" path="res://images/tiles/building_tile.png" id="4_73ohu"]
-[ext_resource type="Texture2D" uid="uid://ilmuen1w3m02" path="res://images/tiles/water_tile.png" id="5_biwdy"]
-[ext_resource type="Texture2D" uid="uid://cqdximf5uthje" path="res://images/tiles/phosphorus_tile.png" id="6_vhuso"]
+[ext_resource type="Script" path="res://scripts/gameworld/gameworld.gd" id="1_qiqyy"]
+[ext_resource type="Texture2D" uid="uid://dd1mbv0n2wpgl" path="res://images/tiles/street_tile.png" id="2_byuj6"]
+[ext_resource type="Texture2D" uid="uid://bafeg2r0xcmi2" path="res://images/tiles/tile_grass.png" id="3_de4og"]
+[ext_resource type="Texture2D" uid="uid://cfsvs6danobca" path="res://images/tiles/building_tile.png" id="4_kkcgt"]
+[ext_resource type="Texture2D" uid="uid://ilmuen1w3m02" path="res://images/tiles/water_tile.png" id="5_vdim1"]
+[ext_resource type="Texture2D" uid="uid://cqdximf5uthje" path="res://images/tiles/phosphorus_tile.png" id="6_plxta"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_qilbu"]
 source_geometry_group_name = &"navigation_polygon_source_group"
@@ -18,7 +18,7 @@ source_geometry_group_name = &"navigation_polygon_source_group"
 agent_radius = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jlyrs"]
-texture = ExtResource("2_4igmn")
+texture = ExtResource("2_byuj6")
 texture_region_size = Vector2i(64, 48)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(0, -8)
@@ -34,7 +34,7 @@ source_geometry_group_name = &"navigation_polygon_source_group"
 agent_radius = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wnpwd"]
-texture = ExtResource("1_ww1q7")
+texture = ExtResource("3_de4og")
 texture_region_size = Vector2i(64, 48)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(0, -8)
@@ -45,7 +45,7 @@ texture_region_size = Vector2i(64, 48)
 source_geometry_group_name = &"navigation_polygon_source_group"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uetf4"]
-texture = ExtResource("4_73ohu")
+texture = ExtResource("4_kkcgt")
 texture_region_size = Vector2i(64, 48)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(0, -8)
@@ -53,14 +53,14 @@ texture_region_size = Vector2i(64, 48)
 0:0/0/custom_data_0 = "building"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bu0j0"]
-texture = ExtResource("5_biwdy")
+texture = ExtResource("5_vdim1")
 texture_region_size = Vector2i(64, 48)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(0, -8)
 0:0/0/custom_data_0 = "water"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bf5mm"]
-texture = ExtResource("6_vhuso")
+texture = ExtResource("6_plxta")
 texture_region_size = Vector2i(64, 48)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(0, -8)
@@ -81,8 +81,8 @@ sources/2 = SubResource("TileSetAtlasSource_uetf4")
 sources/3 = SubResource("TileSetAtlasSource_bu0j0")
 sources/4 = SubResource("TileSetAtlasSource_bf5mm")
 
-[node name="TestPathfinding" type="Node2D"]
-script = ExtResource("1_ygucs")
+[node name="Gameworld" type="Node2D"]
+script = ExtResource("1_qiqyy")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_w5lil")
