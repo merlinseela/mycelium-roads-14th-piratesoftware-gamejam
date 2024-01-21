@@ -92,8 +92,7 @@ script = ExtResource("1_85cbg")
 [node name="RandomEvent" type="CanvasLayer" parent="."]
 visible = false
 
-[node name="HBoxPanel" type="HBoxContainer" parent="RandomEvent"]
-unique_name_in_owner = true
+[node name="HBoxEventPanel" type="HBoxContainer" parent="RandomEvent"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -106,7 +105,7 @@ offset_bottom = 372.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="RandomEvent/HBoxPanel"]
+[node name="Panel" type="Panel" parent="RandomEvent/HBoxEventPanel"]
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -622,7 +621,7 @@ metadata/_edit_lock_ = true
 [node name="Options" type="CanvasLayer" parent="."]
 visible = false
 
-[node name="HBoxPanel" type="HBoxContainer" parent="Options"]
+[node name="HBoxOprionsPanel" type="HBoxContainer" parent="Options"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -636,7 +635,7 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_lock_ = true
 
-[node name="Panel" type="Panel" parent="Options/HBoxPanel"]
+[node name="Panel" type="Panel" parent="Options/HBoxOprionsPanel"]
 layout_mode = 2
 size_flags_horizontal = 3
 metadata/_edit_lock_ = true
