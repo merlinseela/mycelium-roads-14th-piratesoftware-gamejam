@@ -27,12 +27,12 @@ func set_movement_target(movement_target: Vector2):
 func _process(_delta):
 	if Input.is_action_just_pressed("mouse_right_button"):
 		movement_target_position = get_global_mouse_position()
-		print("VIEWPORT GLOBAL: " + str(get_viewport().get_mouse_position()))
-		print("TARGET GLOBAL POSITION: " + str(movement_target_position))
-		print("NAV TARGET POSITION:  " + str(navigation_agent.target_position))
-		print(" ")
-		print("TEST: " +  str(get_global_mouse_position()))
-		print(" ")
+		#print("VIEWPORT GLOBAL: " + str(get_viewport().get_mouse_position()))
+		#print("TARGET GLOBAL POSITION: " + str(movement_target_position))
+		#print("NAV TARGET POSITION:  " + str(navigation_agent.target_position))
+		#print(" ")
+		#print("TEST: " +  str(get_global_mouse_position()))
+		#print(" ")
 		actor_setup()
 		
 func _physics_process(_delta):

@@ -3,6 +3,7 @@ extends CharacterBody2D
 var movement_speed: float = 200.0
 var movement_target_position: Vector2
 
+@onready var tilemap = get_node("/root/Main/Gameworld/TileMap")
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
 
 func _ready():
@@ -11,9 +12,9 @@ func _ready():
 	navigation_agent.path_desired_distance = 4.0
 	navigation_agent.target_desired_distance = 4.0
 
-	# starting position
-	position = get_viewport().get_mouse_position()
-
+	# spawn at main building position
+	spawn()
+	
 	# Make sure to not await during _ready.
 	call_deferred("actor_setup")
 	
@@ -33,9 +34,6 @@ func set_movement_target(movement_target: Vector2):
 func _process(_delta):
 	if Input.is_action_just_pressed("mouse_right_button"):
 		movement_target_position = get_global_mouse_position()
-		#print(get_viewport().get_mouse_position())
-		#print(movement_target_position)
-		#print(navigation_agent.target_position)
 		actor_setup()
 		
 func _physics_process(_delta):
@@ -51,3 +49,9 @@ func _physics_process(_delta):
 
 	velocity = current_agent_position.direction_to(next_path_position) * movement_speed
 	move_and_slide()
+	
+func spawn():
+# detect main building position (grid based) and set mushroom spawn position to the right tile
+	var mainBuildingPos = tilemap.local_to_map(get_node("../MainBuilding").position)
+	var mushroomDesiredPos = mainBuildingPos + Vector2i(1,1)
+	position = tilemap.map_to_local(mushroomDesiredPos)

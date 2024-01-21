@@ -4,27 +4,28 @@ extends Node2D
 
 # preloading all scences
 
-var npcScene = preload("res://scenes/units/npc_shroom.tscn")
-# var npcInstance = npcScene.instantiate()
-
 var mushyScene = preload("res://scenes/units/mushy.tscn")
 var mushyInstance = mushyScene.instantiate()
 
+# load buildings
 var mainBuildingScene = preload("res://scenes/buildings/main_building.tscn")
 var shedScene = preload("res://scenes/buildings/shed.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
-	#add_child(mushyInstance)
-	#$mushy.position = Vector2(500,500)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	if Input.is_action_just_pressed("mouse_left_button"):
-		add_child(npcScene.instantiate())
-
-	if (Input.is_action_just_pressed("mouse_middle_button")) == true:
+	if (Input.is_action_just_pressed("place_building_main")) == true:
 		add_child(mainBuildingScene.instantiate())
-		# Detect tile on cursor and return tile coordinates
-		print("TILE CORDS: " + str(tilemap.local_to_map(get_viewport().get_mouse_position())))
+	
+	if (Input.is_action_just_pressed("place_building_shed")) == true:
+		add_child(shedScene.instantiate())
+	
+	if (Input.is_action_just_pressed("place_tile_street")) == true:
+		var tilePosition = get_node("TileMap").local_to_map(get_viewport().get_mouse_position())
+		tilemap.set_cell(0,tilePosition,0,Vector2i(0,0),0)
+
+	if (Input.is_action_just_pressed("place_tile_street_revert")) == true:
+		pass

@@ -9,4 +9,4 @@ script = ExtResource("1_5pakm")
 
 [node name="HUD" parent="." instance=ExtResource("3_1lthc")]
 
-[node name="TestPathfinding" parent="." instance=ExtResource("4_07xhx")]
+[node name="Gameworld" parent="." instance=ExtResource("4_07xhx")]

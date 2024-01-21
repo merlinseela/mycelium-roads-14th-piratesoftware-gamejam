@@ -4,6 +4,12 @@ extends StaticBody2D
 @onready var tileMap = get_parent().get_node("TileMap")
 
 func _ready():
+	place_shed()
+	
+func _physics_process(delta):
+	pass
+	
+func place_shed():
 	var tileVector = tileMap.local_to_map(get_viewport().get_mouse_position())
 	var tileData = tileMap.get_cell_tile_data(0, tileVector)
 	print("TILE TYPE: " + str(tileData.get_custom_data("type")))
@@ -27,8 +33,5 @@ func _ready():
 	else:
 		print("FAILED")
 		queue_free()
-	
-func _physics_process(delta):
-	pass
 
 
