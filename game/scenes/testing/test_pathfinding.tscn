@@ -41,19 +41,15 @@ texture_region_size = Vector2i(64, 48)
 0:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_qlxqc")
 0:0/0/custom_data_0 = "grass"
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_57xwh"]
-vertices = PackedVector2Array(32, 0, 16, 16, -16, 16, -32, 0, -16, -16, 16, -16)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-32, 0, -16, -15.5, 16, -15.5, 32, 0, 16, 15.5, -16, 15.5)])
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_q8yfn"]
 source_geometry_group_name = &"navigation_polygon_source_group"
-agent_radius = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uetf4"]
 texture = ExtResource("4_73ohu")
 texture_region_size = Vector2i(64, 48)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(0, -8)
-0:0/0/navigation_layer_1/polygon = SubResource("NavigationPolygon_57xwh")
+0:0/0/navigation_layer_1/polygon = SubResource("NavigationPolygon_q8yfn")
 0:0/0/custom_data_0 = "building"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bu0j0"]

@@ -4,10 +4,10 @@ extends Node2D
 
 # preloading all scences
 
-var npcScene = preload("res://scenes/npc_shroom.tscn")
+var npcScene = preload("res://scenes/units/npc_shroom.tscn")
 # var npcInstance = npcScene.instantiate()
 
-var mushyScene = preload("res://scenes/mushy.tscn")
+var mushyScene = preload("res://scenes/units/mushy.tscn")
 var mushyInstance = mushyScene.instantiate()
 
 var mainBuildingScene = preload("res://scenes/buildings/main_building.tscn")
@@ -19,15 +19,12 @@ func _ready():
 	#add_child(mushyInstance)
 	#$mushy.position = Vector2(500,500)
 	
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if Input.is_action_just_pressed("mouse_left_button"):
 		add_child(npcScene.instantiate())
 
 	if (Input.is_action_just_pressed("mouse_middle_button")) == true:
-		
 		add_child(mainBuildingScene.instantiate())
-		
 		# Detect tile on cursor and return tile coordinates
 		print("TILE CORDS: " + str(tilemap.local_to_map(get_viewport().get_mouse_position())))

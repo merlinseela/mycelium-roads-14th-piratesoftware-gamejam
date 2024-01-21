@@ -1,6 +1,6 @@
 extends Node
 
-var mushyScene = preload("res://scenes/mushy.tscn")
+var mushyScene = preload("res://scenes/units/mushy.tscn")
 var mushyInstance = mushyScene.instantiate()
 
 # Called when the node enters the scene tree for the first time.

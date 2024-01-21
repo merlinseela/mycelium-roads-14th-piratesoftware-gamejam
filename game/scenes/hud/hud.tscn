@@ -12,7 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://gfin2ky0e4f4" path="res://sounds/Button Confirm-2024-01-14-00.wav" id="9_psx5h"]
 [ext_resource type="AudioStream" uid="uid://d0q1cdew41r68" path="res://sounds/Button Back-2024-01-14-00.wav" id="10_7l3f6"]
 [ext_resource type="Texture2D" uid="uid://bcc7nnodvbk6c" path="res://images/ui/large_button_normal.png" id="10_c0yl7"]
-[ext_resource type="PackedScene" uid="uid://deykccsuuvrdq" path="res://scenes/inventory_box.tscn" id="10_sevrw"]
+[ext_resource type="PackedScene" uid="uid://deykccsuuvrdq" path="res://scenes/hud/inventory_box.tscn" id="10_sevrw"]
 [ext_resource type="Texture2D" uid="uid://petnjqf4dwwb" path="res://images/ui/large_button_pressed.png" id="11_lkfju"]
 [ext_resource type="Texture2D" uid="uid://eol1wracjl4i" path="res://images/ui/large_button_hover.png" id="12_nqn7h"]
 
