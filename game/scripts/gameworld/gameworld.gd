@@ -2,8 +2,9 @@ extends Node2D
 
 @onready var tilemap = $TileMap
 
-# preloading all scences
 
+
+# preloading all scences
 var mushyScene = preload("res://scenes/units/mushy.tscn")
 var mushyInstance = mushyScene.instantiate()
 
@@ -17,7 +18,7 @@ func _ready():
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	# check for input if true place 
+	# check for input if true place
 	if (Input.is_action_just_pressed("place_building_main")) == true:
 		add_child(mainBuildingScene.instantiate())
 	
@@ -30,3 +31,6 @@ func _process(_delta):
 
 	if (Input.is_action_just_pressed("place_tile_street_revert")) == true:
 		pass
+		
+	if (Input.is_action_just_pressed("test_button")) == true:
+		print(get_node_or_null("/root/Main/Gameworld/MainBuilding").inventory)
