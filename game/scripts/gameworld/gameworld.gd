@@ -17,6 +17,7 @@ func _ready():
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	# check for input if true place 
 	if (Input.is_action_just_pressed("place_building_main")) == true:
 		add_child(mainBuildingScene.instantiate())
 	
