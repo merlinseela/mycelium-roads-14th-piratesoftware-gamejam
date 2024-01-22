@@ -66,8 +66,7 @@ func _process(_delta):
 	for task_index in task_delete_index:
 		tasks.pop_at(task_index - task_delete_index_offset)
 		task_delete_index_offset += 1
-			
-	
+
 	# place buildings
 	if (Input.is_action_just_pressed("place_building_main")) == true:
 		var main_building = building_main_scene.instantiate()
@@ -79,7 +78,7 @@ func _process(_delta):
 		add_child(building_house_shed_scene.instantiate())
 	if (Input.is_action_just_pressed("place_building_dirt_hole")) == true:
 		add_child(building_dirt_hole_scene.instantiate())
-	
+
 	# tiles
 	if (Input.is_action_just_pressed("place_tile_street")) == true:
 		var tilePosition = get_node("TileMap").local_to_map(get_viewport().get_mouse_position())
@@ -87,39 +86,15 @@ func _process(_delta):
 
 	if (Input.is_action_just_pressed("place_tile_street_revert")) == true:
 		pass
-	
+
 	# deletion
 	if (Input.is_action_just_pressed("delete")) == true:
 		pass # delete keybind not yet set! -> input map
-	
-	
+
 	# test button and debugging
 	if (Input.is_action_just_pressed("test_button")) == true:
-		print(tasks)
-		var i = 0
-		for task in tasks:
-			i += 1
-		print("TASK COUNT: " + str(i))
-		# task idle
-		i = 0
-		for task in tasks:
-			if task.status == TASKSTATUS.IDLE:
-				i += 1
-		print("TASK IDLE COUNT: " + str(i))
-		# task in inprocess
-		i = 0
-		for task in tasks:
-			if task.status == TASKSTATUS.INPROCESS:
-				i += 1
-		print("TASK INPROCESS COUNT: " + str(i))
-		# task done
-		i = 0
-		for task in tasks:
-			if task.status == TASKSTATUS.DONE:
-				i += 1
-		print("TASK DONE COUNT: " + str(i))
-
-
+		pass
+		
 func _building_create(node_name, building, location):
 	building_id += 1
 	var new_building = Building.new()
@@ -148,5 +123,33 @@ func _task_done():
 		if tasks[task].status == TASKSTATUS.DONE:
 			print(task)
 
+#------------------------------
+# DEBUG AND TEST FUNCTIONS!
+
 func _call_test():
 	print("I WAS CALLED: GAMEWORLD")
+	
+func _debug_task_manager_status():
+	print(tasks)
+	var i = 0
+	for task in tasks:
+		i += 1
+	print("TASK COUNT: " + str(i))
+	# task idle
+	i = 0
+	for task in tasks:
+		if task.status == TASKSTATUS.IDLE:
+			i += 1
+	print("TASK IDLE COUNT: " + str(i))
+	# task in inprocess
+	i = 0
+	for task in tasks:
+		if task.status == TASKSTATUS.INPROCESS:
+			i += 1
+	print("TASK INPROCESS COUNT: " + str(i))
+	# task done
+	i = 0
+	for task in tasks:
+		if task.status == TASKSTATUS.DONE:
+			i += 1
+	print("TASK DONE COUNT: " + str(i))
