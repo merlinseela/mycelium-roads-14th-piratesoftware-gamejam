@@ -47,8 +47,7 @@ func _ready():
 	spawn() # DEV: START AT MAIN
 
 	# Make sure to not await during _ready.
-	call_deferred("actor_setup")
-	
+	call_deferred("actor_setup")	
 func _process(_delta):
 	if state_tracker == STATE.IDLE:
 		load_idle_task()
@@ -73,13 +72,13 @@ func _process(_delta):
 		# pickup resource
 			STATETASK.EXECUTETASKATFROMBUILDING:
 				# decrese building inventory
-				print("OLD B INV: " + str(get_node(loaded_task.from_building).inventory[loaded_task.resource]))
+				# print("OLD B INV: " + str(get_node(loaded_task.from_building).inventory[loaded_task.resource]))
 				get_node(loaded_task.from_building).inventory[loaded_task.resource] -= 1
-				print("NEW B INV: " + str(get_node(loaded_task.from_building).inventory[loaded_task.resource]))
+				#print("NEW B INV: " + str(get_node(loaded_task.from_building).inventory[loaded_task.resource]))
 				# increase personal inventory
-				print("OLD P INV: " + str(inventory[loaded_task.resource]))
+				#print("OLD P INV: " + str(inventory[loaded_task.resource]))
 				inventory[loaded_task.resource] += 1
-				print("NEW P INV: " + str(inventory[loaded_task.resource]))
+				#print("NEW P INV: " + str(inventory[loaded_task.resource]))
 				state_task_tracker = STATETASK.NOTATTOBUILDING
 				
 		# walk to to_building
@@ -93,7 +92,7 @@ func _process(_delta):
 			STATETASK.EXECUTETASKATTOBUILDING:
 				inventory[loaded_task.resource] -= 1
 				get_node(loaded_task.to_building).inventory[loaded_task.resource] += 1
-				print("MAIN BUILDING INV: " + str(get_node(loaded_task.to_building).inventory))
+				#print("MAIN BUILDING INV: " + str(get_node(loaded_task.to_building).inventory))
 				
 				set_task_done()
 				state_tracker = STATE.IDLE
@@ -113,6 +112,8 @@ func spawn():
 	var mainBuildingPos = tilemap.local_to_map(get_node("../MainBuilding").position)
 	var mushroomDesiredPos = mainBuildingPos + Vector2i(1,1)
 	position = tilemap.map_to_local(mushroomDesiredPos)
+	movement_target_position = get_parent().get_node("/root/Main/Gameworld/MainBuilding").position
+	actor_setup()
 
 func actor_setup():
 	# Wait for the first physics frame so the NavigationServer can sync.
@@ -128,6 +129,7 @@ func load_idle_task():
 	for task in get_parent().tasks:
 		if task.status == get_parent().TASKSTATUS.IDLE:
 			loaded_task = task
+			task.status = get_parent().TASKSTATUS.INPROCESS
 			break
 		else:
 			loaded_task = null

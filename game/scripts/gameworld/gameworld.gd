@@ -55,6 +55,19 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	# cleanup tasks list
+	var task_delete_index = []
+	var task_delete_number = 0
+	var task_delete_index_offset = 0
+	for task in tasks:
+		if task.status == TASKSTATUS.DONE:
+			task_delete_index.append(task_delete_number)
+		task_delete_number += 1
+	for task_index in task_delete_index:
+		tasks.pop_at(task_index - task_delete_index_offset)
+		task_delete_index_offset += 1
+			
+	
 	# place buildings
 	if (Input.is_action_just_pressed("place_building_main")) == true:
 		var main_building = building_main_scene.instantiate()
@@ -80,9 +93,31 @@ func _process(_delta):
 		pass # delete keybind not yet set! -> input map
 	
 	
-	# test button
+	# test button and debugging
 	if (Input.is_action_just_pressed("test_button")) == true:
 		print(tasks)
+		var i = 0
+		for task in tasks:
+			i += 1
+		print("TASK COUNT: " + str(i))
+		# task idle
+		i = 0
+		for task in tasks:
+			if task.status == TASKSTATUS.IDLE:
+				i += 1
+		print("TASK IDLE COUNT: " + str(i))
+		# task in inprocess
+		i = 0
+		for task in tasks:
+			if task.status == TASKSTATUS.INPROCESS:
+				i += 1
+		print("TASK INPROCESS COUNT: " + str(i))
+		# task done
+		i = 0
+		for task in tasks:
+			if task.status == TASKSTATUS.DONE:
+				i += 1
+		print("TASK DONE COUNT: " + str(i))
 
 
 func _building_create(node_name, building, location):
