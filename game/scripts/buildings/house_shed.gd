@@ -1,11 +1,19 @@
 extends StaticBody2D
 
+@export var inventory = {
+	
+}
+
 @onready var iPosition = get_parent().get_node("TileMap").local_to_map(get_viewport().get_mouse_position())
 @onready var tileMap = get_parent().get_node("TileMap")
 
 func _ready():
 	_place_shed()
 	
+func _process(_delta):
+	pass
+	
+
 func _physics_process(delta):
 	pass
 	# if inventory resource empty == true -> then exetute request new resource

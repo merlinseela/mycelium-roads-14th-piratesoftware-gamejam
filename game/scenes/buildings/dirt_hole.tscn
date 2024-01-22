@@ -1,10 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://cratqhs3c5lty"]
+[gd_scene load_steps=4 format=3 uid="uid://cratqhs3c5lty"]
 
 [ext_resource type="Texture2D" uid="uid://bcpnp77nptfad" path="res://images/buildings/dirt_hole_greybox.png" id="1_0dv68"]
+[ext_resource type="Script" path="res://scripts/buildings/dirt_hole.gd" id="1_sladq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ebrh8"]
+radius = 21.0
 
-[node name="StaticBody2D" type="StaticBody2D"]
+[node name="DirtHole" type="StaticBody2D"]
+script = ExtResource("1_sladq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 17)
@@ -12,3 +15,8 @@ texture = ExtResource("1_0dv68")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ebrh8")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

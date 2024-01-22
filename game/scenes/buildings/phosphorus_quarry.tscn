@@ -1,10 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://3u71jcmffmfr"]
+[gd_scene load_steps=4 format=3 uid="uid://3u71jcmffmfr"]
 
 [ext_resource type="Texture2D" uid="uid://jmpkhgt26kay" path="res://images/buildings/wheat_farm_greybox.png" id="1_4de51"]
+[ext_resource type="Script" path="res://scripts/buildings/phosphorus_quarry.gd" id="1_d61oi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n7i35"]
 
 [node name="StaticBody2D" type="StaticBody2D"]
+script = ExtResource("1_d61oi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_n7i35")

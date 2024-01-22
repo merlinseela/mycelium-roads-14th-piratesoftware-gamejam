@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://6psyccdpdnl0"]
+[gd_scene load_steps=4 format=3 uid="uid://6psyccdpdnl0"]
 
+[ext_resource type="Script" path="res://scripts/buildings/wheat_farm.gd" id="1_nmlfi"]
 [ext_resource type="Texture2D" uid="uid://jmpkhgt26kay" path="res://images/buildings/wheat_farm_greybox.png" id="1_qtw1b"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oe5vn"]
 radius = 19.0
 
 [node name="StaticBody2D" type="StaticBody2D"]
+script = ExtResource("1_nmlfi")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_qtw1b")

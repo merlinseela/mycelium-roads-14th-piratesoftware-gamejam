@@ -1,45 +1,32 @@
 extends StaticBody2D
 
 @export var inventory = {
-		"water": 0,
-		"dirt": 0,
-		"phosphorus": 0,
-		"potassium": 0,
-		"carbohydrates": 0,
-		"protein": 0,
-		"calcium": 0,
-		"luciferin": 0
+	"dirt": 0
 }
 
-# LOAD ON INSTANCIATING
-	# load npc mushroom for instancianting slaves
-var npcScene = preload("res://scenes/units/npc_shroom.tscn")
+# TASK TRACKER
+@export var task_tracker = 0
 
 # ON-READY
 	#locate spawn position for building on grid via mousecursorposition 
 @onready var iPosition = get_parent().get_node("TileMap").local_to_map(get_viewport().get_mouse_position())
 @onready var tileMap = get_parent().get_node("TileMap")
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	place_main_building()
-	
-	# DEV TASK MANAGER
-	# create_task(, name)
+	_place_building()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	# spawn new npc mushroom
-	if Input.is_action_just_pressed("mouse_left_button"):
-		spawn_npc_shroom()
+func _process(_delta):
+	if (inventory["dirt"] - task_tracker) > 0:
+		get_parent()._task_create(get_path(),"/root/Main/Gameworld/MainBuilding","dirt")
+		task_tracker += 1
 
-# -----------------------------
-# User defined functions
-# this functions spawns the main building, before spawning the building it checks if all the tiles underneath it are the right ones 
-# if true then it changes the ground tiles to building/street tiles and places the building on top of it
-func place_main_building():
-	
+	if Input.is_action_just_pressed("test_button"):
+		#print(task_tracker)
+		#print(inventory["dirt"])
+		pass
+
+func _place_building():
 	# create 
 	var tileVector = tileMap.local_to_map(get_viewport().get_mouse_position())
 	var tileData = tileMap.get_cell_tile_data(0, tileVector)
@@ -87,5 +74,8 @@ func place_main_building():
 		# print("FAILED")
 		queue_free() # despawn node if not placable -> making sure it is not inside the engine
 
-func spawn_npc_shroom():
-	get_parent().add_child(npcScene.instantiate())
+# configuration of timer via godot! -> not in code!
+# create 1 resource whenever timer reaches 0
+func _on_timer_timeout():
+	if inventory["dirt"] < 3:
+		inventory["dirt"] += 1
