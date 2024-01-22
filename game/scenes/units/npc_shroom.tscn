@@ -8,6 +8,7 @@ radius = 1.0
 height = 10.0
 
 [node name="npc_shroom" type="CharacterBody2D"]
+collision_layer = 2
 script = ExtResource("1_xntdo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

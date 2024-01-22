@@ -4,12 +4,14 @@ extends StaticBody2D
 @onready var tileMap = get_parent().get_node("TileMap")
 
 func _ready():
-	place_shed()
+	_place_shed()
 	
 func _physics_process(delta):
 	pass
+	# if inventory resource empty == true -> then exetute request new resource
+	# func _create_resource_request
 	
-func place_shed():
+func _place_shed():
 	var tileVector = tileMap.local_to_map(get_viewport().get_mouse_position())
 	var tileData = tileMap.get_cell_tile_data(0, tileVector)
 	# DEBUGGING
@@ -34,3 +36,6 @@ func place_shed():
 	else:
 		print("FAILED")
 		queue_free()
+
+func _create_resource_request():
+	pass # hand over location of this building -> translates to target position
