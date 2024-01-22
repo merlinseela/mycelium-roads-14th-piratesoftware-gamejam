@@ -98,7 +98,7 @@ func _on_button_decline_pressed():
 #Goes to main_scene or quits game depending on what button opened this menu
 func _on_button_confirm_pressed():
 	if %LabelConfirmation.text == "Go to main menu?":
-		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+		get_tree().change_scene_to_file("res://scenes/main_menu/main_menu.tscn")
 	elif  %LabelConfirmation.text == "Quit game?":
 		get_tree().quit()
 
