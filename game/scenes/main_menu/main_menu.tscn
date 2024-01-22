@@ -1,12 +1,19 @@
-[gd_scene load_steps=8 format=3 uid="uid://b5fpc0pmkusq7"]
+[gd_scene load_steps=15 format=3 uid="uid://b5fpc0pmkusq7"]
 
 [ext_resource type="PackedScene" uid="uid://cdniymhmxc1r3" path="res://scenes/main_menu/gdd_mushy.tscn" id="1_8i3cr"]
 [ext_resource type="Script" path="res://scripts/ui/main_menu.gd" id="1_563nv"]
+[ext_resource type="Texture2D" uid="uid://cmwsy2enlvj86" path="res://images/ui/title.PNG" id="2_2vxv1"]
 [ext_resource type="Texture2D" uid="uid://bcc7nnodvbk6c" path="res://images/ui/large_button_normal.png" id="2_ja7es"]
 [ext_resource type="Texture2D" uid="uid://petnjqf4dwwb" path="res://images/ui/large_button_pressed.png" id="3_fm7mq"]
 [ext_resource type="Texture2D" uid="uid://eol1wracjl4i" path="res://images/ui/large_button_hover.png" id="4_4t0wq"]
 [ext_resource type="AudioStream" uid="uid://gfin2ky0e4f4" path="res://sounds/Button Confirm-2024-01-14-00.wav" id="6_swuit"]
 [ext_resource type="AudioStream" uid="uid://d0q1cdew41r68" path="res://sounds/Button Back-2024-01-14-00.wav" id="7_k4o2x"]
+[ext_resource type="Script" path="res://scenes/main_menu/parallax_background.gd" id="8_pd4qa"]
+[ext_resource type="Texture2D" uid="uid://b0gl8oh8m6whn" path="res://images/ui/parallax_title_screen/Parallax title screen/5.png" id="9_lacmd"]
+[ext_resource type="Texture2D" uid="uid://lyu6okx123p5" path="res://images/ui/parallax_title_screen/Parallax title screen/4.png" id="10_v1ljn"]
+[ext_resource type="Texture2D" uid="uid://cvioraqpbwxhn" path="res://images/ui/parallax_title_screen/Parallax title screen/3.png" id="11_chk36"]
+[ext_resource type="Texture2D" uid="uid://bhkva7w2p4oct" path="res://images/ui/parallax_title_screen/Parallax title screen/2.png" id="12_i6v0i"]
+[ext_resource type="Texture2D" uid="uid://bhqqnlj8a4ic2" path="res://images/ui/parallax_title_screen/Parallax title screen/1.png" id="13_delgv"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -19,16 +26,11 @@ script = ExtResource("1_563nv")
 
 [node name="Canvas" type="CanvasLayer" parent="."]
 
-[node name="GameTitle" type="Label" parent="Canvas"]
+[node name="GameTitle" type="Sprite2D" parent="Canvas"]
 unique_name_in_owner = true
-offset_left = 354.5
-offset_top = 100.0
-offset_right = 797.5
-offset_bottom = 279.0
-theme_override_colors/font_color = Color(0.431373, 0.262745, 0, 1)
-theme_override_font_sizes/font_size = 64
-text = "Mycelium 
-               Roads"
+position = Vector2(576, 166)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("2_2vxv1")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Canvas"]
 anchors_preset = 1
@@ -56,6 +58,8 @@ layout_mode = 2
 
 [node name="LabelNewGame" type="Label" parent="Canvas/HBoxContainer/VBoxButtons"]
 layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
 text = "New Game"
 horizontal_alignment = 1
 
@@ -69,6 +73,8 @@ stretch_mode = 3
 
 [node name="LabelOptions" type="Label" parent="Canvas/HBoxContainer/VBoxButtons"]
 layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
 text = "Options"
 horizontal_alignment = 1
 
@@ -82,6 +88,8 @@ stretch_mode = 3
 
 [node name="LabelQuit" type="Label" parent="Canvas/HBoxContainer/VBoxButtons"]
 layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
 text = "Quit"
 horizontal_alignment = 1
 
@@ -142,6 +150,57 @@ stream = ExtResource("6_swuit")
 
 [node name="AudioBack" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_k4o2x")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+offset = Vector2(576, 324)
+scale = Vector2(1.8, 1.8)
+transform = Transform2D(1.8, 0, 0, 1.8, 576, 324)
+script = ExtResource("8_pd4qa")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(640, 0)
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("9_lacmd")
+metadata/_edit_lock_ = true
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(640, 0)
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+texture = ExtResource("10_v1ljn")
+metadata/_edit_lock_ = true
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(640, 0)
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+texture = ExtResource("11_chk36")
+metadata/_edit_lock_ = true
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.7, 0.7)
+motion_mirroring = Vector2(640, 0)
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+texture = ExtResource("12_i6v0i")
+metadata/_edit_lock_ = true
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.9, 0.9)
+motion_mirroring = Vector2(640, 0)
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]
+texture = ExtResource("13_delgv")
+metadata/_edit_lock_ = true
 
 [connection signal="pressed" from="Canvas/HBoxContainer/VBoxButtons/ButtonNewGame" to="." method="_on_button_new_game_pressed"]
 [connection signal="pressed" from="Canvas/HBoxContainer/VBoxButtons/ButtonQuit" to="." method="_on_button_quit_pressed"]

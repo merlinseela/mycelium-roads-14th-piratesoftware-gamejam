@@ -6,7 +6,6 @@ var save_file
 #Simple tween to make the title wiggle.
 func _ready():
 	title_tween = create_tween()
-	%GameTitle.set_pivot_offset(%GameTitle.size / 2)
 	title_tween.tween_property(%GameTitle, "rotation", .15, 5)
 	title_tween.tween_callback(_title_wiggle)
 
