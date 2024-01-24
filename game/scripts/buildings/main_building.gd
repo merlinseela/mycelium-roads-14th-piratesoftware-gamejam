@@ -17,7 +17,7 @@ var npcScene = preload("res://scenes/units/npc_shroom.tscn")
 
 # ON-READY
 	#locate spawn position for building on grid via mousecursorposition 
-@onready var iPosition = get_parent().get_node("TileMap").local_to_map(get_viewport().get_mouse_position())
+@onready var iPosition = get_parent().get_node("TileMap").local_to_map(get_global_mouse_position())
 @onready var tileMap = get_parent().get_node("TileMap")
 @onready var hud_ui = get_parent().get_parent().get_node("HUD").get_node("UI")
 @onready var hud_ui_resources = hud_ui.get_node("Resource")
@@ -52,7 +52,7 @@ func _process(delta):
 func place_main_building():
 	
 	# create 
-	var tileVector = tileMap.local_to_map(get_viewport().get_mouse_position())
+	var tileVector = tileMap.local_to_map(get_global_mouse_position())
 	var tileData = tileMap.get_cell_tile_data(0, tileVector)
 	
 	# Debugging

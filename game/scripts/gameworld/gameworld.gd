@@ -43,11 +43,11 @@ var building_earthworm_farm_scene = preload("res://scenes/buildings/earthworm_fa
 var building_house_tent_scene = preload("res://scenes/buildings/house_tent.tscn")
 var building_house_shed_scene = preload("res://scenes/buildings/house_shed.tscn")
 var building_house_house_scene = preload("res://scenes/buildings/house_house.tscn")
-var building_phosphorus_quarry = preload("res://scenes/buildings/phosphorus_quarry.tscn")
-var building_well = preload("res://scenes/buildings/well.tscn")
-var building_wheat_farm = preload("res://scenes/buildings/wheat_farm.tscn")
-var building_wood_burner = preload("res://scenes/buildings/wood_burner.tscn")
-var building_wood_decayer = preload("res://scenes/buildings/wood_decayer.tscn")
+var building_phosphorus_quarry_scene = preload("res://scenes/buildings/phosphorus_quarry.tscn")
+var building_well_scene = preload("res://scenes/buildings/well.tscn")
+var building_wheat_farm_scene = preload("res://scenes/buildings/wheat_farm.tscn")
+var building_wood_burner_scene = preload("res://scenes/buildings/wood_burner.tscn")
+var building_wood_decayer_scene = preload("res://scenes/buildings/wood_decayer.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -72,12 +72,34 @@ func _process(_delta):
 		var main_building = building_main_scene.instantiate()
 		add_child(main_building)
 		# create new entry in building list
-		_building_create(main_building.get_path(), "main", main_building.position)
-		
+		# _building_create(main_building.get_path(), "main", main_building.position)
+	
+		# buildings houseing
+	if (Input.is_action_just_pressed("place_building_tent")) == true:
+		add_child(building_house_shed_scene.instantiate())		
 	if (Input.is_action_just_pressed("place_building_shed")) == true:
 		add_child(building_house_shed_scene.instantiate())
+	if (Input.is_action_just_pressed("place_building_house")) == true:
+		add_child(building_house_house_scene.instantiate())
+		
+		
+		# building industry
 	if (Input.is_action_just_pressed("place_building_dirt_hole")) == true:
 		add_child(building_dirt_hole_scene.instantiate())
+	if (Input.is_action_just_pressed("place_building_dirt_cleanser")) == true:
+		add_child(building_dirt_cleanser_scene.instantiate())
+	if (Input.is_action_just_pressed("place_building_earthworm_farm")) == true:
+		add_child(building_earthworm_farm_scene.instantiate())
+	if (Input.is_action_just_pressed("place_building_phosphorus_quarry")) == true:
+		add_child(building_phosphorus_quarry_scene.instantiate())
+	if (Input.is_action_just_pressed("place_building_well")) == true:
+		add_child(building_well_scene.instantiate())
+	if (Input.is_action_just_pressed("place_building_wheat_farm")) == true:
+		add_child(building_wheat_farm_scene.instantiate())
+	if (Input.is_action_just_pressed("place_building_wood_burner")) == true:
+		add_child(building_wood_burner_scene.instantiate())
+	if (Input.is_action_just_pressed("place_building_wood_decayer")) == true:
+		add_child(building_wood_decayer_scene.instantiate())
 
 	# tiles
 	if (Input.is_action_just_pressed("place_tile_street")) == true:

@@ -9,7 +9,7 @@ extends StaticBody2D
 
 # ON-READY
 	#locate spawn position for building on grid via mousecursorposition 
-@onready var iPosition = get_parent().get_node("TileMap").local_to_map(get_viewport().get_mouse_position())
+@onready var iPosition = get_parent().get_node("TileMap").local_to_map(get_global_mouse_position())
 @onready var tileMap = get_parent().get_node("TileMap")
 
 # Called when the node enters the scene tree for the first time.
@@ -28,7 +28,7 @@ func _process(_delta):
 
 func _place_building():
 	# create 
-	var tileVector = tileMap.local_to_map(get_viewport().get_mouse_position())
+	var tileVector = tileMap.local_to_map(get_global_mouse_position())
 	var tileData = tileMap.get_cell_tile_data(0, tileVector)
 	
 	# Debugging
