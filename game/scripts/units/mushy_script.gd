@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var movement_speed: float = 160.0
 #var movement_speed: float = 200.0
-var movement_target_position: Vector2
+var movement_target_position: Vector2 = Vector2(500,500)
 var game_speed = 1
 
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D

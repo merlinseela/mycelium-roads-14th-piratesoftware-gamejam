@@ -145,9 +145,9 @@ func _task_done():
 		if tasks[task].status == TASKSTATUS.DONE:
 			print(task)
 
+
 #------------------------------
 # DEBUG AND TEST FUNCTIONS!
-
 func _call_test():
 	print("I WAS CALLED: GAMEWORLD")
 	

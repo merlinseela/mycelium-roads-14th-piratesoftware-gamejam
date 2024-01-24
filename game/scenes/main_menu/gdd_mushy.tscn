@@ -586,7 +586,7 @@ offset_right = 37.0
 offset_bottom = 54.0
 grow_horizontal = 2
 grow_vertical = 2
-uri = "https://www.youtube.com/@PirateSoftware"
+uri = "https://drive.google.com/file/d/1RsqUB9RSibTIjNLoIcsMyM0eneAp7Bth/view?usp=sharing"
 metadata/_edit_use_anchors_ = true
 
 [connection signal="animation_looped" from="GDDMushyAnimatedSprite" to="." method="_on_animation_finished"]
