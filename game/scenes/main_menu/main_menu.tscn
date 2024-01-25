@@ -198,9 +198,10 @@ offset = Vector2(400, 300)
 
 [node name="LandratLogo" type="Sprite2D" parent="Canvas"]
 unique_name_in_owner = true
-position = Vector2(-120, 324)
+position = Vector2(840, -89)
 rotation = -6.28319
 texture = ExtResource("15_1vtja")
+offset = Vector2(-960, 413)
 
 [node name="AudioConfirm" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_swuit")

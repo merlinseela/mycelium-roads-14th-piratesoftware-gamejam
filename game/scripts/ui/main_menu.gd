@@ -25,7 +25,9 @@ func _title_wiggle():
 	title_tween.tween_property(%GameTitle, "rotation", .15, 10)
 	
 func _process(_delta):
-	pass
+	if Input.is_action_just_pressed("ui_cancel"):
+		%BlackOut.visible = false
+		%LandratLogo.visible = false
 
 #Hide/show save slots with sound effects
 func _on_button_new_game_pressed():
