@@ -94,9 +94,14 @@ func _process(_delta):
 				get_node(loaded_task.to_building).inventory[loaded_task.resource] += 1
 				#print("MAIN BUILDING INV: " + str(get_node(loaded_task.to_building).inventory))
 				
-				set_task_done()
-				state_tracker = STATE.IDLE
-				load_task_success_tracker = false
+				if str(loaded_task.to_building) == str((get_parent().get_node("/root/Main/Gameworld/MainBuilding")).get_path()):
+					set_task_done_to_main_building()
+					state_tracker = STATE.IDLE
+					load_task_success_tracker = false
+				else:
+					set_task_done_to_not_main_building()
+					state_tracker = STATE.IDLE
+					load_task_success_tracker = false
 
 func _physics_process(_delta):
 	# decide on next position and move to it _> DO NOT TOUCH!!!!
@@ -134,9 +139,15 @@ func load_idle_task():
 		else:
 			loaded_task = null
 
-func set_task_done():
+func set_task_done_to_main_building():
 	for task in get_parent().tasks:
 		if task.task_id == loaded_task.task_id:
 			task.status = get_parent().TASKSTATUS.DONE
 			get_node(loaded_task.from_building).task_tracker -= 1
+			break
+func set_task_done_to_not_main_building():
+	for task in get_parent().tasks:
+		if task.task_id == loaded_task.task_id:
+			task.status = get_parent().TASKSTATUS.DONE
+			get_node(loaded_task.to_building).task_tracker -= 1
 			break

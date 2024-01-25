@@ -29,7 +29,7 @@ func _process(_delta):
 func _place_building():
 	# create 
 	var tileVector = tileMap.local_to_map(get_global_mouse_position())
-	var tileData = tileMap.get_cell_tile_data(0, tileVector)
+	var _tileData = tileMap.get_cell_tile_data(0, tileVector)
 	
 	# Debugging
 	# print("TILE TYPE: " + str(tileData.get_custom_data("type")))
@@ -45,13 +45,14 @@ func _place_building():
 			(tileMap.get_cell_tile_data(0, tileVector + Vector2i( 0, 1)).get_custom_data("type")) == "grass" and
 			(tileMap.get_cell_tile_data(0, tileVector + Vector2i( 0, 1)).get_custom_data("type")) == "grass"
 		)
-		 and
+		and
 		# check for street or grass tiles on 2 tiles
-			(
-				((tileMap.get_cell_tile_data(0, tileVector + Vector2i( 1, 1)).get_custom_data("type")) == "street" or "grass")
-				and
-				((tileMap.get_cell_tile_data(0, tileVector + Vector2i( 2, 2)).get_custom_data("type")) == "street" or "grass")
-			)
+		(
+			((tileMap.get_cell_tile_data(0, tileVector + Vector2i( 1, 1)).get_custom_data("type")) == "street" or "grass")
+		)
+		and 
+		# check if enough building materials are in stock
+			(get_parent().get_node("/root/Main/Gameworld/MainBuilding").inventory["dirt"] > 5)
 		):
 		# IF TRUE:
 		# Change ground tiles to building ground
@@ -64,11 +65,15 @@ func _place_building():
 		tileMap.set_cell(0,(tileVector + Vector2i( 1, 0)),2,Vector2i(0,0),0)
 		# street tiles -> entrance
 		tileMap.set_cell(0,(tileVector + Vector2i( 1, 1)),0,Vector2i(0,0),0)
-		tileMap.set_cell(0,(tileVector + Vector2i( 2, 2)),0,Vector2i(0,0),0)
 		
 		# Place image/collison Node
 		position = get_parent().get_node("TileMap").map_to_local(iPosition)
 		position = position - Vector2(5,0)
+		
+		# deduct costs from main building inventory
+ 
+		# add max-pop of 2
+		get_parent().get_node("/root/Main/Gameworld/MainBuilding").inventory["population-max"] += 2
 		
 	else:
 		# print("FAILED")

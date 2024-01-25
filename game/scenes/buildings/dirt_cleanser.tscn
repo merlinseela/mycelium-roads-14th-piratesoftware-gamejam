@@ -4,15 +4,20 @@
 [ext_resource type="Texture2D" uid="uid://c4frds0cq1y2g" path="res://images/buildings/dirt_cleanser_greybox.png" id="1_unfiu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_emrm4"]
-size = Vector2(39, 28)
+size = Vector2(62, 28)
 
 [node name="DirtCleanser" type="StaticBody2D"]
 script = ExtResource("1_30mjm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(3, 5)
+position = Vector2(5, -1)
 texture = ExtResource("1_unfiu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3, 5)
+position = Vector2(4, -1)
 shape = SubResource("RectangleShape2D_emrm4")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
