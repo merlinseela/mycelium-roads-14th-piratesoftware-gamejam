@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cu0enlqdej8e3"
-path="res://.godot/imported/UI_Wood_Button_Large_Lock_02a2.png-b77d4d00b10194c5a5227cd854044806.ctex"
+uid="uid://djtv1kqo60cjr"
+path="res://.godot/imported/black.png-4c3721923739e60c2280f92872da1d5b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/ui/UI_Wood_Button_Large_Lock_02a2.png"
-dest_files=["res://.godot/imported/UI_Wood_Button_Large_Lock_02a2.png-b77d4d00b10194c5a5227cd854044806.ctex"]
+source_file="res://images/ui/black.png"
+dest_files=["res://.godot/imported/black.png-4c3721923739e60c2280f92872da1d5b.ctex"]
 
 [params]
 

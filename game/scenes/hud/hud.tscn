@@ -1,9 +1,6 @@
 [gd_scene load_steps=38 format=3 uid="uid://v7oxdodc6od"]
 
 [ext_resource type="Script" path="res://scripts/ui/hud.gd" id="1_85cbg"]
-[ext_resource type="Texture2D" uid="uid://jmlarxo7lw1" path="res://images/ui/UI_Wood_Button_Large_Lock_02a1.png" id="3_5jom4"]
-[ext_resource type="Texture2D" uid="uid://cbf6bg7hyxagg" path="res://images/ui/UI_Wood_Button_Large_Lock_02a3.png" id="4_ee4xe"]
-[ext_resource type="Texture2D" uid="uid://cu0enlqdej8e3" path="res://images/ui/UI_Wood_Button_Large_Lock_02a2.png" id="5_74m5a"]
 [ext_resource type="Script" path="res://scripts/ui/event_button.gd" id="6_mh4o5"]
 [ext_resource type="Texture2D" uid="uid://dcbrkw5f6w3b4" path="res://images/ui/time_buttons/pause1.png" id="7_hrav6"]
 [ext_resource type="Texture2D" uid="uid://ntqfof625rr" path="res://images/ui/icon_sheet.png" id="7_sjnku"]
@@ -27,6 +24,15 @@
 [ext_resource type="Texture2D" uid="uid://bef633vyb866f" path="res://images/ui/time_buttons/fastforward1_x3.png" id="16_fxam7"]
 [ext_resource type="Texture2D" uid="uid://l7i1d5cachlh" path="res://images/ui/time_buttons/fastforward3_x3.png" id="17_18fs0"]
 [ext_resource type="Texture2D" uid="uid://2u1b5s2puho0" path="res://images/ui/time_buttons/fastforward2_x3.png" id="18_c1ghs"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i37qp"]
+load_path = "res://.godot/imported/UI_Wood_Button_Large_Lock_02a1.png-0fc1449647b1a61fb333ee20b0830a36.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_g8u48"]
+load_path = "res://.godot/imported/UI_Wood_Button_Large_Lock_02a3.png-f141ef00382d745a2ef042a2853e467c.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rd64p"]
+load_path = "res://.godot/imported/UI_Wood_Button_Large_Lock_02a2.png-b77d4d00b10194c5a5227cd854044806.ctex"
 
 [sub_resource type="Theme" id="Theme_0q56n"]
 
@@ -148,9 +154,9 @@ grow_vertical = 0
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 3
-texture_normal = ExtResource("3_5jom4")
-texture_pressed = ExtResource("4_ee4xe")
-texture_hover = ExtResource("5_74m5a")
+texture_normal = SubResource("CompressedTexture2D_i37qp")
+texture_pressed = SubResource("CompressedTexture2D_g8u48")
+texture_hover = SubResource("CompressedTexture2D_rd64p")
 stretch_mode = 0
 script = ExtResource("6_mh4o5")
 
@@ -799,9 +805,9 @@ grow_vertical = 0
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
-texture_normal = ExtResource("3_5jom4")
-texture_pressed = ExtResource("4_ee4xe")
-texture_hover = ExtResource("5_74m5a")
+texture_normal = SubResource("CompressedTexture2D_i37qp")
+texture_pressed = SubResource("CompressedTexture2D_g8u48")
+texture_hover = SubResource("CompressedTexture2D_rd64p")
 stretch_mode = 0
 script = ExtResource("8_dtp82")
 
