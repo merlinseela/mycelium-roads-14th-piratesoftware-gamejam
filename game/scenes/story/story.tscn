@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://d4fria4udve8v"]
+[gd_scene load_steps=26 format=3 uid="uid://d4fria4udve8v"]
 
 [ext_resource type="Script" path="res://scenes/story/story_1.gd" id="1_l3gy1"]
 [ext_resource type="Texture2D" uid="uid://d335jre0xbvr8" path="res://images/story/Intro running 1.PNG" id="2_wbxff"]
@@ -21,6 +21,9 @@
 [ext_resource type="Texture2D" uid="uid://m1ahk4gohdho" path="res://images/story/Intro running 15.PNG" id="19_up6il"]
 [ext_resource type="Texture2D" uid="uid://dbkh571wax8nu" path="res://images/story/Intro running 16.PNG" id="20_s1weu"]
 [ext_resource type="Texture2D" uid="uid://b77tyspdashkh" path="res://images/story/Event 5. 5.PNG" id="21_l210o"]
+[ext_resource type="Texture2D" uid="uid://bcc7nnodvbk6c" path="res://images/ui/large_button_normal.png" id="22_whqs0"]
+[ext_resource type="Texture2D" uid="uid://petnjqf4dwwb" path="res://images/ui/large_button_pressed.png" id="23_5qohk"]
+[ext_resource type="Texture2D" uid="uid://eol1wracjl4i" path="res://images/ui/large_button_hover.png" id="24_gpamb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sqe5k"]
 animations = [{
@@ -138,3 +141,46 @@ position = Vector2(558, 225)
 scale = Vector2(3.45679, 2.98667)
 sprite_frames = SubResource("SpriteFrames_sqe5k")
 frame_progress = 0.11999
+
+[node name="Buttons" type="CanvasLayer" parent="."]
+
+[node name="ButtonChoice1" type="TextureButton" parent="Buttons"]
+offset_left = 920.0
+offset_top = 480.0
+offset_right = 1016.0
+offset_bottom = 510.0
+texture_normal = ExtResource("22_whqs0")
+texture_pressed = ExtResource("23_5qohk")
+texture_hover = ExtResource("24_gpamb")
+
+[node name="ButtonChoice2" type="TextureButton" parent="Buttons"]
+offset_left = 920.0
+offset_top = 537.0
+offset_right = 1016.0
+offset_bottom = 567.0
+texture_normal = ExtResource("22_whqs0")
+texture_pressed = ExtResource("23_5qohk")
+texture_hover = ExtResource("24_gpamb")
+
+[node name="LabelChoice1" type="Label" parent="Buttons"]
+unique_name_in_owner = true
+offset_left = 700.0
+offset_top = 480.0
+offset_right = 900.0
+offset_bottom = 503.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "TEST"
+horizontal_alignment = 2
+
+[node name="LabelChoice2" type="Label" parent="Buttons"]
+unique_name_in_owner = true
+offset_left = 700.0
+offset_top = 544.0
+offset_right = 900.0
+offset_bottom = 567.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "TEST"
+horizontal_alignment = 2
+
+[connection signal="pressed" from="Buttons/ButtonChoice1" to="." method="_on_button_choice_1_pressed"]
+[connection signal="pressed" from="Buttons/ButtonChoice2" to="." method="_on_button_choice_2_pressed"]
