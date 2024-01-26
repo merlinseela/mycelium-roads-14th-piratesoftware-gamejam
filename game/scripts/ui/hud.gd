@@ -6,11 +6,15 @@ var new_game_speed
 var tweenfade : Tween
 var game_time = 0
 
+@onready var option_vars = get_node("/root/Options")
+
 signal update_game_speed
 
 func _ready():
-	pass
-	#$UI/Minimap/SubViewportContainer/SubViewport/mushy/mushy_script/Camera2D.zoom = Vector2(.5,.5)
+	%SliderVolume.set_value(option_vars.music_volume)
+	$AudioMain.play()
+	$AudioMain.volume_db = option_vars.music_volume - 50
+
 func _process(_delta):
 	#options menu controls called by "escape"-key
 	if Input.is_action_just_pressed("ui_cancel"):
@@ -106,3 +110,14 @@ func _on_button_confirm_pressed():
 func _on_button_back_pressed():
 	$AudioBack.play()
 	$Options.visible = false
+
+func _on_button_options_pressed():
+	$Options.visible = !$Options.visible
+	$AudioConfirm.play()
+
+func _on_slider_volume_value_changed(value):
+	if value == 10:
+		$AudioMain.volume_db = -100
+	else:
+		$AudioMain.volume_db = value - 50
+	Options._on_value_changed(value)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b5fpc0pmkusq7"]
+[gd_scene load_steps=19 format=3 uid="uid://b5fpc0pmkusq7"]
 
 [ext_resource type="PackedScene" uid="uid://cdniymhmxc1r3" path="res://scenes/main_menu/gdd_mushy.tscn" id="1_8i3cr"]
 [ext_resource type="Script" path="res://scripts/ui/main_menu.gd" id="1_563nv"]
@@ -10,9 +10,11 @@
 [ext_resource type="AudioStream" uid="uid://d0q1cdew41r68" path="res://sounds/Button Back-2024-01-14-00.wav" id="7_k4o2x"]
 [ext_resource type="Texture2D" uid="uid://djtv1kqo60cjr" path="res://images/ui/black.png" id="7_s5p4u"]
 [ext_resource type="Script" path="res://scenes/main_menu/parallax_background.gd" id="8_pd4qa"]
+[ext_resource type="PackedScene" uid="uid://b83i0a0qgnf2u" path="res://scenes/hud/slider_volume.tscn" id="9_bvb03"]
 [ext_resource type="Texture2D" uid="uid://b0gl8oh8m6whn" path="res://images/ui/parallax_title_screen/Parallax title screen/5.png" id="9_lacmd"]
 [ext_resource type="Texture2D" uid="uid://lyu6okx123p5" path="res://images/ui/parallax_title_screen/Parallax title screen/4.png" id="10_v1ljn"]
 [ext_resource type="Texture2D" uid="uid://cvioraqpbwxhn" path="res://images/ui/parallax_title_screen/Parallax title screen/3.png" id="11_chk36"]
+[ext_resource type="AudioStream" uid="uid://bwgf6pqse7wga" path="res://sounds/Colony Main - 2024-01-14-125.wav" id="12_db31y"]
 [ext_resource type="Texture2D" uid="uid://bhkva7w2p4oct" path="res://images/ui/parallax_title_screen/Parallax title screen/2.png" id="12_i6v0i"]
 [ext_resource type="Texture2D" uid="uid://bhqqnlj8a4ic2" path="res://images/ui/parallax_title_screen/Parallax title screen/1.png" id="13_delgv"]
 [ext_resource type="Texture2D" uid="uid://ckfdaysgs8ydm" path="res://images/ui/landrat_software_logo.png" id="15_1vtja"]
@@ -149,20 +151,28 @@ texture_hover = ExtResource("4_4t0wq")
 stretch_mode = 3
 
 [node name="LabelNewGame" type="Label" parent="Canvas"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
 offset_left = 26.0
-offset_top = 270.0
+offset_top = -265.0
 offset_right = 122.0
-offset_bottom = 293.0
+offset_bottom = -242.0
+grow_vertical = 0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 0
 text = "New Game"
 horizontal_alignment = 1
 
 [node name="ButtonNewGame" type="TextureButton" parent="Canvas"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
 offset_left = 26.0
-offset_top = 295.0
+offset_top = -240.0
 offset_right = 122.0
-offset_bottom = 325.0
+offset_bottom = -210.0
+grow_vertical = 0
 size_flags_vertical = 3
 texture_normal = ExtResource("2_ja7es")
 texture_pressed = ExtResource("3_fm7mq")
@@ -170,20 +180,28 @@ texture_hover = ExtResource("4_4t0wq")
 stretch_mode = 3
 
 [node name="LabelQuit" type="Label" parent="Canvas"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
 offset_left = 26.0
-offset_top = 390.0
+offset_top = -145.0
 offset_right = 122.0
-offset_bottom = 413.0
+offset_bottom = -122.0
+grow_vertical = 0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 0
 text = "Quit"
 horizontal_alignment = 1
 
 [node name="ButtonQuit" type="TextureButton" parent="Canvas"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
 offset_left = 26.0
-offset_top = 415.0
+offset_top = -120.0
 offset_right = 122.0
-offset_bottom = 445.0
+offset_bottom = -90.0
+grow_vertical = 0
 size_flags_vertical = 3
 texture_normal = ExtResource("2_ja7es")
 texture_pressed = ExtResource("3_fm7mq")
@@ -198,16 +216,23 @@ offset = Vector2(400, 300)
 
 [node name="LandratLogo" type="Sprite2D" parent="Canvas"]
 unique_name_in_owner = true
-position = Vector2(840, -89)
+position = Vector2(-120, 324)
 rotation = -6.28319
 texture = ExtResource("15_1vtja")
-offset = Vector2(-960, 413)
+
+[node name="SliderVolume" parent="Canvas" instance=ExtResource("9_bvb03")]
+unique_name_in_owner = true
+script = null
 
 [node name="AudioConfirm" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_swuit")
 
 [node name="AudioBack" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_k4o2x")
+
+[node name="AudioMain" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_db31y")
+volume_db = -10.0
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 offset = Vector2(576, 324)
@@ -267,3 +292,4 @@ metadata/_edit_lock_ = true
 [connection signal="pressed" from="Canvas/HBoxUnused/VBoxSlots/ButtonSlot3" to="." method="_on_button_slot_3_pressed"]
 [connection signal="pressed" from="Canvas/ButtonNewGame" to="." method="_on_button_new_game_pressed"]
 [connection signal="pressed" from="Canvas/ButtonQuit" to="." method="_on_button_quit_pressed"]
+[connection signal="value_changed" from="Canvas/SliderVolume" to="." method="_on_slider_volume_value_changed"]
