@@ -201,5 +201,15 @@ stream = ExtResource("26_sx7n4")
 [node name="OpeningSceneAudio4" type="AudioStreamPlayer" parent="OpeningSceneAudio"]
 stream = ExtResource("27_yloar")
 
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 578.0
+offset_right = 704.0
+offset_bottom = 601.0
+theme_override_colors/font_color = Color(0.388235, 0.388235, 0.388235, 1)
+theme_override_font_sizes/font_size = 12
+text = "(Press space or enter to continue.)"
+
 [connection signal="pressed" from="Buttons/ButtonChoice1" to="." method="_on_button_choice_1_pressed"]
 [connection signal="pressed" from="Buttons/ButtonChoice2" to="." method="_on_button_choice_2_pressed"]

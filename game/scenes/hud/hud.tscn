@@ -635,7 +635,6 @@ animation = &"Day_Night"
 metadata/_edit_lock_ = true
 
 [node name="Options" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="HBoxOprionsPanel" type="HBoxContainer" parent="Options"]
 anchors_preset = 8
@@ -797,6 +796,38 @@ metadata/_edit_lock_ = true
 [node name="SliderVolume" parent="Options" instance=ExtResource("23_76nb7")]
 unique_name_in_owner = true
 script = null
+
+[node name="Label" type="Label" parent="Options"]
+offset_left = 16.0
+offset_top = 184.0
+offset_right = 492.0
+offset_bottom = 639.0
+text = "Controls:
+ESC- Open/close this menu
+WASD/arrow keys - move camera
+M - Main building, needed to build anything else
+B - Street tile to connect buildings together
+V - Turns street back into grass
+U - Tent, medium population increase
+N - Shed, medium population increase
+I - House, large population increase
+C - Dirt hole, used to gather dirt
+H - Well, used to gather water (well what else did you expect?)
+L - Dirt cleanser, generates calcium
+K - Earthworm farm, produces protein
+J - Quarry, produces phosphorus
+G - Wheat farm, produces carbohydrates
+P - Wood burner, produces potassium
+O - Wood decayer, produces luciferin"
+
+[node name="Label2" type="Label" parent="Options"]
+offset_left = 661.0
+offset_top = 212.0
+offset_right = 1150.0
+offset_bottom = 472.0
+theme_override_font_sizes/font_size = 36
+text = "Main building has to be
+placed before anything else!"
 
 [node name="Inventory" type="CanvasLayer" parent="."]
 visible = false
