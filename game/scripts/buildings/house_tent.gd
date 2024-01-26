@@ -71,7 +71,7 @@ func _place_building():
 		position = position - Vector2(5,0)
 		
 		# deduct costs from main building inventory
- 
+		get_parent().get_node("/root/Main/Gameworld/MainBuilding").inventory["dirt"] -= 5
 		# add max-pop of 2
 		get_parent().get_node("/root/Main/Gameworld/MainBuilding").inventory["population-max"] += 2
 		

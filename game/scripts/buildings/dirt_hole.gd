@@ -28,10 +28,16 @@ func _place_building():
 	#print("TILE TYPE: " + str(tileData.get_custom_data("type")))
 	
 	if (
+	(
 		(tileMap.get_cell_tile_data(0, tileVector).get_custom_data("type")) == "grass" and
 		(tileMap.get_cell_tile_data(0, tileVector + Vector2i(0, -1)).get_custom_data("type")) == "grass" and
 		(tileMap.get_cell_tile_data(0, tileVector + Vector2i(-1,-1)).get_custom_data("type")) == "grass" and
 		(tileMap.get_cell_tile_data(0, tileVector + Vector2i(-1, 0)).get_custom_data("type")) == "grass"
+	)
+	and 
+	(
+		get_parent().get_node("/root/Main/Gameworld/MainBuilding").inventory["dirt"] > 5
+	)
 	):
 		# IF TRUE:
 		# Change ground tiles to building ground
@@ -43,6 +49,10 @@ func _place_building():
 		#Place Shed Node
 		position = get_parent().get_node("TileMap").map_to_local(iPosition)
 		position = position - Vector2(5,20)
+		
+		# deduct costs from main building inventory
+		get_parent().get_node("/root/Main/Gameworld/MainBuilding").inventory["dirt"] -= 5
+
 	else:
 		print("FAILED")
 		queue_free()

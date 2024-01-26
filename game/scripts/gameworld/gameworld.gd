@@ -104,7 +104,12 @@ func _process(_delta):
 	# tiles
 	if (Input.is_action_just_pressed("place_tile_street")) == true:
 		var tilePosition = get_node("TileMap").local_to_map(get_global_mouse_position())
-		tilemap.set_cell(0,tilePosition,0,Vector2i(0,0),0)
+		if (
+			(get_node("TileMap").get_cell_tile_data(0, tilePosition).get_custom_data("type")) != "street" or
+			(get_node("TileMap").get_cell_tile_data(0, tilePosition).get_custom_data("type")) != "building"
+		):
+			tilemap.set_cell(0,tilePosition,0,Vector2i(0,0),0)
+			get_node("MainBuilding").inventory["dirt"] -= -2
 
 	if (Input.is_action_just_pressed("place_tile_street_revert")) == true:
 		pass
