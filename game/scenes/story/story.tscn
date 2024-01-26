@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://d4fria4udve8v"]
+[gd_scene load_steps=23 format=3 uid="uid://d4fria4udve8v"]
 
 [ext_resource type="Script" path="res://scenes/story/story_1.gd" id="1_l3gy1"]
 [ext_resource type="Texture2D" uid="uid://d335jre0xbvr8" path="res://images/story/Intro running 1.PNG" id="2_wbxff"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://bns5uk57u3jf0" path="res://images/story/Intro running 14.PNG" id="18_s5c10"]
 [ext_resource type="Texture2D" uid="uid://m1ahk4gohdho" path="res://images/story/Intro running 15.PNG" id="19_up6il"]
 [ext_resource type="Texture2D" uid="uid://dbkh571wax8nu" path="res://images/story/Intro running 16.PNG" id="20_s1weu"]
+[ext_resource type="Texture2D" uid="uid://b77tyspdashkh" path="res://images/story/Event 5. 5.PNG" id="21_l210o"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sqe5k"]
 animations = [{
@@ -77,6 +78,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("20_s1weu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_l210o")
 }],
 "loop": true,
 "name": &"default",
@@ -101,6 +105,7 @@ offset_right = 1285.0
 offset_bottom = 670.0
 
 [node name="NinePatchRect" parent="." instance=ExtResource("3_ylnnk")]
+layout_mode = 0
 offset_left = 54.0
 offset_top = 436.0
 offset_right = 1080.0
@@ -132,3 +137,4 @@ z_index = -1
 position = Vector2(558, 225)
 scale = Vector2(3.45679, 2.98667)
 sprite_frames = SubResource("SpriteFrames_sqe5k")
+frame_progress = 0.11999
