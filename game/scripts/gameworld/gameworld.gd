@@ -76,7 +76,7 @@ func _process(_delta):
 	
 		# buildings houseing
 	if (Input.is_action_just_pressed("place_building_tent")) == true:
-		add_child(building_house_shed_scene.instantiate())		
+		add_child(building_house_tent_scene.instantiate())		
 	if (Input.is_action_just_pressed("place_building_shed")) == true:
 		add_child(building_house_shed_scene.instantiate())
 	if (Input.is_action_just_pressed("place_building_house")) == true:
@@ -103,7 +103,7 @@ func _process(_delta):
 
 	# tiles
 	if (Input.is_action_just_pressed("place_tile_street")) == true:
-		var tilePosition = get_node("TileMap").local_to_map(get_viewport().get_mouse_position())
+		var tilePosition = get_node("TileMap").local_to_map(get_global_mouse_position())
 		tilemap.set_cell(0,tilePosition,0,Vector2i(0,0),0)
 
 	if (Input.is_action_just_pressed("place_tile_street_revert")) == true:

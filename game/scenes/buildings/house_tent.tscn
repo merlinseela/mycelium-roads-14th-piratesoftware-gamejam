@@ -1,18 +1,20 @@
 [gd_scene load_steps=4 format=3 uid="uid://bisrmh1upv3ty"]
 
-[ext_resource type="Texture2D" uid="uid://dquq1rd3iq1fs" path="res://images/buildings/wood_burner_greybox.png" id="1_7u5mt"]
 [ext_resource type="Script" path="res://scripts/buildings/house_tent.gd" id="1_nsqwi"]
+[ext_resource type="Texture2D" uid="uid://cbt4abq0gckgq" path="res://images/buildings/tent_greybox.png" id="2_17n0y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cmj6j"]
-size = Vector2(23, 24)
+size = Vector2(59, 53.5)
 
 [node name="StaticBody2D" type="StaticBody2D"]
 script = ExtResource("1_nsqwi")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.905882, 0.913725, 0.223529, 1)
-texture = ExtResource("1_7u5mt")
+position = Vector2(-5, 12)
+scale = Vector2(0.78125, 0.78125)
+texture = ExtResource("2_17n0y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.5, -2)
+position = Vector2(4.5, -4)
 shape = SubResource("RectangleShape2D_cmj6j")

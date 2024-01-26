@@ -3,15 +3,23 @@
 [ext_resource type="Texture2D" uid="uid://jmpkhgt26kay" path="res://images/buildings/wheat_farm_greybox.png" id="1_4de51"]
 [ext_resource type="Script" path="res://scripts/buildings/phosphorus_quarry.gd" id="1_d61oi"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_n7i35"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xbtic"]
+size = Vector2(58, 26)
 
 [node name="StaticBody2D" type="StaticBody2D"]
 script = ExtResource("1_d61oi")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_n7i35")
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0, 0, 0, 1)
-position = Vector2(-3, 23)
+position = Vector2(1, 18)
+scale = Vector2(0.882813, 0.890625)
 texture = ExtResource("1_4de51")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5, 2)
+shape = SubResource("RectangleShape2D_xbtic")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

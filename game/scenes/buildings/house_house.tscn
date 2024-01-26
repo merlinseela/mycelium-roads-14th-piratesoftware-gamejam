@@ -3,15 +3,17 @@
 [ext_resource type="Texture2D" uid="uid://dquq1rd3iq1fs" path="res://images/buildings/wood_burner_greybox.png" id="1_fuib0"]
 [ext_resource type="Script" path="res://scripts/buildings/house_house.gd" id="1_j210h"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_1u31r"]
-radius = 20.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e4jqj"]
+size = Vector2(53, 42)
 
 [node name="StaticBody2D" type="StaticBody2D"]
 script = ExtResource("1_j210h")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(1, 0.384314, 1, 1)
+position = Vector2(-1, -7)
 texture = ExtResource("1_fuib0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_1u31r")
+position = Vector2(5, 0)
+shape = SubResource("RectangleShape2D_e4jqj")

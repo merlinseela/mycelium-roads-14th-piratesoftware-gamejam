@@ -5,6 +5,9 @@ extends StaticBody2D
 	"calcium": 0
 }
 
+# TASK TRACKER
+@export var task_tracker = 0
+
 @onready var iPosition = get_parent().get_node("TileMap").local_to_map(get_global_mouse_position())
 @onready var tileMap = get_parent().get_node("TileMap")
 
@@ -12,17 +15,21 @@ func _ready():
 	_place_shed()
 	
 func _process(_delta):
-	pass
+	if (Input.is_action_just_pressed("test_button")):
+		print(inventory)
 	
 
-func _physics_process(delta):
-	pass
-	# if inventory resource empty == true -> then exetute request new resource
-	# func _create_resource_request
+func _physics_process(_delta):
+	# generate a lot of tasks....
+	if (inventory["calcium"] - task_tracker) > 0:
+		get_parent()._task_create(get_path(),"/root/Main/Gameworld/MainBuilding","calcium")
+		task_tracker += 1
+
+
 	
 func _place_shed():
 	var tileVector = tileMap.local_to_map(get_global_mouse_position())
-	var tileData = tileMap.get_cell_tile_data(0, tileVector)
+	var _tileData = tileMap.get_cell_tile_data(0, tileVector)
 	# DEBUGGING
 	#print("TILE TYPE: " + str(tileData.get_custom_data("type")))
 	
@@ -48,3 +55,9 @@ func _place_shed():
 
 func _create_resource_request():
 	pass # hand over location of this building -> translates to target position
+
+
+func _on_timer_timeout():
+	if inventory["calcium"] < 3: #and inventory["calcium"] < 3:
+		# inventory["dirt"] -= 1
+		inventory["calcium"] += 1

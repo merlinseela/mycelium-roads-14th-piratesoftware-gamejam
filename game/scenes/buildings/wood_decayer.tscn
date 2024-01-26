@@ -3,15 +3,23 @@
 [ext_resource type="Script" path="res://scripts/buildings/wood_decayer.gd" id="1_1mfue"]
 [ext_resource type="Texture2D" uid="uid://c4frds0cq1y2g" path="res://images/buildings/dirt_cleanser_greybox.png" id="1_wfehe"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_8jfhh"]
-radius = 12.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dq7hn"]
+size = Vector2(63, 15)
 
 [node name="StaticBody2D" type="StaticBody2D"]
 script = ExtResource("1_1mfue")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(1, 0, 1, 1)
+position = Vector2(5, 0)
+scale = Vector2(0.833333, 1)
 texture = ExtResource("1_wfehe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_8jfhh")
+position = Vector2(7.5, 6.5)
+shape = SubResource("RectangleShape2D_dq7hn")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

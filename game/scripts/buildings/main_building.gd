@@ -1,14 +1,16 @@
 extends StaticBody2D
 
 @export var inventory = {
-		"water": 0,
-		"dirt": 0,
-		"phosphorus": 0,
-		"potassium": 0,
-		"carbohydrates": 0,
-		"protein": 0,
-		"calcium": 0,
-		"luciferin": 0
+		"water": 100,
+		"dirt": 100,
+		"phosphorus": 100,
+		"potassium": 100,
+		"carbohydrates": 100,
+		"protein": 100,
+		"calcium": 100,
+		"luciferin": 100,
+		"population": 0,
+		"population-max": 5
 }
 
 # LOAD ON INSTANCIATING
@@ -21,16 +23,20 @@ var npcScene = preload("res://scenes/units/npc_shroom.tscn")
 @onready var tileMap = get_parent().get_node("TileMap")
 @onready var hud_ui = get_parent().get_parent().get_node("HUD").get_node("UI")
 @onready var hud_ui_resources = hud_ui.get_node("Resource")
+@onready var hud_ui_effect = hud_ui.get_node("Effect")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	place_main_building()
 	
-	# DEV TASK MANAGER
-	# create_task(, name)
+	var start_pop = 0
+	while start_pop < 5:
+		spawn_npc_shroom()
+		start_pop += 1
+		
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	# update HUD Inventory
 	hud_ui_resources.get_node("WaterCount").text = str(inventory["water"])
 	hud_ui_resources.get_node("DirtCount").text = str(inventory["dirt"])
@@ -40,11 +46,26 @@ func _process(delta):
 	hud_ui_resources.get_node("ProteinCount").text = str(inventory["protein"])
 	hud_ui_resources.get_node("CalciumCount").text = str(inventory["calcium"])
 	hud_ui_resources.get_node("LuciferinCount").text = str(inventory["luciferin"])
+	
+	hud_ui_effect.get_node("PopulationCount").text = (str(inventory['population']) + '/' + str(inventory["population-max"]))
 
 	# spawn new npc mushroom
-	if Input.is_action_just_pressed("mouse_left_button"):
-		spawn_npc_shroom()
+	#if Input.is_action_just_pressed("mouse_left_button"):
+		#spawn_npc_shroom()
 
+	if (inventory["population-max"] - inventory["population"] > 0):
+		if (
+			inventory["water"] > 5 and
+			inventory["potassium"] > 6 and 
+			inventory["carbohydrates"] > 4 and
+			inventory["protein"] > 3
+			):
+				print("spawn")
+				spawn_npc_shroom()
+				inventory["water"] -= 5 
+				inventory["potassium"] -= 6 
+				inventory["carbohydrates"] -= 4 
+				inventory["protein"] -= 3
 # -----------------------------
 # User defined functions
 # this functions spawns the main building, before spawning the building it checks if all the tiles underneath it are the right ones 
@@ -53,7 +74,7 @@ func place_main_building():
 	
 	# create 
 	var tileVector = tileMap.local_to_map(get_global_mouse_position())
-	var tileData = tileMap.get_cell_tile_data(0, tileVector)
+	#var _tileData = tileMap.get_cell_tile_data(0, tileVector)
 	
 	# Debugging
 	# print("TILE TYPE: " + str(tileData.get_custom_data("type")))
@@ -94,9 +115,12 @@ func place_main_building():
 		position = get_parent().get_node("TileMap").map_to_local(iPosition)
 		position = position - Vector2(5,0)
 		
+		
+		
 	else:
 		# print("FAILED")
 		queue_free() # despawn node if not placable -> making sure it is not inside the engine
 
 func spawn_npc_shroom():
 	get_parent().add_child(npcScene.instantiate())
+	inventory["population"] += 1
