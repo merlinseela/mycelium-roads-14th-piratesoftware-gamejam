@@ -140,6 +140,19 @@ func _process(_delta):
 		%Words.text = "You’re a mushroom after all… maybe I’ll call you Mushy!"
 		$Visual.set_frame(18)	
 	#### INSERT DIALOGUE OPTIONS
+	
+	#MUSHROOM: Dialogue options:
+#		… (anything but that)....
+#		:D
+#
+#SAM: Dialogue answers
+#Sorry…. ummmm…. well you do have a pretty round head… and so do I…. What about Roundhead? Or what about Stropharia caerulea?
+#(No answer necessary here)
+#
+		#MUSHROOM: Dialogue options:
+		#… well it’s better than “Mushy”…
+		#something else?  (Text box)
+
 		
 	if story_progress == 31: # Change this
 		%Speaker.text = "SAM"
