@@ -43,6 +43,10 @@ func _process(_delta):
 	if Input.is_action_just_pressed("ui_cancel") or Input.is_action_just_pressed("ui_accept"):
 		%BlackOut.visible = false
 		%LandratLogo.visible = false
+		
+	#Makes audio loop
+	if $AudioMain.playing == false:
+		$AudioMain.play()
 
 #Hide/show save slots with sound effects
 func _on_button_new_game_pressed():

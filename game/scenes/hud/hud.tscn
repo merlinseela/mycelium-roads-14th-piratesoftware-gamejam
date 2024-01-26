@@ -851,7 +851,6 @@ stream = ExtResource("10_7l3f6")
 [node name="AudioMain" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("26_fis47")
 volume_db = -10.0
-autoplay = true
 
 [connection signal="pressed" from="UI/Minimap/ButtonOptions" to="." method="_on_button_options_pressed"]
 [connection signal="mouse_entered" from="UI/WeatherHolder/WeatherArea" to="UI/WeatherHolder/WeatherArea" method="_on_weather_mouse_entered"]

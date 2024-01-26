@@ -63,6 +63,10 @@ func _process(_delta):
 	if %SunMoonMovement.rotation_degrees < -360:
 		%SunMoonMovement.rotation_degrees = -360
 		_tween_sun()
+	
+	#Makes audio loop
+	if $AudioMain.is_playing == false:
+		$AudioMain.play()
 
 func _change_sun():
 	#Changes the sun to moon and back
