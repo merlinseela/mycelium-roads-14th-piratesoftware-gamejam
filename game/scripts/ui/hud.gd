@@ -65,7 +65,7 @@ func _process(_delta):
 		_tween_sun()
 	
 	#Makes audio loop
-	if $AudioMain.is_playing == false:
+	if $AudioMain.playing == false:
 		$AudioMain.play()
 
 func _change_sun():

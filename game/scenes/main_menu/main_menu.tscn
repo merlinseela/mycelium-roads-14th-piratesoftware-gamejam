@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://b0gl8oh8m6whn" path="res://images/ui/parallax_title_screen/Parallax title screen/5.png" id="9_lacmd"]
 [ext_resource type="Texture2D" uid="uid://lyu6okx123p5" path="res://images/ui/parallax_title_screen/Parallax title screen/4.png" id="10_v1ljn"]
 [ext_resource type="Texture2D" uid="uid://cvioraqpbwxhn" path="res://images/ui/parallax_title_screen/Parallax title screen/3.png" id="11_chk36"]
-[ext_resource type="AudioStream" uid="uid://bwgf6pqse7wga" path="res://sounds/Colony Main - 2024-01-14-125.wav" id="12_db31y"]
+[ext_resource type="AudioStream" uid="uid://djx4yf1b7nrd0" path="res://sounds/Main Theme + Event 1-2024-01-20.wav" id="12_f4ypu"]
 [ext_resource type="Texture2D" uid="uid://bhkva7w2p4oct" path="res://images/ui/parallax_title_screen/Parallax title screen/2.png" id="12_i6v0i"]
 [ext_resource type="Texture2D" uid="uid://bhqqnlj8a4ic2" path="res://images/ui/parallax_title_screen/Parallax title screen/1.png" id="13_delgv"]
 [ext_resource type="Texture2D" uid="uid://ckfdaysgs8ydm" path="res://images/ui/landrat_software_logo.png" id="15_1vtja"]
@@ -231,7 +231,7 @@ stream = ExtResource("6_swuit")
 stream = ExtResource("7_k4o2x")
 
 [node name="AudioMain" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("12_db31y")
+stream = ExtResource("12_f4ypu")
 volume_db = -10.0
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
