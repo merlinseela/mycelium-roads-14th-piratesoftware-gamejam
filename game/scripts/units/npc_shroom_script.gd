@@ -14,6 +14,8 @@ extends CharacterBody2D
 var movement_speed: float = 150.0
 var movement_target_position: Vector2
 
+var game_speed = 1
+
 @onready var tilemap = get_node("/root/Main/Gameworld/TileMap")
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
 
@@ -45,9 +47,17 @@ func _ready():
 
 	# spawn at main building position
 	spawn() # DEV: START AT MAIN
+	
+	var get_speed = get_node("/root/Main/HUD")
+	get_speed.update_game_speed.connect(_update_speed)
+
 
 	# Make sure to not await during _ready.
 	call_deferred("actor_setup")	
+
+func _update_speed(new_game_speed):
+	game_speed = new_game_speed
+
 func _process(_delta):
 	if state_tracker == STATE.IDLE:
 		load_idle_task()
@@ -107,7 +117,7 @@ func _physics_process(_delta):
 	# decide on next position and move to it _> DO NOT TOUCH!!!!
 	var current_agent_position: Vector2 = global_position
 	var next_path_position: Vector2 = navigation_agent.get_next_path_position()
-	velocity = current_agent_position.direction_to(next_path_position) * movement_speed
+	velocity = current_agent_position.direction_to(next_path_position) * movement_speed * game_speed
 	move_and_slide()
 	if navigation_agent.is_navigation_finished():
 		return
