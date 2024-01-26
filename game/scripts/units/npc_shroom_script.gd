@@ -11,7 +11,7 @@ extends CharacterBody2D
 		"luciferin": 0
 }
 
-var movement_speed: float = 150.0
+var movement_speed: float = 50.0
 var movement_target_position: Vector2
 
 var game_speed = 1
@@ -59,6 +59,14 @@ func _update_speed(new_game_speed):
 	game_speed = new_game_speed
 
 func _process(_delta):
+		# decide on next position and move to it _> DO NOT TOUCH!!!!
+	var current_agent_position: Vector2 = global_position
+	var next_path_position: Vector2 = navigation_agent.get_next_path_position()
+	velocity = current_agent_position.direction_to(next_path_position) * movement_speed * game_speed
+	move_and_slide()
+	if navigation_agent.is_navigation_finished():
+		return
+
 	if state_tracker == STATE.IDLE:
 		load_idle_task()
 		if loaded_task != null: 
@@ -66,7 +74,7 @@ func _process(_delta):
 
 	# configuring the execution of the task
 	if state_tracker == STATE.BUSY and load_task_success_tracker == false:
-		actor_setup()
+		#actor_setup()
 		load_task_success_tracker = true
 		state_task_tracker = STATETASK.NOTATFROMBUILDING
 
@@ -114,13 +122,7 @@ func _process(_delta):
 					load_task_success_tracker = false
 
 func _physics_process(_delta):
-	# decide on next position and move to it _> DO NOT TOUCH!!!!
-	var current_agent_position: Vector2 = global_position
-	var next_path_position: Vector2 = navigation_agent.get_next_path_position()
-	velocity = current_agent_position.direction_to(next_path_position) * movement_speed * game_speed
-	move_and_slide()
-	if navigation_agent.is_navigation_finished():
-		return
+	pass
 	
 func spawn():
 # detect main building position (grid based) and set mushroom spawn position to the right tile

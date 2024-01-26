@@ -49,7 +49,7 @@ func _place_building():
 		#Place Shed Node
 		position = get_parent().get_node("TileMap").map_to_local(iPosition)
 		position = position - Vector2(5,20)
-		
+
 		# deduct costs from main building inventory
 		get_parent().get_node("/root/Main/Gameworld/MainBuilding").inventory["dirt"] -= 5
 

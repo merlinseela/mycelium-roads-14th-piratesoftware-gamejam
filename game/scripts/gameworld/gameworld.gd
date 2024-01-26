@@ -103,16 +103,20 @@ func _process(_delta):
 
 	# tiles
 	if (Input.is_action_just_pressed("place_tile_street")) == true:
-		var tilePosition = get_node("TileMap").local_to_map(get_global_mouse_position())
+		var tilePosition = tilemap.local_to_map(get_global_mouse_position())
 		if (
-			(get_node("TileMap").get_cell_tile_data(0, tilePosition).get_custom_data("type")) != "street" or
-			(get_node("TileMap").get_cell_tile_data(0, tilePosition).get_custom_data("type")) != "building"
+			(tilemap.get_cell_tile_data(0, tilePosition).get_custom_data("type")) != "street" and
+			(tilemap.get_cell_tile_data(0, tilePosition).get_custom_data("type")) != "building"
 		):
 			tilemap.set_cell(0,tilePosition,0,Vector2i(0,0),0)
-			get_node("MainBuilding").inventory["dirt"] -= -2
+			get_node("MainBuilding").inventory["dirt"] -= 2
 
 	if (Input.is_action_just_pressed("place_tile_street_revert")) == true:
-		pass
+		var tilePosition = tilemap.local_to_map(get_global_mouse_position())
+		if (
+			(tilemap.get_cell_tile_data(0, tilePosition).get_custom_data("type")) == "street"
+		):
+			tilemap.set_cell(0,tilePosition,1,Vector2i(0,0),0)
 
 	# deletion
 	if (Input.is_action_just_pressed("delete")) == true:
@@ -149,7 +153,6 @@ func _task_done():
 	for task in tasks.size():
 		if tasks[task].status == TASKSTATUS.DONE:
 			print(task)
-
 
 #------------------------------
 # DEBUG AND TEST FUNCTIONS!
