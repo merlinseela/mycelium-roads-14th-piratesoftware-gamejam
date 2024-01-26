@@ -26,7 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://l7i1d5cachlh" path="res://images/ui/time_buttons/fastforward3_x3.png" id="17_18fs0"]
 [ext_resource type="Texture2D" uid="uid://2u1b5s2puho0" path="res://images/ui/time_buttons/fastforward2_x3.png" id="18_c1ghs"]
 [ext_resource type="PackedScene" uid="uid://b83i0a0qgnf2u" path="res://scenes/hud/slider_volume.tscn" id="23_76nb7"]
-[ext_resource type="AudioStream" uid="uid://bwgf6pqse7wga" path="res://sounds/Colony Main - 2024-01-14-125.wav" id="27_vnh5j"]
+[ext_resource type="AudioStream" uid="uid://b6i0obml66jgw" path="res://sounds/Colony Main 2024-01-26.wav" id="27_nfprc"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i37qp"]
 
@@ -849,7 +849,7 @@ stream = ExtResource("9_psx5h")
 stream = ExtResource("10_7l3f6")
 
 [node name="AudioMain" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("27_vnh5j")
+stream = ExtResource("27_nfprc")
 volume_db = -10.0
 
 [connection signal="pressed" from="UI/Minimap/ButtonOptions" to="." method="_on_button_options_pressed"]
