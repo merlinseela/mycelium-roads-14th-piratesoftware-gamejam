@@ -124,3 +124,9 @@ func place_main_building():
 func spawn_npc_shroom():
 	get_parent().add_child(npcScene.instantiate())
 	inventory["population"] += 1
+	# Every time a mushroom spawns, check if story needs to progress. 
+	if(inventory["population"] == 15): 
+		var event_1_scene = load("res://scenes/story/story_event_1.tscn")
+		var event_1_instance = event_1_scene.instantiate()
+		add_child(event_1_instance)
+		print_debug("THE THING SPAWNED")

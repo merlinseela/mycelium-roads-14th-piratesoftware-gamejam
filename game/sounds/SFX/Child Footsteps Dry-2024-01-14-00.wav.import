@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dxq7iyva5s3ya"
+path="res://.godot/imported/Child Footsteps Dry-2024-01-14-00.wav-10a8504b3c37e024720d7db5592a808e.sample"
+
+[deps]
+
+source_file="res://sounds/SFX/Child Footsteps Dry-2024-01-14-00.wav"
+dest_files=["res://.godot/imported/Child Footsteps Dry-2024-01-14-00.wav-10a8504b3c37e024720d7db5592a808e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
