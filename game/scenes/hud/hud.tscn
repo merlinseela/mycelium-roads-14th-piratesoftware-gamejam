@@ -466,9 +466,9 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -258.0
-offset_top = -256.0
+offset_top = -71.0
 offset_right = 14.0
-offset_bottom = 17.0
+offset_bottom = 202.0
 grow_horizontal = 0
 grow_vertical = 0
 size_flags_horizontal = 3
@@ -561,12 +561,13 @@ metadata/_edit_lock_ = true
 
 [node name="ButtonOptions" type="TextureButton" parent="UI/Minimap"]
 layout_mode = 0
-offset_left = -43.0
-offset_top = 211.0
-offset_right = -11.0
-offset_bottom = 243.0
+offset_left = -15.0
+offset_top = 12.0
+offset_right = 17.0
+offset_bottom = 44.0
 scale = Vector2(1.1, 1.1)
 texture_normal = ExtResource("16_shrwe")
+metadata/_edit_lock_ = true
 
 [node name="WeatherHolder" type="NinePatchRect" parent="UI"]
 anchors_preset = 1
@@ -634,6 +635,7 @@ animation = &"Day_Night"
 metadata/_edit_lock_ = true
 
 [node name="Options" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="HBoxOprionsPanel" type="HBoxContainer" parent="Options"]
 anchors_preset = 8
