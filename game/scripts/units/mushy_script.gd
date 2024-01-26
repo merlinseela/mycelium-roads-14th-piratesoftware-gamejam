@@ -36,7 +36,7 @@ func set_movement_target(movement_target: Vector2):
 func _process(_delta):
 	if Input.is_action_just_pressed("mouse_right_button"):
 		movement_target_position = get_global_mouse_position()
-		actor_setup()
+		#actor_setup()
 		
 func _physics_process(_delta):
 	if navigation_agent.is_navigation_finished():
