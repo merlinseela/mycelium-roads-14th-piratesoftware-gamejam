@@ -46,7 +46,7 @@ func _process(_delta):
 
 #Hide/show save slots with sound effects
 func _on_button_new_game_pressed():
-	get_tree().change_scene_to_file("res://main.tscn")
+	get_tree().change_scene_to_file("res://scenes/story/story.tscn")
 	#if %VBoxSlots.visible == true:
 		#$AudioBack.play()
 	#elif %VBoxSlots.visible == false:

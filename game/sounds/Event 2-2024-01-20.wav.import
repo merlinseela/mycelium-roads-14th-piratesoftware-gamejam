@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dkh2um6t5ac4k"
+path="res://.godot/imported/Event 2-2024-01-20.wav-45dff187d4ca80117570e9fb5b99e08a.sample"
+
+[deps]
+
+source_file="res://sounds/Event 2-2024-01-20.wav"
+dest_files=["res://.godot/imported/Event 2-2024-01-20.wav-45dff187d4ca80117570e9fb5b99e08a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

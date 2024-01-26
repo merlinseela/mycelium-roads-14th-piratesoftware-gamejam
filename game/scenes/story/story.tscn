@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://d4fria4udve8v"]
+[gd_scene load_steps=30 format=3 uid="uid://d4fria4udve8v"]
 
 [ext_resource type="Script" path="res://scenes/story/story_1.gd" id="1_l3gy1"]
 [ext_resource type="Texture2D" uid="uid://d335jre0xbvr8" path="res://images/story/Intro running 1.PNG" id="2_wbxff"]
@@ -24,6 +24,10 @@
 [ext_resource type="Texture2D" uid="uid://bcc7nnodvbk6c" path="res://images/ui/large_button_normal.png" id="22_whqs0"]
 [ext_resource type="Texture2D" uid="uid://petnjqf4dwwb" path="res://images/ui/large_button_pressed.png" id="23_5qohk"]
 [ext_resource type="Texture2D" uid="uid://eol1wracjl4i" path="res://images/ui/large_button_hover.png" id="24_gpamb"]
+[ext_resource type="AudioStream" uid="uid://c7ocv3mkkfqlp" path="res://sounds/Finding Mushroom-2024-01-18-Part1.wav" id="25_k5gsx"]
+[ext_resource type="AudioStream" uid="uid://cg1qltgevwkpe" path="res://sounds/Finding Mushroom-2024-01-18-Part2.wav" id="26_sx7n4"]
+[ext_resource type="AudioStream" uid="uid://c0x6qthjxs2uq" path="res://sounds/Finding Mushroom-2024-01-18-Part3.wav" id="27_sk3h4"]
+[ext_resource type="AudioStream" uid="uid://djx4yf1b7nrd0" path="res://sounds/Main Theme + Event 1-2024-01-20.wav" id="27_yloar"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sqe5k"]
 animations = [{
@@ -143,6 +147,7 @@ sprite_frames = SubResource("SpriteFrames_sqe5k")
 frame_progress = 0.11999
 
 [node name="Buttons" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="ButtonChoice1" type="TextureButton" parent="Buttons"]
 offset_left = 920.0
@@ -164,7 +169,7 @@ texture_hover = ExtResource("24_gpamb")
 
 [node name="LabelChoice1" type="Label" parent="Buttons"]
 unique_name_in_owner = true
-offset_left = 700.0
+offset_left = 505.0
 offset_top = 480.0
 offset_right = 900.0
 offset_bottom = 503.0
@@ -174,13 +179,27 @@ horizontal_alignment = 2
 
 [node name="LabelChoice2" type="Label" parent="Buttons"]
 unique_name_in_owner = true
-offset_left = 700.0
+offset_left = 493.0
 offset_top = 544.0
 offset_right = 900.0
 offset_bottom = 567.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "TEST"
 horizontal_alignment = 2
+
+[node name="OpeningSceneAudio" type="Node" parent="."]
+
+[node name="OpeningSceneAudio1" type="AudioStreamPlayer" parent="OpeningSceneAudio"]
+stream = ExtResource("25_k5gsx")
+
+[node name="OpeningSceneAudio2" type="AudioStreamPlayer" parent="OpeningSceneAudio"]
+stream = ExtResource("27_sk3h4")
+
+[node name="OpeningSceneAudio3" type="AudioStreamPlayer" parent="OpeningSceneAudio"]
+stream = ExtResource("26_sx7n4")
+
+[node name="OpeningSceneAudio4" type="AudioStreamPlayer" parent="OpeningSceneAudio"]
+stream = ExtResource("27_yloar")
 
 [connection signal="pressed" from="Buttons/ButtonChoice1" to="." method="_on_button_choice_1_pressed"]
 [connection signal="pressed" from="Buttons/ButtonChoice2" to="." method="_on_button_choice_2_pressed"]
