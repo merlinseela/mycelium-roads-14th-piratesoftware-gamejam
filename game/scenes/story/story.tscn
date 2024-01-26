@@ -1,0 +1,134 @@
+[gd_scene load_steps=22 format=3 uid="uid://d4fria4udve8v"]
+
+[ext_resource type="Script" path="res://scenes/story/story_1.gd" id="1_l3gy1"]
+[ext_resource type="Texture2D" uid="uid://d335jre0xbvr8" path="res://images/story/Intro running 1.PNG" id="2_wbxff"]
+[ext_resource type="Texture2D" uid="uid://buofkwvmsxm87" path="res://images/story/Intro 1.PNG" id="3_r3q88"]
+[ext_resource type="PackedScene" uid="uid://deykccsuuvrdq" path="res://scenes/hud/inventory_box.tscn" id="3_ylnnk"]
+[ext_resource type="Texture2D" uid="uid://dhiasm8m2sv68" path="res://images/story/Intro 2.PNG" id="4_5kacn"]
+[ext_resource type="Texture2D" uid="uid://bkb6jtqvigwop" path="res://images/story/Intro 3.PNG" id="5_0se6b"]
+[ext_resource type="Texture2D" uid="uid://ds6tqq0mrf5m2" path="res://images/story/Intro running 2.PNG" id="7_qk4p0"]
+[ext_resource type="Texture2D" uid="uid://jsg1yrs2ukvf" path="res://images/story/Intro running 3.PNG" id="8_gspxa"]
+[ext_resource type="Texture2D" uid="uid://d4a3478evprix" path="res://images/story/intro running 4.PNG" id="9_rp6y1"]
+[ext_resource type="Texture2D" uid="uid://cp2mttklyr0xm" path="res://images/story/Intro running 5.PNG" id="10_8rgfw"]
+[ext_resource type="Texture2D" uid="uid://bov8d74g4e1tx" path="res://images/story/Intro running 6.PNG" id="11_twdvw"]
+[ext_resource type="Texture2D" uid="uid://bqxatohc24llu" path="res://images/story/Intro running 7.PNG" id="12_e5g8u"]
+[ext_resource type="Texture2D" uid="uid://bodxtcql4ouys" path="res://images/story/Intro running 8.PNG" id="13_syccf"]
+[ext_resource type="Texture2D" uid="uid://cfambji44ggpa" path="res://images/story/Intro running 9.PNG" id="14_jsajg"]
+[ext_resource type="Texture2D" uid="uid://2sc3xbsisfcq" path="res://images/story/Intro running 11.PNG" id="15_kbpsj"]
+[ext_resource type="Texture2D" uid="uid://dgsca0t0oib80" path="res://images/story/Intro running 12.PNG" id="16_knobd"]
+[ext_resource type="Texture2D" uid="uid://dkum6bmk7rbk4" path="res://images/story/Intro running 13.PNG" id="17_as6hk"]
+[ext_resource type="Texture2D" uid="uid://bns5uk57u3jf0" path="res://images/story/Intro running 14.PNG" id="18_s5c10"]
+[ext_resource type="Texture2D" uid="uid://m1ahk4gohdho" path="res://images/story/Intro running 15.PNG" id="19_up6il"]
+[ext_resource type="Texture2D" uid="uid://dbkh571wax8nu" path="res://images/story/Intro running 16.PNG" id="20_s1weu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sqe5k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_r3q88")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5kacn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0se6b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_wbxff")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qk4p0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_gspxa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_rp6y1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_8rgfw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_twdvw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_e5g8u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_syccf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_jsajg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_kbpsj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_knobd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_as6hk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_s5c10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_up6il")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_s1weu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Story" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l3gy1")
+
+[node name="Panel" type="Panel" parent="."]
+z_index = -2
+layout_mode = 0
+offset_left = -54.0
+offset_top = -55.0
+offset_right = 1285.0
+offset_bottom = 670.0
+
+[node name="NinePatchRect" parent="." instance=ExtResource("3_ylnnk")]
+offset_left = 54.0
+offset_top = 436.0
+offset_right = 1080.0
+offset_bottom = 642.0
+
+[node name="Speaker" type="Label" parent="NinePatchRect"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 75.0
+offset_top = 39.0
+offset_right = 138.0
+offset_bottom = 62.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Speaker"
+
+[node name="Words" type="Label" parent="NinePatchRect"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 80.0
+offset_top = 91.0
+offset_right = 960.0
+offset_bottom = 156.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Actual words"
+
+[node name="Visual" type="AnimatedSprite2D" parent="."]
+z_index = -1
+position = Vector2(558, 225)
+scale = Vector2(3.45679, 2.98667)
+sprite_frames = SubResource("SpriteFrames_sqe5k")

@@ -29,13 +29,10 @@
 [ext_resource type="AudioStream" uid="uid://djx4yf1b7nrd0" path="res://sounds/Main Theme + Event 1-2024-01-20.wav" id="26_fis47"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i37qp"]
-load_path = "res://.godot/imported/UI_Wood_Button_Large_Lock_02a1.png-0fc1449647b1a61fb333ee20b0830a36.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_g8u48"]
-load_path = "res://.godot/imported/UI_Wood_Button_Large_Lock_02a3.png-f141ef00382d745a2ef042a2853e467c.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rd64p"]
-load_path = "res://.godot/imported/UI_Wood_Button_Large_Lock_02a2.png-b77d4d00b10194c5a5227cd854044806.ctex"
 
 [sub_resource type="Theme" id="Theme_0q56n"]
 
