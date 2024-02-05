@@ -1,0 +1,130 @@
+<mxfile host="Electron" modified="2024-01-22T13:53:15.536Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.0.2 Chrome/114.0.5735.289 Electron/25.8.4 Safari/537.36" etag="1Yru4-BkpRV4gSzV8Efd" version="22.0.2" type="device">
+  <diagram name="Page-1" id="4Y5169i-J_ugkYAt-xjl">
+    <mxGraphModel dx="2431" dy="707" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1169" pageHeight="827" background="#B3B3B3" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="lqZI8Cv99HljoWMNERQL-3" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="630" y="1110" width="490" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="lqZI8Cv99HljoWMNERQL-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;" parent="1" source="lqZI8Cv99HljoWMNERQL-1" target="lqZI8Cv99HljoWMNERQL-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lqZI8Cv99HljoWMNERQL-1" value="It&#39;s Spreading" style="ellipse;whiteSpace=wrap;html=1;fontStyle=1;fontSize=18;" parent="1" vertex="1">
+          <mxGeometry x="790" y="920" width="180" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="lqZI8Cv99HljoWMNERQL-2" value="&lt;h1&gt;Explenation&lt;/h1&gt;&lt;p&gt;This theme centers around making a mechanic or narrative that consumes or expands in some way. Things like a pandemic, zombie apocalypse, idea, or bagel toppings come to mind. Be creative with it and work it into something unique and unexpected. Themes are there to get you to think outside the box!&lt;br&gt;&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="635" y="1110" width="490" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="lqZI8Cv99HljoWMNERQL-5" value="Tower Defense&lt;br&gt;" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1010" y="190" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="lqZI8Cv99HljoWMNERQL-7" value="Kitchen settings" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="970" y="600" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="lqZI8Cv99HljoWMNERQL-8" value="plague style" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="820" y="580" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="lqZI8Cv99HljoWMNERQL-9" value="paint" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="860" y="660" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="lqZI8Cv99HljoWMNERQL-10" value="water" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1050" y="760" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="lqZI8Cv99HljoWMNERQL-11" value="playing catch" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1140" y="650" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="lqZI8Cv99HljoWMNERQL-12" value="fire / burning" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="920" y="510" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="lqZI8Cv99HljoWMNERQL-13" value="floor is lava" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="780" y="490" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="4PqtFaMHEQPSMtPGuPxq-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="lqZI8Cv99HljoWMNERQL-14" target="lqZI8Cv99HljoWMNERQL-17" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lqZI8Cv99HljoWMNERQL-14" value="growing a garden" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-210" y="360" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="lqZI8Cv99HljoWMNERQL-15" value="marketing through selling an addictive product" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="635" y="490" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="lqZI8Cv99HljoWMNERQL-16" value="postit ideas" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="530" y="560" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="4PqtFaMHEQPSMtPGuPxq-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="lqZI8Cv99HljoWMNERQL-17" target="lqZI8Cv99HljoWMNERQL-38" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lqZI8Cv99HljoWMNERQL-17" value="living minefield" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-200" y="480" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="lqZI8Cv99HljoWMNERQL-18" value="dogs barking" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="580" y="400" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="lqZI8Cv99HljoWMNERQL-19" value="viral content" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="710" y="660" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="lqZI8Cv99HljoWMNERQL-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="lqZI8Cv99HljoWMNERQL-20" target="lqZI8Cv99HljoWMNERQL-5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lqZI8Cv99HljoWMNERQL-20" value="strategie games" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="830" y="360" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="lqZI8Cv99HljoWMNERQL-21" value="Action games" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="480" y="470" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="lqZI8Cv99HljoWMNERQL-23" value="Or a puzzle game where your character duplicates/spreads to solve the puzzle" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="680" y="240" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="lqZI8Cv99HljoWMNERQL-24" value="anything that is kind of&amp;nbsp; like fluid" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="820" y="810" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="lqZI8Cv99HljoWMNERQL-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="lqZI8Cv99HljoWMNERQL-25" target="lqZI8Cv99HljoWMNERQL-26" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lqZI8Cv99HljoWMNERQL-25" value="nanomachines" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="500" y="670" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="lqZI8Cv99HljoWMNERQL-26" value="BORK - StarTrek" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="620" y="770" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="lqZI8Cv99HljoWMNERQL-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="lqZI8Cv99HljoWMNERQL-28" target="lqZI8Cv99HljoWMNERQL-29" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lqZI8Cv99HljoWMNERQL-28" value="men can spread int he metro -&amp;gt; man spradhing" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1160" y="470" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="lqZI8Cv99HljoWMNERQL-29" value="you slap man that are spreading in the metro" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1400" y="470" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="lqZI8Cv99HljoWMNERQL-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="lqZI8Cv99HljoWMNERQL-31" target="lqZI8Cv99HljoWMNERQL-32" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lqZI8Cv99HljoWMNERQL-31" value="bureaucracy" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1380" y="630" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="lqZI8Cv99HljoWMNERQL-32" value="you fight the spread of bad laws" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1610" y="630" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="lqZI8Cv99HljoWMNERQL-34" value="What about something where a &quot;gerücht&quot; is spreading" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1370" y="760" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="lqZI8Cv99HljoWMNERQL-38" value="Living mine field _&amp;gt;&lt;br&gt;a field of mines that is behaving like a meat eating plant.&lt;br&gt;turn based combat.&lt;br&gt;&lt;br&gt;the player is trying to navigate through the mine field which constantly chaning.&lt;br&gt;&lt;br&gt;using items/weapons the player can attack the mines and create poth for himself&lt;br&gt;&lt;br&gt;secondary mechanics could be&lt;br&gt;- mines growing and gettign more intese if they explode&lt;br&gt;- also items that change the area of dmg (sword, shotgun, turrets, wall) (practically a mix of tower defense and solving a problem)&lt;br&gt;- if a structure (turret/wall is too long right adjustend to the plant it becomes infected (wealls collapsing and giving a boost to growth, tturrets turning on the player and attack first structures then the player&lt;br&gt;- hitpoints on player to give some wiggle room.&lt;br&gt;&lt;br&gt;Story&lt;br&gt;- an experiment went wrong -&amp;gt; working with uranium from fire detectors wasnt a good idea&lt;br&gt;- now the player has to get back from his shed to his house&lt;br&gt;&lt;br&gt;Scope:&lt;br&gt;top_down&amp;nbsp; graphics&lt;br&gt;user interface" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-390" y="610" width="520" height="410" as="geometry" />
+        </mxCell>
+        <mxCell id="4PqtFaMHEQPSMtPGuPxq-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="lqZI8Cv99HljoWMNERQL-39" target="lqZI8Cv99HljoWMNERQL-14" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lqZI8Cv99HljoWMNERQL-39" value="Entropy" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-210" y="240" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="4PqtFaMHEQPSMtPGuPxq-1" value="spreading it wings (bird?)" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-805" y="510" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="4PqtFaMHEQPSMtPGuPxq-2" value="the player is playing the gamejam -&amp;gt; telling the story of beginners, learning godot and spreading their wings the first time in the pirate software game jam&lt;br&gt;&lt;br&gt;storytelling game with puzzles&lt;br&gt;- leranign how a statemachine works&lt;br&gt;..." style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-940" y="620" width="410" height="200" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
